@@ -54,7 +54,7 @@ export default {
     }
     const ok = () => {
       if(props.ok && props.ok() !== false){
-        close
+        close()
       }
     }
     const cancel = () => {
