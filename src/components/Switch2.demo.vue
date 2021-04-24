@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import Switch from '../lib/Switch.vue'
+import {Switch} from "../lib/index"
 import {
   ref
 } from 'vue'
