@@ -1,6 +1,10 @@
 {
   "name": "lion-ui-1",
-  "version": "0.0.4",
+  "version": "0.0.2",
+  "files": [
+    "dist/lib/*"
+  ],
+  "main": "dist/lib/lion.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
