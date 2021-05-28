@@ -3,17 +3,15 @@
 </demo>
 <template>
 <div>
-  <Button>你好</Button>
-  <Button theme="link">你好</Button>
-  <Button theme="text">你好</Button>
+  <Input class="icon"></Input>
 </div>
 </template>
 
 <script lang="ts">
-import {Button} from "../lib/index"
+import {Input} from "../lib/index"
 export default {
   components: {
-    Button
+    Input
   }
 }
 </script>

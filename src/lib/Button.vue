@@ -1,13 +1,27 @@
 <template>
-  <button class="lion-button" :class="classes" :disabled="disabled">
+  <button class="lion-button" :class="classes" :disabled="disabled" >
     <span v-if="loading" class="lion-loadingIndicator"></span>
-    <slot />
+    <svg v-if="icon" class="icon">
+      <use :xlink:href="`#i-${icon}`"></use>
+    </svg>
+    <div class="content">
+      <slot />
+    </div>
   </button>
 </template>
+
 <script lang="ts">
 import { computed } from "vue";
+
 export default {
   props: {
+    icon:{
+      type:String
+    },
+    iconPosition:{
+      type:String,
+      default:'left'
+    },
     theme: {
       type: String,
       default: "button",
@@ -27,15 +41,18 @@ export default {
     loading: {
       type: Boolean,
       default: false
-    }
+    },
+    
   },
   setup(props) {
-    const { theme, size, level } = props;
+    const { theme, size, level, icon, iconPosition } = props;
     const classes = computed(() => {
       return {
         [`lion-theme-${theme}`]: theme,
         [`lion-size-${size}`]: size,
         [`lion-level-${level}`]: level,
+        [`lion-icon-${icon}`]:icon,
+        [`lion-iconPosition-${iconPosition}`]:iconPosition
       };
     });
     return { classes };
@@ -53,13 +70,14 @@ $grey: grey;
 .lion-button {
   box-sizing: border-box;
   height: $h;
-  padding: 0 12px;
+  padding: 0 1em;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
   background: white;
+  vertical-align: middle;
   color: $color;
   border: 1px solid $border-color;
   border-radius: $radius;
@@ -78,6 +96,25 @@ $grey: grey;
   }
   &::-moz-focus-inner {
     border: 0;
+  }
+  &.lion-iconPosition-left{
+    > .content {
+      order: 2;
+    }
+    > .icon {
+      order: 1;
+      margin-right: .3em;
+    }
+  }
+  &.lion-iconPosition-right {
+    > .content {
+      order: 1;
+    }
+    > .icon {
+      order: 2;
+      margin-right: 0;
+      margin-left: .3em;
+    }
   }
   &.lion-theme-link {
     border-color: transparent;
