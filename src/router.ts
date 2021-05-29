@@ -8,6 +8,7 @@ import TabsDemo from "./components/TabsDemo.vue";
 import InputDemo from "./components/InputDemo.vue";
 import GridDemo from "./components/GridDemo.vue"
 import LayoutDemo from "./components/LayoutDemo.vue"
+import ToastDemo from "./components/ToastDemo.vue"
 
 
 import { h } from 'vue';
@@ -36,6 +37,7 @@ export const router = createRouter({
         { path: "input",component: InputDemo},
         { path: "Grid",component: GridDemo},
         { path: "Layout",component: LayoutDemo},
+        { path: "Toast",component: ToastDemo},
       ],
     },
   ],
