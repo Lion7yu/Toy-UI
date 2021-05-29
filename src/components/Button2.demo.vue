@@ -1,31 +1,29 @@
 <demo>
-支持 size
+支持 icon
 </demo>
 <template>
 <div>
   <div>
-    <Button size="big">大大大</Button>
-    <Button>普普通</Button>
-    <Button size="small">小小小</Button>
+    <Button icon="settings2">Settings</Button>
+    <Button icon="good" iconPosition="right">点赞</Button>
   </div>
   <div>
-    <Button theme="link" size="big">大大大</Button>
-    <Button theme="link">普普通</Button>
-    <Button size="small" theme="link">小小小</Button>
-  </div>
-  <div>
-    <Button size="big" theme="text">大大大</Button>
-    <Button theme="text">普普通</Button>
-    <Button size="small" theme="text">小小小</Button>
+    <ButtonGroup>
+      <Button icon="left">上一页</Button>
+      <Button>目录</Button>
+      <Button icon="right" iconPosition="right">下一页</Button>
+    </ButtonGroup>
   </div>
 </div>
 </template>
 
 <script lang="ts">
 import {Button} from "../lib/index"
+import {ButtonGroup} from "../lib/index"
 export default {
   components: {
-    Button
+    Button,
+    ButtonGroup,
   }
 }
 </script>
