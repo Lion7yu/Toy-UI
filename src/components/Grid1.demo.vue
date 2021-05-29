@@ -3,18 +3,75 @@
 </demo>
 <template>
 <div>
-  <Input></Input>
-  <Input value="xxx" icon="search"></Input>
-  <Input disabled></Input>
-  <Input readonly></Input>
+  <Row class="demoRow">
+    <Col :xs="{span:12}">
+      <div class="demoCol">12</div>
+    </Col>
+    <Col :xs="{span:12}">
+      <div class="demoCol">12</div>
+    </Col>
+  </Row>
+  <Row class="demoRow">
+    <Col :xs="{span:8}">
+      <div class="demoCol">8</div>
+    </Col>
+    <Col :xs="{span:8}">
+      <div class="demoCol">8</div>
+    </Col>
+    <Col :xs="{span:8}">
+      <div class="demoCol">8</div>
+    </Col>
+  </Row>
+  <Row class="demoRow">
+    <Col :xs="{span:6}">
+      <div class="demoCol">8</div>
+    </Col>
+    <Col :xs="{span:6}">
+      <div class="demoCol">8</div>
+    </Col>
+    <Col :xs="{span:6}">
+      <div class="demoCol">8</div>
+    </Col>
+    <Col :xs="{span:6}">
+      <div class="demoCol">8</div>
+    </Col>
+  </Row>
+</div>
+
+<div>
+  <Row class="demoRow" gutter="10">
+    <Col :xs="{span:8}">
+      <div class="demoCol">8</div>
+    </Col>
+    <Col :xs="{span:8}">
+      <div class="demoCol">8</div>
+    </Col>
+    <Col :xs="{span:8}">
+      <div class="demoCol">8</div>
+    </Col>
+  </Row>
 </div>
 </template>
 
 <script lang="ts">
-import {Input} from "../lib/index"
+import {Row} from "../lib/index"
+import {Col} from "../lib/index"
+import {Button} from "../lib/index"
 export default {
   components: {
-    Input
+    Row,
+    Col,
+    Button
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .demoRow{
+  }
+  .demoCol{
+    height: 50px;
+    background: #0C78FF;
+    border: 1px solid white;
+  }
+</style>

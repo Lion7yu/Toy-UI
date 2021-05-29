@@ -1,5 +1,5 @@
 <template>
-  <div class="row" :style="rowStyle" :class="rowClass"> 
+  <div class="row" style="rowStyle" :class="rowClass"> 
     <slot></slot>
   </div>
 </template>
@@ -21,6 +21,8 @@ export default {
   computed:{
     rowStyle(){
       let {gutter} = this
+      console.log('gutter')
+      console.log(gutter)
       return {
         marginLeft:-gutter/2+'px',
         marginRight:-gutter/2+'px'
@@ -32,7 +34,13 @@ export default {
       }
   },
   mounted(){
-    this.$children.forEach((vm)=>{
+    console.log('this')
+    console.log(this)
+    console.log('this.gutter1')
+    console.log(this.gutter)
+    console.log('this.$refs')
+    console.log(this.$$refs)
+    this.$refs.forEach((vm)=>{
       vm.gutter = this.gutter
     })
   }

@@ -38,7 +38,7 @@ export default {
     lg:{
       type:Object,
       validator,
-      },
+    },
     xl:{
       type:Object,
       validator,
