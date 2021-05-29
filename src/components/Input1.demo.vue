@@ -3,7 +3,10 @@
 </demo>
 <template>
 <div>
-  <Input class="icon"></Input>
+  <Input></Input>
+  <Input value="xxx" icon="search"></Input>
+  <Input disabled></Input>
+  <Input readonly></Input>
 </div>
 </template>
 
