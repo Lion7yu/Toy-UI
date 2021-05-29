@@ -13,4 +13,6 @@ export { default as Content} from './Content.vue';
 export { default as Footer} from './Footer.vue';
 export { default as Toast} from './Toast.vue';
 export { default as Popover} from './Popover.vue';
+export { default as Collapse} from './Collapse.vue';
+export { default as CollapseItem} from './CollapseItem.vue';
 export { openDialog as openDialog } from './openDialog';

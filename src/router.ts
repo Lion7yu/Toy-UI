@@ -10,6 +10,7 @@ import GridDemo from "./components/GridDemo.vue"
 import LayoutDemo from "./components/LayoutDemo.vue"
 import ToastDemo from "./components/ToastDemo.vue"
 import PopoverDemo from "./components/PopoverDemo.vue"
+import CollapseDemo from "./components/CollapseDemo.vue"
 
 
 import { h } from 'vue';
@@ -40,6 +41,7 @@ export const router = createRouter({
         { path: "Layout",component: LayoutDemo},
         { path: "Toast",component: ToastDemo},
         { path: "Popover",component: PopoverDemo},
+        { path: "Collapse",component: CollapseDemo},
       ],
     },
   ],
