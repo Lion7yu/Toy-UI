@@ -40,9 +40,9 @@ export default {
     console.log(this.gutter)
     console.log('this.$refs')
     console.log(this.$$refs)
-    this.$refs.forEach((vm)=>{
-      vm.gutter = this.gutter
-    })
+    // this.$refs.forEach((vm)=>{
+    //   vm.gutter = this.gutter
+    // })
   }
 }
 </script>

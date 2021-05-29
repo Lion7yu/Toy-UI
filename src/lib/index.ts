@@ -7,4 +7,8 @@ export { default as Input } from './Input.vue';
 export { default as ButtonGroup} from './ButtonGroup.vue';
 export { default as Row} from './Row.vue';
 export { default as Col} from './Col.vue';
+export { default as Layout} from './Layout.vue';
+export { default as Header} from './Header.vue';
+export { default as Content} from './Content.vue';
+export { default as Footer} from './Footer.vue';
 export { openDialog as openDialog } from './openDialog';
