@@ -41,6 +41,9 @@
         <li>
           <router-link to="/doc/toast">Toast 组件</router-link>
         </li>
+        <li>
+          <router-link to="/doc/popover">Popover 组件</router-link>
+        </li>
       </ol>
     </aside>
     <main>
