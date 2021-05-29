@@ -6,6 +6,7 @@ import ButtonDemo from "./components/ButtonDemo.vue";
 import DialogDemo from "./components/DialogDemo.vue";
 import TabsDemo from "./components/TabsDemo.vue";
 import InputDemo from "./components/InputDemo.vue";
+import GridDemo from "./components/GridDemo.vue"
 
 
 import { h } from 'vue';
@@ -32,6 +33,7 @@ export const router = createRouter({
         { path: "dialog", component: DialogDemo },
         { path: "tabs", component: TabsDemo },
         { path: "input",component: InputDemo},
+        { path: "Grid",component: GridDemo},
       ],
     },
   ],
