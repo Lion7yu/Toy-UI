@@ -2,9 +2,13 @@
 常规使用
 </demo>
 <template>
-<div>
-
-</div>
+  <div>
+    <Collapse >
+      <Collapse-item title="标题1" name="1">1</Collapse-item>
+      <Collapse-item title="标题2" name="2">2</Collapse-item>
+      <Collapse-item title="标题3" name="3">3</Collapse-item>
+    </Collapse>
+  </div>
 </template>
 
 <script lang="ts">
