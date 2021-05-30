@@ -3,7 +3,7 @@
 </demo>
 <template>
 <div>
-<Layout style="color: white; margin-bottom:50px;">
+<Layout style="color: white;">
   <Header style="height: 50px; background:lightskyblue;">
     header
   </Header>
@@ -18,11 +18,13 @@
 </template>
 
 <script lang="ts">
+import {Layout} from "../lib/index"
 import {Header} from "../lib/index"
 import {Content} from "../lib/index"
 import {Footer} from "../lib/index"
 export default {
   components: {
+    Layout,
     Header,
     Content,
     Footer
