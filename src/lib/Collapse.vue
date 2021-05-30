@@ -9,16 +9,6 @@ import {createApp} from 'vue'
 import mitt from 'mitt'
 export default {
   name:"LCollapse",
-  data() {
-    return {
-      emitter:createApp({})
-    }
-  },
-  provide(){
-    return{
-      emitter:mitt
-    }
-  }
 }
 </script>
 

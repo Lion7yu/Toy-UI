@@ -34,12 +34,6 @@ export default {
       }
   },
   mounted(){
-    console.log('this')
-    console.log(this)
-    console.log('this.gutter1')
-    console.log(this.gutter)
-    console.log('this.$refs')
-    console.log(this.$$refs)
     // this.$refs.forEach((vm)=>{
     //   vm.gutter = this.gutter
     // })

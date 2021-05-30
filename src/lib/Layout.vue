@@ -15,11 +15,11 @@ export default {
     }
   },
   mounted(){
-    this.$children.forEach((vm)=>{
-      if(vm.$options.name === 'LSider'){
-        this.layoutClass.hasSider = true
-      }
-    })
+    // this.$children.forEach((vm)=>{
+    //   if(vm.$options.name === 'LSider'){
+    //     this.layoutClass.hasSider = true
+    //   }
+    // })
   }
 }
 </script>
