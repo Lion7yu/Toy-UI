@@ -3,16 +3,14 @@
 </demo>
 <template>
 <div>
-  <div>
+  <div >
     <Button icon="settings2">Settings</Button>
+    <Button icon="search" iconPosition="left">搜索</Button>
     <Button icon="good" iconPosition="right">点赞</Button>
+    <Button icon="heart" iconPosition="right">点赞</Button>
   </div>
   <div>
-    <ButtonGroup>
-      <Button icon="left">上一页</Button>
-      <Button>目录</Button>
-      <Button icon="right" iconPosition="right">下一页</Button>
-    </ButtonGroup>
+
   </div>
 </div>
 </template>
