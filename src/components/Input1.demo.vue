@@ -3,10 +3,7 @@
 </demo>
 <template>
 <div>
-  <Input></Input>
-  <Input value="xxx" icon="search"></Input>
-  <Input disabled></Input>
-  <Input readonly></Input>
+  <Input value="请输入" icon="search"></Input>
 </div>
 </template>
 

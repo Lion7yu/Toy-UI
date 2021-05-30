@@ -41,6 +41,7 @@ export default {
   $font-size:14px;
   $box-shadow-color:rgba(0,0,0,0.5);
   $red: #F1453D;
+  $blue: #40a9ff;
   .wrapper{
     display: inline-flex;
     justify-content: center;
@@ -54,13 +55,16 @@ export default {
       padding: 0 8px;
       font-size: inherit;
       &:hover{
-        border-color: #666;
+        border-color: $blue;
+        box-shadow: 0px 0px 3px 1px $blue;
       }
       &:focus{
-        box-shadow: inset 0 1px 3px $box-shadow-color;
+        border-color: $blue;
+        box-shadow: 0px 0px 3px 1px $blue;
         outline: none;
       }
       &[disabled]{
+        box-shadow: none;
         border-color: #bbb;
         color: #bbb;
         cursor: not-allowed;

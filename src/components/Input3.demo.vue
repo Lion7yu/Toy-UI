@@ -1,9 +1,9 @@
 <demo>
-支持 Disable
+支持 Readonly
 </demo>
 <template>
 <div>
-  <Input value="禁止更改" disabled></Input>
+  <Input value="只读" readonly></Input>
 </div>
 </template>
 
