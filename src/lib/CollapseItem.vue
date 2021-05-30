@@ -1,6 +1,6 @@
 <template>
   <div class="collapseItem">
-    <div class="title" @click="open=!open">
+    <div class="title" @click="toggle">
       {{title}}
     </div>
     <div class="content" v-if="open">
@@ -27,6 +27,18 @@ export default {
       open:false
     }
   },
+  inject:['emitter'],
+  mounted(){
+
+  },
+  toggle(){
+    if(this.open){
+      this.open = false
+    }else{
+      this.open = true
+      this.emitter.emit('update:selected',this)
+    }
+  }
 }
 </script>
 

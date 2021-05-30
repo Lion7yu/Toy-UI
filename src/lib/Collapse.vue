@@ -6,17 +6,19 @@
 
 <script>
 import {createApp} from 'vue'
+import mitt from 'mitt'
 export default {
   name:"LCollapse",
-  props:{
-    single:{
-      type:Boolean,
-      default:false
-    },
-    selected:{
-      type:Array,
+  data() {
+    return {
+      emitter:createApp({})
     }
   },
+  provide(){
+    return{
+      emitter:mitt
+    }
+  }
 }
 </script>
 

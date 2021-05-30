@@ -1,11 +1,11 @@
 <template>
   <!-- 如果存在error就有error类 -->
   <div class="wrapper" :class="{error}">
-    <input :placeholder="placeholder" type="text" :disabled="disabled" :readonly="readonly"
-      @change="$emit('change',$event.target.placeholder)"
-      @input="$emit('input',$event.target.placeholder)"
-      @focus="$emit('focus',$event.target.placeholder)"
-      @blur="$emit('blur',$event.target.placeholder)"
+    <input :value="value" type="text" :disabled="disabled" :readonly="readonly"
+      @change="$emit('change',$event.target.value)"
+      @input="$emit('input',$event.target.value)"
+      @focus="$emit('focus',$event.target.value)"
+      @blur="$emit('blur',$event.target.value)"
     >
     <template v-if="error">
       <span class="errorMessage">{{error}}</span>

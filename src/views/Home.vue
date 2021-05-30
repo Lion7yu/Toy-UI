@@ -15,21 +15,21 @@
     <ul>
       <li>
         <svg>
-          <use xlink:href="#icon-vue"></use>
+          <use xlink:href="#i-vue"></use>
         </svg>
         <h3>基于 Vue 3</h3>
         <p>使用了 Vue 3 Composition API</p>
       </li>
       <li>
         <svg>
-          <use xlink:href="#icon-ts"></use>
+          <use xlink:href="#i-ts"></use>
         </svg>
         <h3>基于 TypeScript </h3>
         <p>源代码采用 TypeScript 书写</p>
       </li>
       <li>
         <svg>
-          <use xlink:href="#icon-light"></use>
+          <use xlink:href="#i-light"></use>
         </svg>
         <h3>代码易读</h3>
         <p>每个组件的源代码都极其简洁</p>

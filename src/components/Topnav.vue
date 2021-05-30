@@ -2,7 +2,7 @@
 <div class="topnav">
   <router-link to="/" class="logo">
     <svg class="icon">
-      <use xlink:href="#icon-lion1"></use>
+      <use xlink:href="#i-lion1"></use>
     </svg>
   </router-link>
   <ul class="menu">
@@ -11,7 +11,7 @@
     </li>
   </ul>
   <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
-    <use xlink:href="#icon-menu"></use>
+    <use xlink:href="#i-menu"></use>
   </svg>
 </div>
 </template>
