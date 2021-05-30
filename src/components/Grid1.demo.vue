@@ -24,33 +24,20 @@
   </Row>
   <Row class="demoRow">
     <Col :xs="{span:6}">
-      <div class="demoCol">8</div>
+      <div class="demoCol">6</div>
     </Col>
     <Col :xs="{span:6}">
-      <div class="demoCol">8</div>
+      <div class="demoCol">6</div>
     </Col>
     <Col :xs="{span:6}">
-      <div class="demoCol">8</div>
+      <div class="demoCol">6</div>
     </Col>
     <Col :xs="{span:6}">
-      <div class="demoCol">8</div>
+      <div class="demoCol">6</div>
     </Col>
   </Row>
 </div>
 
-<div>
-  <Row class="demoRow" gutter="10">
-    <Col :xs="{span:8}">
-      <div class="demoCol">8</div>
-    </Col>
-    <Col :xs="{span:8}">
-      <div class="demoCol">8</div>
-    </Col>
-    <Col :xs="{span:8}">
-      <div class="demoCol">8</div>
-    </Col>
-  </Row>
-</div>
 </template>
 
 <script lang="ts">
@@ -73,5 +60,9 @@ export default {
     height: 50px;
     background: #0C78FF;
     border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
   }
 </style>
