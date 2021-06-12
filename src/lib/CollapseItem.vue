@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
   $grey:#ddd;
   $border-radius:4px;
   .collapseItem{

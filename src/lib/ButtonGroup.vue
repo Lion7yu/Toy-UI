@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $border-radius:4px;
   .lion-button-group{
     display: inline-flex;

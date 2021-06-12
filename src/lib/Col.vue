@@ -90,7 +90,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
   .col{
     $class-prefix:col-xs-; //声明一个class前缀
     @for $n from 1 through 24 {
