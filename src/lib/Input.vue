@@ -1,6 +1,6 @@
 <template>
   <!-- 如果存在error就有error类 -->
-  <div class="wrapper" :class = "error">
+  <div class="wrapper" :class="{error}">
     <input :value="value" type="text" :disabled="disabled" :readonly="readonly"
       @change="$emit('change',$event.target.value)"
       @input="$emit('input',$event.target.value)"
@@ -8,6 +8,9 @@
       @blur="$emit('blur',$event.target.value)"
     >
     <template v-if="error">
+    <svg class="icon">
+      <use xlink:href="#i-error"></use>
+    </svg>
       <span class="errorMessage">{{error}}</span>
     </template>
   </div>
@@ -77,6 +80,25 @@ export default {
     &.error{
      > input{
        border-color: $red;
+       color: $red;
+     }
+     :hover{
+       box-shadow: 0px 0px 3px 1px $red;
+     }
+     :focus{
+       border-color: $red;
+       box-shadow: 0px 0px 3px 1px $red;
+     }
+     >svg{
+       fill:$red;
+       &:hover{
+         box-shadow: none;
+       }
+     }
+     >span{
+       &:hover{
+         box-shadow: none;
+       }
      }
     }
     .icon-error{
@@ -85,5 +107,6 @@ export default {
     .errorMessage{
       color:$red
     }
+
   }
 </style>
