@@ -3,7 +3,7 @@
 </demo>
 <template>
 <div>
-  <Input value="请输入" icon="search"></Input>
+  <Input value="请输入" icon="search" />
 </div>
 </template>
 

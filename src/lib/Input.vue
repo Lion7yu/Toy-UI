@@ -1,6 +1,6 @@
 <template>
   <!-- 如果存在error就有error类 -->
-  <div class="wrapper" :class="{error}">
+  <div class="wrapper" :class = "error">
     <input :value="value" type="text" :disabled="disabled" :readonly="readonly"
       @change="$emit('change',$event.target.value)"
       @input="$emit('input',$event.target.value)"

@@ -71,7 +71,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $radius: 4px;
 $border-color: #d9d9d9;
 

@@ -5,7 +5,7 @@ git init &&
 git add . &&
 git commit -m "update" &&
 git branch -M master &&
-git remote add origin git@gitee.com:lion7yu/gallery-ui-website-1.git &&
+git remote add origin git@github.com:lion7yu/Lion-ui-website.git &&
 git push -f -u origin master &&
 cd ..
 echo https://lion7yu.github.io/Lion-UI/
