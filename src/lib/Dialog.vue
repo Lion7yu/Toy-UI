@@ -58,7 +58,7 @@ export default {
       }
     }
     const cancel = () => {
-      context.emit('calcel')
+      context.emit('cancel')
       close()
     }
     return {
