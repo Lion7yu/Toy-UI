@@ -3,19 +3,19 @@
 </demo>
 <template>
 <div>
-<Layout style="color: white;">
+<Layout style="color: white;" has-sider>
+  <Sider style="width:20%; background:rgb(59,160,233)">sider</Sider>
+  <Layout>
   <Header style="height: 50px; background:rgb(125,188,234);">
     header
   </Header>
-  <Layout has-sider>
-    <Sider style="height:100px;width:20%; background:rgb(59,160,233)">sider</Sider>
-    <Content style="height: 100px; background:rgb(16,142,233);">
-      content
-    </Content>
-  </Layout>
+  <Content style="height: 100px; background:rgb(16,142,233);">
+    content
+  </Content>
   <Footer style="height: 50px; background:rgb(125,188,234);">
     footer
   </Footer>
+  </Layout>
 </Layout>
 </div>
 </template>

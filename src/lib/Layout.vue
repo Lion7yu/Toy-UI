@@ -1,36 +1,23 @@
 <template>
-  <div class="layout" :class="layoutClass">
-    <slot></slot>
+  <div class="lion-layout" :class ="has-sider">
+    <slot />
   </div>
 </template>
 
 <script>
+import { ref, onMounted } from 'vue'
 export default {
   name:'LLayout',
-  data(){
-    return{
-      layoutClass:{
-        hasSider:false
-      }
-    }
-  },
-  mounted(){
-    // this.$children.forEach((vm)=>{
-    //   if(vm.$options.name === 'LSider'){
-    //     this.layoutClass.hasSider = true
-    //   }
-    // })
-  }
 }
 </script>
 
 <style lang="scss" >
-  .layout{
+  .lion-layout{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    &.hasSider{
-      flex-direction: row;
+    &[has-sider]{
+      flex-direction: row
     }
   }
 </style>

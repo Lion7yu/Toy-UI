@@ -8,14 +8,16 @@
     header
   </Header>
   <Layout has-sider>
-    <Sider style="height:100px;width:20%; background:rgb(59,160,233)">sider</Sider>
-    <Content style="height: 100px; background:rgb(16,142,233);">
-      content
-    </Content>
+    <Sider style="width:20%; background:rgb(59,160,233)">sider</Sider>
+    <Layout>
+      <Content style="height: 100px; background:rgb(16,142,233);">
+        content
+      </Content>
+      <Footer style="height: 50px; background:rgb(125,188,234);">
+        footer
+      </Footer>
+    </Layout>
   </Layout>
-  <Footer style="height: 50px; background:rgb(125,188,234);">
-    footer
-  </Footer>
 </Layout>
 </div>
 </template>
