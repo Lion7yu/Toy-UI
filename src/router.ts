@@ -11,6 +11,7 @@ import LayoutDemo from "./components/LayoutDemo.vue"
 import ToastDemo from "./components/ToastDemo.vue"
 import PopoverDemo from "./components/PopoverDemo.vue"
 import CollapseDemo from "./components/CollapseDemo.vue"
+import CheckboxDemo from "./components/CheckboxDemo.vue"
 
 
 import { h } from 'vue';
@@ -42,6 +43,7 @@ export const router = createRouter({
         { path: "Toast",component: ToastDemo},
         { path: "Popover",component: PopoverDemo},
         { path: "Collapse",component: CollapseDemo},
+        { path: "Checkbox",component: CheckboxDemo},
       ],
     },
   ],
