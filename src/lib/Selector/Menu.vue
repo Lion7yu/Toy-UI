@@ -1,20 +1,28 @@
 <template>
   <div class="selector-menu">
-    <div class="menu-item" v-for="(item,index) of searchData"
-    :key="index"
-    @click="setItemValue(item)"
-    >
+    <template v-if="searchData.length > 0">
+      <div class="menu-item" 
+      v-for="(item,index) of searchData"
+      :key="index"
+      @click="setItemValue(item)"
+      >
     {{item.text}}
     </div>
+    </template>
+    <NoDataTip v-else/>
   </div>
 </template>
 
 <script>
 
 import {ref, onMounted,watch} from 'vue'
+import NoDataTip from './NoDataTip.vue'
 
 export default {
   name:'SelectorMenu',
+  components:{
+    NoDataTip
+  },
   props:{
     searchValue: String,
     data:{
