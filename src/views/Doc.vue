@@ -44,9 +44,9 @@
         <li>
           <router-link to="/doc/collapse">Collapse</router-link>
         </li>
-        <li>
+        <!-- <li>
           <router-link to="/doc/checkbox">Checkbox</router-link>
-        </li>
+        </li> -->
       </ol>
     </aside>
     <main>

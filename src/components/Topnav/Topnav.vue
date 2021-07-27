@@ -60,6 +60,7 @@ $color: #000;
     margin-right: auto;
 
     >svg {
+      margin: 0 26px;
       width: 32px;
       height: 32px;
     }
