@@ -17,5 +17,6 @@ export { default as Popover} from './Popover/Popover.vue';
 export { default as Collapse} from './Collapse/Collapse.vue';
 export { default as CollapseItem} from './Collapse/CollapseItem.vue';
 export { default as Selector} from './Selector/Selector.vue';
+export { default as Index} from './Selector/Index.vue';
 export { default as Checkbox} from './Checkbox/Checkbox.vue';
 export { openDialog as openDialog } from './Dialog/openDialog';

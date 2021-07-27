@@ -2,14 +2,18 @@
 常规使用
 </demo>
 <template>
-
+  <Selector >
+    <Index placehodler="请选择人物"></Index>
+  </Selector>
 </template>
 
 <script lang="ts">
 import {Selector} from "../../lib/index"
+import {Index} from "../../lib/index"
 export default {
   components: {
-    Selector
+    Selector,
+    Index
   }
 }
 </script>

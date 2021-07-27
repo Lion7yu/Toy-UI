@@ -16,7 +16,7 @@ import SelectorDemo from "./components/Selector/SelectorDemo.vue"
 
 
 import { h } from 'vue';
-import Markdown from './components/Markdown/Markdown.vue';
+import Markdown from './components/Markdown.vue';
 import intro from './markdown/intro.md'
 import install from './markdown/install.md'
 import getStarted from './markdown/get-started.md'
