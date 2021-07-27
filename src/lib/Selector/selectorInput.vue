@@ -4,13 +4,17 @@
     <input type="text" 
       class="input"
       :value="value"
+      ref="inputValue"
       @input="searchOptions($event)"
+      @focus="searchOptions($event)"
+      @blur="setValue(value)"
     />
     <span class="iconfont i-down"></span>
   </div>
 </template>
 
 <script>
+import {getCurrentInstance} from 'vue'
 export default {
   name:'SelectorInput',
   props:{
@@ -21,11 +25,19 @@ export default {
     value: String 
   },
   setup(props,ctx){
+    const instance = getCurrentInstance()
     const searchOptions = (e) =>{
       ctx.emit('searchOptions',e.target.value)
     }
+    const setValue = (value) =>{
+      const _input = instance.refs.inputValue
+      if(_input.value.length > 0){
+        _input.value = value
+      }
+    }
     return{
-      searchOptions
+      searchOptions,
+      setValue
     }
   }
 }
