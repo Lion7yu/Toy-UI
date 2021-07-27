@@ -7,10 +7,11 @@
       @focus="$emit('focus',$event.target.value)"
       @blur="$emit('blur',$event.target.value)"
     >
-    <template v-if="error">
-    <svg class="icon">
-      <use xlink:href="#i-error"></use>
+    <svg v-if="icon" class="icon">
+      <use :xlink:href="`#i-${icon}`"></use>
     </svg>
+    <template v-if="error">
+      <span class="iconfont i-error"></span>
       <span class="errorMessage">{{error}}</span>
     </template>
   </div>
@@ -19,6 +20,9 @@
 <script>
 export default {
   props:{
+    icon:{
+      type:String,
+    },
     value:{
       type:String,
     },
@@ -46,6 +50,7 @@ export default {
   $red: #F1453D;
   $blue: #40a9ff;
   .wrapper{
+    position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -89,8 +94,8 @@ export default {
        border-color: $red;
        box-shadow: 0px 0px 3px 1px $red;
      }
-     >svg{
-       fill:$red;
+     >.iconfont{
+       color:$red;
        &:hover{
          box-shadow: none;
        }
@@ -101,12 +106,15 @@ export default {
        }
      }
     }
-    .icon-error{
-      fill:$red
-    }
     .errorMessage{
       color:$red
     }
-
+    .icon{
+      position: absolute;
+      font-size: 16px;
+      right: 12px;
+      justify-content: center;
+      color: #000;
+    }
   }
 </style>
