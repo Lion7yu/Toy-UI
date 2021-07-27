@@ -42,6 +42,9 @@
           <router-link to="/doc/collapse">Collapse 组件</router-link>
         </li>
         <li>
+          <router-link to="/doc/selector">Selector 组件</router-link>
+        </li>
+        <li>
           <router-link to="/doc/checkbox">Checkbox 组件</router-link>
         </li>
       </ol>
@@ -54,7 +57,7 @@
 </template>
 
 <script lang="ts">
-import Topnav from "../components/Topnav.vue";
+import Topnav from "../components/Topnav/Topnav.vue";
 import {
   inject,
   Ref

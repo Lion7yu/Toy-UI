@@ -1,21 +1,22 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import Home from "./views/Home.vue";
 import Doc from "./views/Doc.vue";
-import SwitchDemo from "./components/SwitchDemo.vue";
-import ButtonDemo from "./components/ButtonDemo.vue";
-import DialogDemo from "./components/DialogDemo.vue";
-import TabsDemo from "./components/TabsDemo.vue";
-import InputDemo from "./components/InputDemo.vue";
-import GridDemo from "./components/GridDemo.vue"
-import LayoutDemo from "./components/LayoutDemo.vue"
-import ToastDemo from "./components/ToastDemo.vue"
-import PopoverDemo from "./components/PopoverDemo.vue"
-import CollapseDemo from "./components/CollapseDemo.vue"
-import CheckboxDemo from "./components/CheckboxDemo.vue"
+import SwitchDemo from "./components/Switch/SwitchDemo.vue";
+import ButtonDemo from "./components/Button/ButtonDemo.vue";
+import DialogDemo from "./components/Dialog/DialogDemo.vue";
+import TabsDemo from "./components/Tabs/TabsDemo.vue";
+import InputDemo from "./components/Input/InputDemo.vue";
+import GridDemo from "./components/Grid/GridDemo.vue"
+import LayoutDemo from "./components/Layout/LayoutDemo.vue"
+import ToastDemo from "./components/Toast/ToastDemo.vue"
+import PopoverDemo from "./components/Popover/PopoverDemo.vue"
+import CollapseDemo from "./components/Collapse/CollapseDemo.vue"
+import CheckboxDemo from "./components/Checkbox/CheckboxDemo.vue"
+import SelectorDemo from "./components/Selector/SelectorDemo.vue"
 
 
 import { h } from 'vue';
-import Markdown from './components/Markdown.vue';
+import Markdown from './components/Markdown/Markdown.vue';
 import intro from './markdown/intro.md'
 import install from './markdown/install.md'
 import getStarted from './markdown/get-started.md'
@@ -38,12 +39,13 @@ export const router = createRouter({
         { path: "dialog", component: DialogDemo },
         { path: "tabs", component: TabsDemo },
         { path: "input",component: InputDemo},
-        { path: "Grid",component: GridDemo},
-        { path: "Layout",component: LayoutDemo},
-        { path: "Toast",component: ToastDemo},
-        { path: "Popover",component: PopoverDemo},
-        { path: "Collapse",component: CollapseDemo},
-        { path: "Checkbox",component: CheckboxDemo},
+        { path: "grid",component: GridDemo},
+        { path: "layout",component: LayoutDemo},
+        { path: "toast",component: ToastDemo},
+        { path: "popover",component: PopoverDemo},
+        { path: "collapse",component: CollapseDemo},
+        { path: "selector",component: SelectorDemo},
+        { path: "checkbox",component: CheckboxDemo},
       ],
     },
   ],
