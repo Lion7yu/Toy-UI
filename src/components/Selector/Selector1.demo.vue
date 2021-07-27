@@ -3,17 +3,31 @@
 </demo>
 <template>
   <Selector >
-    <Index placehodler="请选择人物"></Index>
+    <Index
+    :data="selectorData" 
+    placehodler="请选择人物" 
+    @setItemValue="setItemValue"
+    ></Index>
   </Selector>
 </template>
 
 <script lang="ts">
 import {Selector} from "../../lib/index"
 import {Index} from "../../lib/index"
+import selectorData from '../../lib/Selector/selector'
 export default {
   components: {
     Selector,
     Index
+  },
+  setup(){
+    const setItemValue = (value) =>{
+      console.log(value)
+    }
+    return{
+      selectorData,
+      setItemValue
+    }
   }
 }
 </script>

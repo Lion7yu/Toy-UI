@@ -3,12 +3,9 @@
     <label class="placeholder">{{placeholder}}</label>
     <input type="text" 
       class="input"
+      :value="value"
     />
-    <span class="iconfont">
-      <svg class="icon">
-        <use xlink:href="#i-down"></use>
-      </svg>
-    </span>
+    <span class="iconfont i-down"></span>
   </div>
 </template>
 
@@ -19,7 +16,8 @@ export default {
     placeholder: {
       type:String,
       default:'请选择'
-    } 
+    },
+    value: String 
   }
 }
 </script>
