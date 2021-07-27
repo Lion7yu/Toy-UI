@@ -18,34 +18,34 @@
       <h2>组件列表</h2>
       <ol>
         <li>
-          <router-link to="/doc/switch">Switch 组件</router-link>
+          <router-link to="/doc/button">Button</router-link>
         </li>
         <li>
-          <router-link to="/doc/button">Button 组件</router-link>
+          <router-link to="/doc/switch">Switch</router-link>
         </li>
         <li>
-          <router-link to="/doc/dialog">Dialog 组件</router-link>
+          <router-link to="/doc/selector">Selector</router-link>
         </li>
         <li>
-          <router-link to="/doc/tabs">Tabs 组件</router-link>
+          <router-link to="/doc/dialog">Dialog</router-link>
         </li>
         <li>
-          <router-link to="/doc/input">Input 组件</router-link>
+          <router-link to="/doc/tabs">Tabs</router-link>
         </li>
         <li>
-          <router-link to="/doc/grid">Grid 组件</router-link>
+          <router-link to="/doc/input">Input</router-link>
         </li>
         <li>
-          <router-link to="/doc/layout">Layout 组件</router-link>
+          <router-link to="/doc/grid">Grid</router-link>
         </li>
         <li>
-          <router-link to="/doc/collapse">Collapse 组件</router-link>
+          <router-link to="/doc/layout">Layout</router-link>
         </li>
         <li>
-          <router-link to="/doc/selector">Selector 组件</router-link>
+          <router-link to="/doc/collapse">Collapse</router-link>
         </li>
         <li>
-          <router-link to="/doc/checkbox">Checkbox 组件</router-link>
+          <router-link to="/doc/checkbox">Checkbox</router-link>
         </li>
       </ol>
     </aside>
@@ -114,7 +114,7 @@ $aside-index : 10;
 
 aside {
   background: #FFE882;
-  width: 150px;
+  width: 120px;
   padding: 16px 0;
   position: fixed;
   top: 0;
@@ -126,6 +126,7 @@ aside {
   >h2 {
     margin-bottom: 4px;
     padding: 0 10px;
+    text-align: center;
   }
 
   >ol {
@@ -134,9 +135,13 @@ aside {
         display: block;
         padding: 4px 16px;
         text-decoration: none;
+        text-align: center;
       }
 
       .router-link-active {
+        border-radius: 4px;
+        border: 2px solid #FFE882;
+        box-shadow: 3 0 .1px;
         background: white;
       }
     }
