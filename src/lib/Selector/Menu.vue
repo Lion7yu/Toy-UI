@@ -1,6 +1,6 @@
 <template>
   <div class="selector-menu">
-    <div class="menu-item" v-for="(item,index) of data"
+    <div class="menu-item" v-for="(item,index) of searchData"
     :key="index"
     @click="setItemValue(item)"
     >
@@ -10,9 +10,13 @@
 </template>
 
 <script>
+
+import {ref, onMounted,watch} from 'vue'
+
 export default {
   name:'SelectorMenu',
   props:{
+    searchValue: String,
     data:{
       type:Array,
       default(){
@@ -37,11 +41,26 @@ export default {
     } 
   },
   setup(props,ctx){
+    const searchData = ref([])
+    onMounted(()=>{
+      searchData.value = props.data
+    })
+    watch(()=>{
+      return props.searchValue
+    },(value)=>{
+      filterData(value)
+    })
+    const filterData = (value) =>{
+      searchData.value = props.data.filter((item)=>{
+        return item.text.toLowerCase().includes(props.searchValue.toLowerCase())
+      })
+    }
     const setItemValue = (item) => {
       ctx.emit('setItemValue',item)
     }
     return{
-      setItemValue
+      setItemValue,
+      searchData
     }
   }
 }

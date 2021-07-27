@@ -3,10 +3,12 @@
     <SelectorInput 
       :placeholder="placehodler"
       :value="inputValue"
+      @searchOptions="searchOptions"
     />
     <SelectorMenu 
       :data="data"
       @setItemValue="setItemValue"
+      :searchValue="searchValue"
     />
   </div>
 </template>
@@ -31,15 +33,20 @@ export default {
   },
   setup(props,ctx){
     const state = reactive({
-      inputValue:''
+      inputValue:'',
+      searchValue:''
     })
     const setItemValue = (item)=>{
       state.inputValue = item.text
       ctx.emit('setItemValue',item.value)
     }
+    const searchOptions = (value) =>{
+      state.searchValue = value
+    } 
     return{
       ...toRefs(state),
-      setItemValue
+      setItemValue,
+      searchOptions
     }
   }
 }

@@ -4,6 +4,7 @@
     <input type="text" 
       class="input"
       :value="value"
+      @input="searchOptions($event)"
     />
     <span class="iconfont i-down"></span>
   </div>
@@ -18,6 +19,14 @@ export default {
       default:'请选择'
     },
     value: String 
+  },
+  setup(props,ctx){
+    const searchOptions = (e) =>{
+      ctx.emit('searchOptions',e.target.value)
+    }
+    return{
+      searchOptions
+    }
   }
 }
 </script>
