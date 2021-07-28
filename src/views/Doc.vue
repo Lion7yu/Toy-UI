@@ -141,7 +141,7 @@ aside {
       .router-link-active {
         border-radius: 4px;
         border: 2px solid #FFE882;
-        box-shadow: 3 0 .1px;
+        box-shadow: 0 0 3px 1px white;
         background: white;
       }
     }
