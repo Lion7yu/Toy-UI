@@ -9,7 +9,7 @@
         'Licon iconfont i-dui',
         isTouch === 1? 'In':'Out'
       ]" ></i>
-      <span class="Lspan">请选择</span>
+      <span class="Lspan">{{value}}</span>
     </div>
   </div>
 </template>
@@ -23,6 +23,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    value:{
+      type:String,
+      default:'请选择'
+    }
   },
   setup(props){
     let isDisabled = ref(false)
