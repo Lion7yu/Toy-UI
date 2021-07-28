@@ -30,6 +30,9 @@
           <router-link to="/doc/dialog">Dialog</router-link>
         </li>
         <li>
+          <router-link to="/doc/checkbox">Checkbox</router-link>
+        </li>
+        <li>
           <router-link to="/doc/tabs">Tabs</router-link>
         </li>
         <li>
@@ -44,9 +47,6 @@
         <li>
           <router-link to="/doc/collapse">Collapse</router-link>
         </li>
-        <!-- <li>
-          <router-link to="/doc/checkbox">Checkbox</router-link>
-        </li> -->
       </ol>
     </aside>
     <main>
