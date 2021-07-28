@@ -4,7 +4,7 @@
       'Licon iconfont i-dui',
       isTouch === 1? 'In':'Out'
     ]" ></i>
-    <span class="Lspan">复选框</span>
+    <span class="Lspan">请选择</span>
   </div>
 </template>
 
@@ -35,19 +35,22 @@ export default {
 
 <style lang="scss" scoped>
   .LCheckbox{
+    display: flex;
     border: 1px solid red;
-    width: 100px;
-    height: 50px;
+    width: 80px;
+    height: 30px;
     margin: 0 auto;
     cursor: pointer;
     i.Licon{
       display: flex;
-      border: 1px solid green;
+      border: 1px solid #D9D9D9;
       border-radius: 100%;
       width: 18px;
       height: 18px;
-      float: left;
+      margin: 4px 0px 0px 8px;
       &.In{
+        border-color: #1890FF;
+        box-shadow: 0px 0px 3px 1px #1890FF;
         background:#1890FF;
       }
       &.Out{
@@ -61,7 +64,10 @@ export default {
       color: #fff;
     }
     .Lspan{
-      
+      float: left;
+      font-size: 12px;
+      user-select: none;
+      margin: 4px 0px 0px 8px;
     }
   }
 
