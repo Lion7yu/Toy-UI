@@ -1,10 +1,16 @@
 <template>
-  <div class="LCheckbox" @click="selected">
-    <i :class="[
-      'Licon iconfont i-dui',
-      isTouch === 1? 'In':'Out'
-    ]" ></i>
-    <span class="Lspan">请选择</span>
+  <div class="wrapper">
+      <input class="Linput" type="button" v-show="isDisabled">
+    <div
+      class="LCheckbox" 
+      :class='{"LCheckbox_disabled":isDisabled}'
+      @click="selected">
+      <i :class="[
+        'Licon iconfont i-dui',
+        isTouch === 1? 'In':'Out'
+      ]" ></i>
+      <span class="Lspan">请选择</span>
+    </div>
   </div>
 </template>
 
@@ -12,7 +18,15 @@
 import { ref } from 'vue'
 export default {
   name:'Checkbox',
-  setup(){
+  props:{
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  setup(props){
+    let isDisabled = ref(false)
+    isDisabled.value = props.disabled
     let isTouch = ref(0)
     let methodsObj = {
       selected(){
@@ -27,7 +41,8 @@ export default {
     }
     return {
       ...methodsObj,
-      isTouch
+      isTouch,
+      isDisabled
     }
   }
 }
@@ -36,7 +51,6 @@ export default {
 <style lang="scss" scoped>
   .LCheckbox{
     display: flex;
-    border: 1px solid red;
     width: 80px;
     height: 30px;
     margin: 0 auto;
@@ -70,5 +84,29 @@ export default {
       margin: 4px 0px 0px 8px;
     }
   }
-
+  .LCheckbox_disabled{
+    cursor: not-allowed;
+    .iconfont{
+      color: #D9D9D9;
+    }
+    .Lspan{
+      color: #D9D9D9;
+    }
+  }
+.wrapper{
+  width: 80px;
+  position: relative;
+  margin: 0 auto;
+  .Linput{
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    border: 0;
+    opacity: 0;
+    cursor: no-drop;
+  }
+}
 </style>

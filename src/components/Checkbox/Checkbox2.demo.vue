@@ -3,7 +3,7 @@
 </demo>
 <template>
   <div>
-    <Checkbox></Checkbox>
+    <Checkbox disabled></Checkbox>
   </div>
 </template>
 
