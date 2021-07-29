@@ -13,6 +13,7 @@ import PopoverDemo from "./components/Popover/PopoverDemo.vue"
 import CollapseDemo from "./components/Collapse/CollapseDemo.vue"
 import CheckboxDemo from "./components/Checkbox/CheckboxDemo.vue"
 import SelectorDemo from "./components/Selector/SelectorDemo.vue"
+import MagnifierDemo from "./components/Magnifier/MagnifierDemo.vue"
 
 
 import { h } from 'vue';
@@ -46,6 +47,7 @@ export const router = createRouter({
         { path: "collapse",component: CollapseDemo},
         { path: "selector",component: SelectorDemo},
         { path: "checkbox",component: CheckboxDemo},
+        { path: "magnifier",component: MagnifierDemo},
       ],
     },
   ],
