@@ -27,13 +27,13 @@
           <router-link to="/doc/selector">Selector</router-link>
         </li>
         <li>
+          <router-link to="/doc/magnifier">Magnifier</router-link>
+        </li>
+        <li>
           <router-link to="/doc/dialog">Dialog</router-link>
         </li>
         <li>
           <router-link to="/doc/checkbox">Checkbox</router-link>
-        </li>
-        <li>
-          <router-link to="/doc/magnifier">Magnifier</router-link>
         </li>
         <li>
           <router-link to="/doc/tabs">Tabs</router-link>
