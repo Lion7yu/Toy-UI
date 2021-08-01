@@ -1,0 +1,22 @@
+export default [
+  {
+    id:1,
+    title:'菜单一'
+  },
+  {
+    id:2,
+    title:'菜单二'
+  },
+  {
+    id:3,
+    title:'菜单三'
+  },
+  {
+    id:4,
+    title:'菜单四'
+  },
+  {
+    id:5,
+    title:'菜单五'
+  },
+]
