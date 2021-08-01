@@ -36,6 +36,9 @@
           <router-link to="/doc/checkbox">Checkbox</router-link>
         </li>
         <li>
+          <router-link to="/doc/rate">Rate</router-link>
+        </li>
+        <li>
           <router-link to="/doc/tabs">Tabs</router-link>
         </li>
         <li>

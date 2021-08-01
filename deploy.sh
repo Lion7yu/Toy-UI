@@ -8,4 +8,4 @@ git branch -M master &&
 git remote add origin git@github.com:lion7yu/Lion-ui-website.git &&
 git push -f -u origin master &&
 cd ..
-echo https://lion7yu.github.io/Lion-UI/
+echo https://github.com/Lion7yu/Lion-ui-website
