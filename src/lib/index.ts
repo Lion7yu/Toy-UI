@@ -23,4 +23,6 @@ export { default as Magnifier} from './Magnifier/Magnifier.vue';
 export { default as Rate} from './Rate/Rate.vue';
 export { default as Tree} from './Tree/Tree.vue';
 export { default as MenuItem} from './Tree/MenuItem.vue';
+export { default as SubMenu} from './Tree/SubMenu.vue';
+export { default as ReSubMenu} from './Tree/ReSubMenu.vue';
 export { openDialog as openDialog } from './Dialog/openDialog';

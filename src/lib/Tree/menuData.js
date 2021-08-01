@@ -9,7 +9,45 @@ export default [
   },
   {
     id:3,
-    title:'菜单三'
+    title:'菜单三',
+    children:[
+      {
+        id:31,
+        title:'菜单3-1'
+      },
+      {
+        id:32,
+        title:'菜单3-2',
+        children:[
+          {
+            id:321,
+            title:'菜单3-2-1'
+          },
+          {
+            id:322,
+            title:'菜单3-2-2',
+            children:[
+              {
+                id:3221,
+                title:'菜单3-2-2-1'
+              },
+              {
+                id:3222,
+                title:'菜单3-2-2-2'
+              },
+            ]
+          },
+          {
+            id:323,
+            title:'菜单3-2-3'
+          },
+        ]
+      },
+      {
+        id:33,
+        title:'菜单3-3'
+      },
+    ]
   },
   {
     id:4,
@@ -17,6 +55,20 @@ export default [
   },
   {
     id:5,
-    title:'菜单五'
+    title:'菜单五',
+    children:[
+      {
+        id:51,
+        title: '5-1'
+      },
+      {
+        id:52,
+        title: '5-2'
+      },
+      {
+        id:53,
+        title: '5-3'
+      },
+    ]
   },
 ]
