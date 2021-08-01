@@ -4,25 +4,34 @@
 
 <template>
   <Rate
-    :num="3"
-    :size="30"
+    :num="num"
+    :size="size"
     @getRateNum="getRateNum"
   />
 </template>
 
 <script lang="ts">
+import { reactive, toRefs } from 'vue'
 import {Rate} from "../../lib/index"
+
 export default {
   components: {
     Rate,
   },
   setup(){
-    const getStartNum = (num) =>{
+
+    const state = reactive({
+      num:3,
+      size:30
+    })
+
+    const getRateNum = (num) =>{
       console.log(num)
     }
 
     return {
-      getStartNum
+      ...toRefs(state),
+      getRateNum
     }
   }
 

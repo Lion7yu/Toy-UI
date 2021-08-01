@@ -1,29 +1,43 @@
 <template>
   <div class="rate-wrapper">
     <span
-      v-for="rateNum in 5"
-      :key="rateNum" 
+      v-for="num in 5"
+      :key="num" 
       :class="[
         'iconfont i-start',
-        rateNum <= num? 'active' : ''
+        num <= rateNum? 'active' : ''
       ]"
       :style="{fontSize: size + 'px' }"
+      @click="setRateNum(num)"
     ></span>
   </div>
 </template>
 
 <script>
+
+import { rate } from "./hooks/rate"
+
 export default {
   name: 'Rate',
   props:{
     num:{
       type: Number,
-      defaule: 0
+      default: 0
     },
     size:{
       type: Number,
-      default:30
+      default: 30
     } 
+  },
+  setup(props, ctx) {
+    const [ rateNum, setRateNum ] = rate(props.num, ()=>{
+      ctx.emit('getRateNum', rateNum.value)
+    })
+
+    return{
+      rateNum,
+      setRateNum
+    }
   }
 }
 </script>
@@ -32,6 +46,7 @@ export default {
   .iconfont{
     font-size: 16px;
     color: #999;
+    cursor: pointer;
 
     &.i-start{
       transition: color .3s;
