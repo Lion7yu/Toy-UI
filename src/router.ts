@@ -15,6 +15,7 @@ import CheckboxDemo from "./components/Checkbox/CheckboxDemo.vue"
 import SelectorDemo from "./components/Selector/SelectorDemo.vue"
 import MagnifierDemo from "./components/Magnifier/MagnifierDemo.vue"
 import RateDemo from "./components/Rate/RateDemo.vue"
+import TreeDemo from "./components/Tree/TreeDemo.vue"
 
 
 import { h } from 'vue';
@@ -50,6 +51,7 @@ export const router = createRouter({
         { path: "checkbox",component: CheckboxDemo},
         { path: "magnifier",component: MagnifierDemo},
         { path: "rate",component: RateDemo},
+        { path: "tree",component: TreeDemo},
       ],
     },
   ],

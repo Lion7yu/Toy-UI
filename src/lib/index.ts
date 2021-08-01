@@ -21,4 +21,5 @@ export { default as Index} from './Selector/Index.vue';
 export { default as Checkbox} from './Checkbox/Checkbox.vue';
 export { default as Magnifier} from './Magnifier/Magnifier.vue';
 export { default as Rate} from './Rate/Rate.vue';
+export { default as Tree} from './Tree/Tree.vue';
 export { openDialog as openDialog } from './Dialog/openDialog';

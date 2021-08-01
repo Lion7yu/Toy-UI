@@ -27,6 +27,9 @@
           <router-link to="/doc/selector">Selector</router-link>
         </li>
         <li>
+          <router-link to="/doc/tree">Tree</router-link>
+        </li>
+        <li>
           <router-link to="/doc/magnifier">Magnifier</router-link>
         </li>
         <li>
