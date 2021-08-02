@@ -25,4 +25,5 @@ export { default as Tree} from './Tree/Tree.vue';
 export { default as MenuItem} from './Tree/MenuItem.vue';
 export { default as SubMenu} from './Tree/SubMenu.vue';
 export { default as ReSubMenu} from './Tree/ReSubMenu.vue';
+export { default as Carousel} from './Carousel/Carousel.vue';
 export { openDialog as openDialog } from './Dialog/openDialog';
