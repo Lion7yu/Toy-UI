@@ -27,6 +27,9 @@
             <router-link to="/doc/selector">Selector</router-link>
           </li>
           <li>
+            <router-link to="/doc/longlist">LongList</router-link>
+          </li>
+          <li>
             <router-link to="/doc/carousel">Carousel</router-link>
           </li>
           <li>

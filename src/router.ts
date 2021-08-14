@@ -17,6 +17,7 @@ import MagnifierDemo from "./components/Magnifier/MagnifierDemo.vue"
 import RateDemo from "./components/Rate/RateDemo.vue"
 import TreeDemo from "./components/Tree/TreeDemo.vue"
 import CarouselDemo from "./components/Carousel/CarouselDemo.vue"
+import LongListDemo from "./components/LongList/LongListDemo.vue"
 
 
 import { h } from 'vue';
@@ -24,7 +25,6 @@ import Markdown from './components/Markdown.vue';
 import intro from './markdown/intro.md'
 import install from './markdown/install.md'
 import getStarted from './markdown/get-started.md'
-import { Carousel } from "./lib";
 const history = createWebHashHistory();
 const md = string => h(Markdown, { content: string, key: string })
 export const router = createRouter({
@@ -55,6 +55,7 @@ export const router = createRouter({
         { path: "rate",component: RateDemo},
         { path: "tree",component: TreeDemo},
         { path: "carousel",component: CarouselDemo},
+        { path: "longlist",component: LongListDemo},
       ],
     },
   ],
