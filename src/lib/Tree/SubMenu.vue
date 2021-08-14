@@ -47,12 +47,12 @@ export default {
       .i-right{
         position: absolute;
         top: 0;
-        right: 15px;
+        right: 5px;
       }
     }
     .sub-item{
       position: absolute;
-      left: 100%;
+      left: 101%;
       top: 0;
       width: 100%;
       background-color: #fff;
