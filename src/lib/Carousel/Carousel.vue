@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel">
+  <div class="carousel" @mouseenter="mouseEnter" @mouseleave="mouseLeave">
     <div class="inner">
       <CarouselDot
         :hasDot="hasDot"
@@ -95,19 +95,33 @@ export default {
       state.currentIndex = index
     }
 
+    const mouseEnter = () => {
+      _clearIntervalFn()
+    }
+
+    const mouseLeave = () => {
+      autoPlay()
+    }
+
     onMounted(() => {
       state.itemLen = instance.slots.default()[0].children.length
       autoPlay()
     })
 
     onBeforeUnmount(() => {
+      _clearIntervalFn()
+    })
+
+    function _clearIntervalFn() {
       clearInterval(timer)
       timer = null
-    })
+    }
 
     return {
       ...toRefs(state),
-      dotClick
+      dotClick,
+      mouseEnter,
+      mouseLeave
     }
   }
 };
