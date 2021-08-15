@@ -6,7 +6,7 @@
     </div>
   </div>
 </template>
-<script>//src/component/LongList.vue
+<script>
 import { ref, computed, onMounted } from "vue";
 export default {
   props: {
