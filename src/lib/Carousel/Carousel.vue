@@ -8,6 +8,8 @@
         :dotBgColor="dotBgColor"
         @dotClick="dotClick"
       ></CarouselDot>
+      <CarouselDirector dir="prev" @dirClick="dirClick"></CarouselDirector>
+      <CarouselDirector dir="next" @dirClick="dirClick"></CarouselDirector>
       <slot></slot>
     </div>
   </div>
@@ -23,12 +25,14 @@ import {
 } from 'vue';
 
 import CarouselDot from './CarouselDot.vue'
+import CarouselDirector from './CarouselDirector.vue'
 
 
 export default {
   name: "Carousel",
   components: {
-    CarouselDot
+    CarouselDot,
+    CarouselDirector
   },
   props: {
     autoplay: {
@@ -95,6 +99,10 @@ export default {
       state.currentIndex = index
     }
 
+    const dirClick = (dir) => {
+      setIndex(dir)
+    }
+
     const mouseEnter = () => {
       _clearIntervalFn()
     }
@@ -120,6 +128,7 @@ export default {
     return {
       ...toRefs(state),
       dotClick,
+      dirClick,
       mouseEnter,
       mouseLeave
     }
