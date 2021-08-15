@@ -1,6 +1,13 @@
 <template>
   <div class="carousel">
     <div class="inner">
+      <CarouselDot
+        :hasDot="hasDot"
+        :itemLen="itemLen"
+        :currentIndex="currentIndex"
+        :dotBgColor="dotBgColor"
+        @dotClick="dotClick"
+      ></CarouselDot>
       <slot></slot>
     </div>
   </div>
@@ -14,8 +21,15 @@ import {
   onBeforeUnmount,
   getCurrentInstance
 } from 'vue';
+
+import CarouselDot from './CarouselDot.vue'
+
+
 export default {
   name: "Carousel",
+  components: {
+    CarouselDot
+  },
   props: {
     autoplay: {
       type: Boolean,
@@ -36,6 +50,9 @@ export default {
     hasDirector: {
       type: Boolean,
       default: true
+    },
+    dotBgColor: {
+      type: String
     }
   },
   setup(props) {
@@ -74,6 +91,10 @@ export default {
       }
     }
 
+    const dotClick = (index) => {
+      state.currentIndex = index
+    }
+
     onMounted(() => {
       state.itemLen = instance.slots.default()[0].children.length
       autoPlay()
@@ -85,7 +106,8 @@ export default {
     })
 
     return {
-      ...toRefs(state)
+      ...toRefs(state),
+      dotClick
     }
   }
 };

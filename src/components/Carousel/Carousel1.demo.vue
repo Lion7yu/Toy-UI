@@ -3,7 +3,14 @@
 </demo>
 <template>
   <div class="container">
-    <Carousel :autoplay="true" :duration="3000" :initial="0" :hasDot="true" :hasDirector="true">
+    <Carousel
+      :autoplay="true"
+      :duration="3000"
+      :initial="0"
+      :hasDot="true"
+      :hasDirector="true"
+      dotBgColor="#000"
+    >
       <CarouselItem v-for="(item, index) of carouselData" :key="index">
         <img :src="getImageUrl(item.img_name)" />
       </CarouselItem>
