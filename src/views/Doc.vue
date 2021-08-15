@@ -27,9 +27,6 @@
             <router-link to="/doc/selector">Selector</router-link>
           </li>
           <li>
-            <router-link to="/doc/longlist">LongList</router-link>
-          </li>
-          <li>
             <router-link to="/doc/carousel">Carousel</router-link>
           </li>
           <li>
@@ -37,6 +34,9 @@
           </li>
           <li>
             <router-link to="/doc/magnifier">Magnifier</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/longlist">LongList</router-link>
           </li>
           <li>
             <router-link to="/doc/dialog">Dialog</router-link>
