@@ -28,4 +28,5 @@ export { default as ReSubMenu} from './Tree/ReSubMenu.vue';
 export { default as Carousel} from './Carousel/Carousel.vue';
 export { default as CarouselItem} from './Carousel/CarouselItem.vue';
 export { default as LongList} from './LongList/LongList.vue';
+export { default as Form} from './Form/Form.vue';
 export { openDialog as openDialog } from './Dialog/openDialog';

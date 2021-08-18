@@ -18,7 +18,7 @@ import RateDemo from "./components/Rate/RateDemo.vue"
 import TreeDemo from "./components/Tree/TreeDemo.vue"
 import CarouselDemo from "./components/Carousel/CarouselDemo.vue"
 import LongListDemo from "./components/LongList/LongListDemo.vue"
-
+import FormDemo from "./components/Form/FormDemo.vue"
 
 import { h } from 'vue';
 import Markdown from './components/Markdown.vue';
@@ -56,6 +56,7 @@ export const router = createRouter({
         { path: "tree",component: TreeDemo},
         { path: "carousel",component: CarouselDemo},
         { path: "longlist",component: LongListDemo},
+        { path: "form",component: FormDemo},
       ],
     },
   ],
