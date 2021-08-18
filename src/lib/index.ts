@@ -34,4 +34,5 @@ export { default as FormInput} from './Form/FormInput.vue';
 export { default as FormButton} from './Form/FormButton.vue';
 export { default as Canvas} from './Canvas/Canvas.vue';
 export { default as Radio} from './Radio/Radio.vue';
+export { default as RadioGroup} from './Radio/RadioGroup.vue';
 export { openDialog as openDialog } from './Dialog/openDialog';
