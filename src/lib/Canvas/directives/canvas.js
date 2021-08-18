@@ -1,5 +1,6 @@
 export default {
   mounted(el) {
-    console.log(el);
+    const canvasWrapper = el;
+    const canvas = canvasWrapper.querySelector("#l-canvas");
   },
 };
