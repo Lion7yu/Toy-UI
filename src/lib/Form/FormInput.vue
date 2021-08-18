@@ -1,6 +1,5 @@
 <template>
-  <form class="was-validated"></form>
-  <slot />
+  <textarea name id cols="30" rows="10"></textarea>
 </template>
 
 <script>

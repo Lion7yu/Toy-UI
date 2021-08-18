@@ -1,6 +1,7 @@
 <template>
-  <form class="was-validated"></form>
-  <slot />
+  <button>
+    <slot />
+  </button>
 </template>
 
 <script>
