@@ -30,6 +30,9 @@
             <router-link to="/doc/carousel">Carousel</router-link>
           </li>
           <li>
+            <router-link to="/doc/canvas">Canvas</router-link>
+          </li>
+          <li>
             <router-link to="/doc/form">Form</router-link>
           </li>
           <li>

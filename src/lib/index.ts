@@ -32,4 +32,5 @@ export { default as Form} from './Form/Form.vue';
 export { default as FormItem} from './Form/FormItem.vue';
 export { default as FormInput} from './Form/FormInput.vue';
 export { default as FormButton} from './Form/FormButton.vue';
+export { default as Canvas} from './Canvas/Canvas.vue';
 export { openDialog as openDialog } from './Dialog/openDialog';

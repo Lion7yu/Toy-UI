@@ -1,21 +1,22 @@
 <template>
   <div>
-    <h1>Carousel 示例</h1>
-    <Demo :component="Carousel1Demo" />
+    <h1>Canvas 示例</h1>
+    <Demo :component="Canvas1Demo" />
   </div>
 </template>
-
-<script lang="ts">
+  
+  <script lang="ts">
 import Demo from "../Demo.vue";
-import Carousel1Demo from "./Carousel1.demo.vue";
+import Canvas1Demo from "./Canvas1.demo.vue";
 export default {
   components: {
     Demo
   },
   setup() {
     return {
-      Carousel1Demo,
+      Canvas1Demo,
     };
   },
 };
 </script>
+  
