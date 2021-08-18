@@ -21,6 +21,9 @@
             <router-link to="/doc/button">Button</router-link>
           </li>
           <li>
+            <router-link to="/doc/radio">Radio</router-link>
+          </li>
+          <li>
             <router-link to="/doc/switch">Switch</router-link>
           </li>
           <li>

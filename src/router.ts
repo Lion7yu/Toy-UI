@@ -20,6 +20,7 @@ import CarouselDemo from "./components/Carousel/CarouselDemo.vue"
 import LongListDemo from "./components/LongList/LongListDemo.vue"
 import FormDemo from "./components/Form/FormDemo.vue"
 import CanvasDemo from "./components/Canvas/CanvasDemo.vue"
+import RadioDemo from "./components/Radio/RadioDemo.vue"
 
 import { h } from 'vue';
 import Markdown from './components/Markdown.vue';
@@ -59,6 +60,7 @@ export const router = createRouter({
         { path: "longlist",component: LongListDemo},
         { path: "form",component: FormDemo},
         { path: "canvas",component: CanvasDemo},
+        { path: "radio",component: RadioDemo},
       ],
     },
   ],
