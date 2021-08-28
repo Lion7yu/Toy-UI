@@ -6,7 +6,7 @@ import {baseParse} from '@vue/compiler-core'
 
 export default {
   base:'./',
-  assetsDir:'assets',
+  assetsDir:'',
   plugins: [md()],
   vueCustomBlockTransforms: {
     demo: (options) => {
@@ -18,7 +18,7 @@ export default {
       return `export default function (Component) {
         Component.__sourceCode = ${
         JSON.stringify(main)
-        }
+      }
         Component.__sourceCodeTitle = ${JSON.stringify(title)}
       }`.trim()
     }

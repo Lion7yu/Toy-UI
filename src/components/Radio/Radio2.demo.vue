@@ -3,28 +3,30 @@
 </demo>
   
 <template>
-  <RadioGroup v-model="gender">
-    <Radio label="1">男</Radio>
-    <Radio label="0">女</Radio>
-  </RadioGroup>
+  <Radio label="男" v-model:value="labelVal"></Radio>
+  <Radio label="女" v-model:value="labelVal"></Radio>
+  <div class="picked">Picked:{{ labelVal }}</div>
 </template>
   
   <script lang="ts">
-import { reactive, toRefs } from 'vue'
+import { ref } from 'vue'
 
 import { Radio } from "../../lib/index"
-import { RadioGroup } from "../../lib/index"
 
 export default {
   components: {
     Radio,
-    RadioGroup,
   },
-  data() {
-    return {
-      gender: '1'
-    }
+  setup() {
+    const labelVal = ref('男')
+    return { labelVal }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.picked {
+  padding: 10px 0;
+}
+</style>
   

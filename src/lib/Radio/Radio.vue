@@ -5,14 +5,14 @@
       <input class="l-radio-original" type="radio" :value="label" :name="name" v-model="model" />
     </span>
     <span class="l-radio-label">
-      <slot>
-        <template v-if="!$slots.default">{{ label }}</template>
-      </slot>
+      <slot></slot>
+      <template v-if="!$slots.default">{{ label }}</template>
     </span>
   </label>
 </template>
 
 <script>
+import { computed } from 'vue'
 export default {
   name: 'Radio',
   inject: {
@@ -20,22 +20,28 @@ export default {
       default: ''
     }
   },
-  created() {
-    console.log(this.$parent)
-  },
-  computed: {
-    model: {
+  setup(props, context) {
+    const model = computed({
       get() {
-        return this.isGroup ? this.RadioGroup.value : this.value
+        return props.value
       },
       set(value) {
-        this.$emit('input', value)
-        this.isGroup ? this.RadioGroup.$$emit('input', value) : this.$emit('input', value)
+        context.emit('update:value', value)
       }
-    },
-    isGroup() {
-      return !!this.RadioGroup
-    }
+    })
+    // const model = computed({
+    //   get() {
+    //     return context.isGroup ? props.RadioGroup.value : props.value
+    //   },
+    //   set() {
+    //     context.emit('update:value', value)
+    //     context.isGroup ? props.RadioGroup.emit('update:value', value) : context.emit('update:value', value)
+    //   },
+    //   isGroup() {
+    //     return !!context.RadioGroup
+    //   }
+    // })
+    return { model }
   },
   props: {
     label: {
