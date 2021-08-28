@@ -21,12 +21,6 @@
             <router-link to="/doc/button">Button</router-link>
           </li>
           <li>
-            <router-link to="/doc/calendar">Calendar</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/switch">Switch</router-link>
-          </li>
-          <li>
             <router-link to="/doc/selector">Selector</router-link>
           </li>
           <li>
@@ -45,10 +39,16 @@
             <router-link to="/doc/magnifier">Magnifier</router-link>
           </li>
           <li>
+            <router-link to="/doc/calendar">Calendar</router-link>
+          </li>
+          <li>
             <router-link to="/doc/longlist">LongList</router-link>
           </li>
           <li>
             <router-link to="/doc/dialog">Dialog</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/switch">Switch</router-link>
           </li>
           <li>
             <router-link to="/doc/checkbox">Checkbox</router-link>
