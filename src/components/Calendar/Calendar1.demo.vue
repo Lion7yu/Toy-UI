@@ -5,26 +5,15 @@
   <Calendar v-model="date" @change="change"></Calendar>
 </template>
   
-  <script lang="ts">
+  <script setup>
 import { ref } from 'vue'
 import { Calendar } from "../../lib/index"
 
-export default {
-  components: {
-    Calendar
-  },
-  setup() {
-    let date = ref("2021/8/19")
-    const change = (...args) => {
-      console.log(args)
-    }
-    return {
-      date,
-      change
-    }
-  }
-
+let date = ref("2021-8-20")
+const change = (...args) => {
+  console.log(args)
 }
+
 </script>
 <style lang="scss" scoped>
 </style>
