@@ -14,18 +14,16 @@
 
     <ul class="day-wrapper" v-for="item in state.dayArr">
       <li
-        :class="{ gray: !val.cursor, isSelect: val.isSelect }"
+        :class="{ gray: !val.cursor, isSelected: val.isSelected }"
         v-for="val in item"
-        @click="getDate(val)"
+        @click="getDay(val)"
       >{{ val.text }}</li>
     </ul>
-
-    <button @click="fn">按钮</button>
   </div>
 </template>
 
 <script setup>
-import { onMounted, reactive, watch } from "vue"
+import { reactive, watch } from "vue"
 
 let props = defineProps({
   modelValue: String
@@ -38,7 +36,7 @@ let state = reactive({
   compTime: props.modelValue
 })
 
-let emit = defineEmits(["change", "update:modelValue"])
+let emit = defineEmits(["update:modelValue"])
 
 // value '2021-8-20'
 function getRanderData(value) {
@@ -58,25 +56,25 @@ function getRanderData(value) {
     return new Date(date.getFullYear(), date.getMonth(), 0).getDate()
   }
   let prevMonthDay = getLastMonthDays(value)
-  console.log(prevMonthDay)
   for (let i = 0; i < 6; i++) {
     let tmp = []
     for (let j = 0; j < 7; j++) {
       if (i === 0) {
         if (j < first) {
           tmp.unshift({
-            isSelect: false,
+            isSelected: false,
             cursor: false,
             text: prevMonthDay--
           })
         } else {
           let obj = {
-            isSelect: false,
+            isSelected: false,
             cursor: true,
             text: n++
           }
-          if (obj.text === value.split('-')[2]) {
-            obj.isSelect = true
+          console.log(obj.text, value.split('-'))
+          if (obj.text === value.split('-')[2] / 1) {
+            obj.isSelected = true
           }
           tmp.push(obj)
         }
@@ -84,18 +82,18 @@ function getRanderData(value) {
         let t = n++
         if (t > nums) {
           tmp.push({
-            isSelect: false,
+            isSelected: false,
             cursor: false,
             text: nextMonthDay++
           })
         } else {
           let obj = {
-            isSelect: false,
+            isSelected: false,
             cursor: true,
             text: t
           }
-          if (obj.text === value.split('-')[2]) {
-            obj.isSelect = true
+          if (obj.text === value.split('-')[2] / 1) {
+            obj.isSelected = true
           }
           tmp.push(obj)
         }
@@ -103,7 +101,6 @@ function getRanderData(value) {
     }
     dayArr.push(tmp)
   }
-  console.log(dayArr)
   return dayArr
 }
 
@@ -166,7 +163,7 @@ const nextMonth = () => {
   state.dayArr = getRanderData(state.compTime)
 }
 
-const getDate = (val) => {
+const getDay = (val) => {
   if (val.cursor) {
     let arr = state.compTime.split('-')
     arr[2] = val.text
@@ -174,11 +171,6 @@ const getDate = (val) => {
   }
 }
 
-onMounted(() => {
-  setTimeout(() => {
-    emit('update:modelValue', "2021-09-01")
-  }, 2000)
-})
 </script>
 
 <style lang="scss" scoped>
@@ -189,17 +181,18 @@ onMounted(() => {
   .title-wrapper {
     height: 50px;
     display: flex;
-    width: 300px;
+    width: 253px;
     margin: auto;
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     .btn {
       width: 30px;
       font-size: 20px;
       font-weight: 600;
       cursor: pointer;
-    }
-
-    .time-wrapper {
-      flex: auto;
     }
   }
 
@@ -210,6 +203,8 @@ onMounted(() => {
     display: flex;
     li {
       flex: 1;
+      text-align: center;
+      justify-content: center;
       cursor: pointer;
     }
   }
@@ -225,10 +220,12 @@ onMounted(() => {
     }
     li.gray {
       color: #ccc;
-      cursor: no-drap;
+      cursor: no-drop;
     }
-    li.isSelect {
-      background-color: blue;
+    li.isSelected {
+      background-color: #1890ff;
+      border-radius: 4px;
+      box-shadow: 0px 0px 6px #1890ff;
       color: #fff;
     }
   }
