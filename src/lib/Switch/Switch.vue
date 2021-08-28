@@ -1,39 +1,62 @@
 <template>
-  <button class="lion-switch" @click="toggle" :class="{'lion-checked':value}">
+  <button class="lion-switch" @click="toggle" :class="{ 'lion-checked': value }">
     <span></span>
   </button>
 </template>
-<script lang="ts" setup="props, context">
-import { ref, SetupContext } from "vue";
-declare const props: {value: boolean}
-declare const context: SetupContext
+
+<script>
 export default {
   props: {
-    value: Boolean,
+    value: Boolean
   },
-};
-export const toggle = () => {
-  context.emit("update:value", !props.value);
-};
+  setup(props, context) {
+    const toggle = () => {
+      context.emit("update:value", !props.value)
+    }
+    return { toggle }
+  }
+}
 </script>
 
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
 .lion-switch {
-  height: $h; width: $h * 2; border: none; background: #bfbfbf; border-radius: $h/2; position: relative;
+  height: $h;
+  width: $h * 2;
+  border: none;
+  background: #bfbfbf;
+  border-radius: $h/2;
+  position: relative;
   > span {
-    position: absolute; top: 2px; left: 2px; height: $h2; width: $h2; background: white; border-radius: $h2 / 2; transition: all 250ms;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: $h2;
+    width: $h2;
+    background: white;
+    border-radius: $h2 / 2;
+    transition: all 250ms;
   }
-  &.lion-checked { background: #1890ff;
-    > span { left: calc(100% - #{$h2} - 2px); }
+  &.lion-checked {
+    background: #1890ff;
+    > span {
+      left: calc(100% - #{$h2} - 2px);
+    }
   }
-  &:focus { outline: none; }
+  &:focus {
+    outline: none;
+  }
   &:active {
-    > span { width: $h2 + 4px; }
+    > span {
+      width: $h2 + 4px;
+    }
   }
   &.lion-checked:active {
-    > span { width: $h2 + 4px; margin-left: -4px; }
+    > span {
+      width: $h2 + 4px;
+      margin-left: -4px;
+    }
   }
 }
 </style>
