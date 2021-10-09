@@ -1,5 +1,6 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import Home from "./views/Home.vue";
+import HomeTest from "./views/HomeTest.vue"
 import Doc from "./views/Doc.vue";
 import SwitchDemo from "./components/Switch/SwitchDemo.vue";
 import ButtonDemo from "./components/Button/ButtonDemo.vue";
@@ -33,7 +34,7 @@ const md = string => h(Markdown, { content: string, key: string })
 export const router = createRouter({
   history: history,
   routes: [
-    { path: "/", component: Home },
+    { path: "/", component: HomeTest },
     {
       path: "/doc",
       component: Doc,

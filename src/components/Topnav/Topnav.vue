@@ -1,19 +1,21 @@
 <template>
-<div class="topnav">
-  <router-link to="/" class="logo">
-    <svg class="icon">
-      <use xlink:href="#i-lion1"></use>
+  <div class="topnav">
+    <router-link to="/" class="logo">
+      <svg class="icon">
+        <use xlink:href="#i-wanju" />
+      </svg>
+      <span>HOME</span>
+    </router-link>
+    <router-link to="/doc" class="docLogo">
+      <svg class="icon">
+        <use xlink:href="#i-doc1" />
+      </svg>
+      <span>DOC</span>
+    </router-link>
+    <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
+      <use xlink:href="#i-doc1" />
     </svg>
-  </router-link>
-  <ul class="menu">
-    <li>
-      <router-link to="/doc">文档</router-link>
-    </li>
-  </ul>
-  <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
-    <use xlink:href="#i-menu"></use>
-  </svg>
-</div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -29,7 +31,7 @@ export default {
     }
   },
   setup() {
-    const menuVisible = inject < Ref < boolean >> ("menuVisible"); // get
+    const menuVisible = inject<Ref<boolean>>("menuVisible"); // get
     const toggleMenu = () => {
       menuVisible.value = !menuVisible.value;
     };
@@ -55,28 +57,60 @@ $color: #000;
   justify-content: center;
   align-items: center;
 
-  >.logo {
+  > .logo {
     max-width: 6em;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      text-decoration: none;
+    }
+    span {
+      font-size: 0.5em;
+      color: rgb(255, 215, 46);
+    }
 
-    >svg {
+    > svg {
+      margin: 0 26px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+  > .docLogo {
+    max-width: 6em;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      text-decoration: none;
+    }
+    span {
+      font-size: 0.5em;
+      color: rgb(255, 215, 46);
+    }
+
+    > svg {
       margin: 0 26px;
       width: 32px;
       height: 32px;
     }
   }
 
-  >.menu {
+  > .menu {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
 
-    >li {
+    > li {
       margin: 0 1em;
     }
   }
 
-  >.toggleAside {
+  > .toggleAside {
     width: 32px;
     height: 32px;
     position: absolute;
@@ -88,15 +122,15 @@ $color: #000;
   }
 
   @media (max-width: 500px) {
-    >.menu {
+    > .menu {
       display: none;
     }
 
-    >.logo {
+    > .logo {
       margin: 0 auto;
     }
 
-    >.toggleAside {
+    > .toggleAside {
       display: inline-block;
     }
   }
