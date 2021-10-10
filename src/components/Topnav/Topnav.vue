@@ -13,7 +13,7 @@
       <span>DOC</span>
     </router-link>
     <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
-      <use xlink:href="#i-doc1" />
+      <use xlink:href="#i-menu" />
     </svg>
   </div>
 </template>

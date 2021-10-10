@@ -8,13 +8,16 @@
     }"
   >
     <canvas
-      id="l-canvas"
+      id="t-canvas"
       :style="{
         width: canvasWidth,
         height: canvasHeight,
         fillStyle: 'black',
       }"
     ></canvas>
+    <div class="reset">
+      <button>reset</button>
+    </div>
   </div>
 </template>
 
@@ -47,8 +50,6 @@ export default {
       type: String,
       default: "round"
     }
-
-
   },
   directives: {
     canvas
@@ -56,5 +57,26 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.canvas-wrapper {
+  display: flex;
+  align-items: center;
+  .reset {
+    padding: 0 8px;
+    > button {
+      font-size: 16px;
+      width: 64px;
+      height: 32px;
+      border-radius: 4px;
+      border: 0;
+      cursor: pointer;
+      background: #fff;
+      border: 1px solid #d9d9d9;
+      &:hover {
+        border-color: lighten(#40a9ff, 10%);
+        color: lighten(#40a9ff, 10%);
+      }
+    }
+  }
+}
 </style>

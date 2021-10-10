@@ -2,7 +2,7 @@
   常规使用
 </demo>
 <template>
-  <div class="wrapper">
+  <div class="canvasWrapper">
     <Canvas
       :canvasWidth="canvasWidth"
       :canvasHeight="canvasHeight"
@@ -38,9 +38,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.wrapper {
-  border: 1px solid red;
+.canvasWrapper {
   width: 500px;
+  box-shadow: 0 0 3px #000;
   margin: auto;
 }
 </style>
