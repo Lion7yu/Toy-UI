@@ -1,29 +1,21 @@
 <template>
-  <SubMenu>
-    <template #title>{{data.title}}</template>
+  <TreeSubMenu>
+    <template #title>{{ data.title }}</template>
     <template v-for="c of data.children">
-      <MenuItem 
-        :key="c.id"
-        v-if="!c.children"
-        >
-        {{c.title}}
-      </MenuItem>
-      <ReSubMenu v-else 
-      :key="c.id"
-      :data="c"
-      ></ReSubMenu>
+      <TreeMenuItem :key="c.id" v-if="!c.children">{{ c.title }}</TreeMenuItem>
+      <ReSubMenu v-else :key="c.id" :data="c"></ReSubMenu>
     </template>
-  </SubMenu>
+  </TreeSubMenu>
 </template>
 
 <script>
-import {MenuItem} from "../../lib/index"
-import {SubMenu} from "../../lib/index"
+import { TreeMenuItem } from "../../lib/index"
+import { TreeSubMenu } from "../../lib/index"
 export default {
   name: 'ReSubMenu',
   components: {
-    MenuItem,
-    SubMenu,
+    TreeMenuItem,
+    TreeSubMenu,
   },
   props: {
     data: Object
@@ -32,5 +24,4 @@ export default {
 </script>
 
 <style>
-
 </style>

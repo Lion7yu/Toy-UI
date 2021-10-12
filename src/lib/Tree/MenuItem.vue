@@ -6,14 +6,14 @@
 
 <script>
 export default {
-  name: 'MenuItem'
+  name: 'TreeMenuItem'
 }
 </script>
 
 <style lang="scss" scoped>
-  .menu-item{
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-  }
+.menu-item {
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
 </style>
