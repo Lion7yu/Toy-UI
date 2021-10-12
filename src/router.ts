@@ -23,6 +23,8 @@ import FormDemo from "./components/Form/FormDemo.vue"
 import CanvasDemo from "./components/Canvas/CanvasDemo.vue"
 import RadioDemo from "./components/Radio/RadioDemo.vue"
 import CalendarDemo from "./components/Calendar/CalendarDemo.vue"
+import MenuDemo from "./components/Menu/MenuDemo.vue"
+
 
 import { h } from 'vue';
 import Markdown from './components/Markdown.vue';
@@ -64,6 +66,7 @@ export const router = createRouter({
         { path: "canvas",component: CanvasDemo},
         { path: "radio",component: RadioDemo},
         { path: "calendar",component: CalendarDemo},
+        { path: "menu",component: MenuDemo},
       ],
     },
   ],

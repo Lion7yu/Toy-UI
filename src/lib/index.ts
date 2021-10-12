@@ -22,8 +22,8 @@ export { default as Checkbox} from './Checkbox/Checkbox.vue';
 export { default as Magnifier} from './Magnifier/Magnifier.vue';
 export { default as Rate} from './Rate/Rate.vue';
 export { default as Tree} from './Tree/Tree.vue';
-export { default as MenuItem} from './Tree/MenuItem.vue';
-export { default as SubMenu} from './Tree/SubMenu.vue';
+export { default as TreeMenuItem} from './Tree/MenuItem.vue';
+export { default as TreeSubMenu} from './Tree/SubMenu.vue';
 export { default as ReSubMenu} from './Tree/ReSubMenu.vue';
 export { default as Carousel} from './Carousel/Carousel.vue';
 export { default as CarouselItem} from './Carousel/CarouselItem.vue';
@@ -36,4 +36,8 @@ export { default as Canvas} from './Canvas/Canvas.vue';
 export { default as Radio} from './Radio/Radio.vue';
 export { default as RadioGroup} from './Radio/RadioGroup.vue';
 export { default as Calendar} from './Calendar/Calendar.vue';
+export { default as Menu} from './Menu/Menu.vue'
+export { default as MenuGroup} from './Menu/MenuGroup.vue'
+export { default as MenuItem} from './Menu/MenuItem.vue';
+export { default as SubMenu} from './Menu/SubMenu.vue'
 export { openDialog as openDialog } from './Dialog/openDialog';
