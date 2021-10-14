@@ -1,184 +1,78 @@
 <template>
-  <div class="layout">
-    <Topnav toggleMenuButtonVisible class="nav" />
-    <div class="content">
-      <aside v-if="menuVisible">
-        <h2>文档</h2>
-        <ol>
-          <li>
-            <router-link to="/doc/intro">介绍</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/install">安装</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/get-started">开始使用</router-link>
-          </li>
-        </ol>
-        <h2>组件列表</h2>
-        <ol>
-          <li>
-            <router-link to="/doc/Menu">Menu</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/button">Button</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/selector">Selector</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/carousel">Carousel</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/canvas">Canvas</router-link>
-          </li>
-          <!-- <li>
-            <router-link to="/doc/form">Form</router-link>
-          </li>-->
-          <li>
-            <router-link to="/doc/tree">Tree</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/magnifier">Magnifier</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/calendar">Calendar</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/longlist">LongList</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/dialog">Dialog</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/switch">Switch</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/checkbox">Checkbox</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/radio">Radio</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/rate">Rate</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/tabs">Tabs</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/input">Input</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/grid">Grid</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/layout">Layout</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/collapse">Collapse</router-link>
-          </li>
-        </ol>
-      </aside>
-      <main>
-        <router-view />
-      </main>
+  <div class="components-page">
+    <h4 class="title">组件总览</h4>
+    <div class="row">
+      <toy-menu
+        style="width: 220px;"
+        default-selected-key="option-1"
+        :default-open-keys="['navigation-1', 'navigation-2']"
+      >
+        <toy-sub-menu value="navigation-1" :show-arrow="true">
+          <template v-slot:title>
+            <div class="sub-title">常规组件</div>
+          </template>
+          <template v-slot:default>
+            <toy-menu-item value="option-1">Option 3</toy-menu-item>
+            <toy-menu-item value="option-2">Option 4</toy-menu-item>
+          </template>
+        </toy-sub-menu>
+        <toy-sub-menu value="navigation-2">
+          <template v-slot:title>
+            <div class="sub-title">玩具组件</div>
+          </template>
+          <template v-slot:default>
+            <toy-menu-item value="option-3">Option 3</toy-menu-item>
+            <toy-menu-item value="option-4">Option 4</toy-menu-item>
+          </template>
+        </toy-sub-menu>
+        <toy-sub-menu value="navigation-3">
+          <template v-slot:title>
+            <div class="sub-title">CSS 效果</div>
+          </template>
+          <template v-slot:default>
+            <toy-menu-item value="option-5">Option 5</toy-menu-item>
+            <toy-menu-item value="option-6">Option 6</toy-menu-item>
+          </template>
+        </toy-sub-menu>
+      </toy-menu>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Topnav from "../components/Topnav/Topnav.vue";
-import {
-  inject,
-  Ref
-} from "vue";
+
+import { Menu, MenuGroup, MenuItem, SubMenu } from "../lib/index.ts";
+
 export default {
+  name: "doc-page",
   components: {
-    Topnav
+    "toy-menu": Menu,
+    "toy-menu-group": MenuGroup,
+    "toy-menu-item": MenuItem,
+    "toy-sub-menu": SubMenu,
   },
   setup() {
-    const menuVisible = inject<Ref<boolean>>("menuVisible"); // get
-    return {
-      menuVisible
+    const onSelect = (key: string | number) => {
+      console.log(key);
     };
+
+    const onOpenChange = (keys: Array<string | number>) => {
+      console.log(keys);
+    };
+
+    return { onSelect, onOpenChange };
   },
 };
 </script>
-
 <style lang="scss" scoped>
-$aside-index: 10;
-
-.layout {
-  display: flex;
-  flex-direction: column;
+.components-page {
+  width: 100vw;
   height: 100vh;
-
-  > .nav {
-    flex-shrink: 0;
-  }
-
-  > .content {
-    flex-grow: 1;
-    padding-top: 60px;
-    padding-left: 156px;
-
-    @media (max-width: 500px) {
-      padding-left: 0;
-    }
-  }
+  margin: 0 auto;
 }
-
-.content {
+.sub-title {
   display: flex;
-
-  > aside {
-    flex-shrink: 0;
-  }
-
-  > main {
-    flex-grow: 1;
-    padding: 16px;
-    background: white;
-  }
-}
-
-aside {
-  background: #ffe882;
-  width: 120px;
-  padding: 16px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 70px;
-  height: 100%;
-  z-index: $aside-index;
-
-  > h2 {
-    margin-bottom: 4px;
-    padding: 0 10px;
-    text-align: center;
-  }
-
-  > ol {
-    > li {
-      > a {
-        display: block;
-        padding: 4px 16px;
-        text-decoration: none;
-        text-align: center;
-      }
-
-      .router-link-active {
-        border-radius: 4px;
-        border: 2px solid #ffe882;
-        box-shadow: 0 0 3px 1px white;
-        background: white;
-      }
-    }
-  }
-}
-
-main {
-  overflow: auto;
+  justify-content: flex-start;
+  align-items: center;
 }
 </style>

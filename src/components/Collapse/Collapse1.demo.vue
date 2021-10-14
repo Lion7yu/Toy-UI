@@ -3,7 +3,7 @@
 </demo>
 <template>
   <div>
-    <Collapse >
+    <Collapse>
       <Collapse-item title="标题1" name="1">1</Collapse-item>
       <Collapse-item title="标题2" name="2">2</Collapse-item>
       <Collapse-item title="标题3" name="3">3</Collapse-item>
@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts">
-import {Collapse} from "../../lib/index"
-import {CollapseItem} from "../../lib/index"
+import { Collapse } from "../../lib/index"
+import { CollapseItem } from "../../lib/index"
 
 export default {
   components: {
@@ -24,5 +24,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

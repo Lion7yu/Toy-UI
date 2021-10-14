@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import canvas from './directives/canvas'
+import canvas from '../directives/canvas.js'
 export default {
   name: 'Canvas',
   props: {
