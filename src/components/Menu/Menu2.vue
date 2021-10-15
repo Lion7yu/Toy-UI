@@ -1,110 +1,144 @@
 <template>
-  <div class="components-page">
-    <div class="nav-bar">
-      <dwc-menu v-model:selected-key="selectedKey">
-        <dwc-menu-item value="overview" @click="onClick('overview')">组件总览</dwc-menu-item>
-        <dwc-menu-group>
-          <template v-slot:title>通用</template>
-          <template v-slot:default>
-            <dwc-menu-item value="button" @click="onClick('button')">Button 按钮</dwc-menu-item>
+  <div class="container">
+    <h4 class="title">横向菜单</h4>
+    <div class="row">
+      <dwc-menu
+        mode="horizontal"
+        default-selected-key="option-1"
+        @select="onSelect"
+        @open-change="onOpenChange"
+      >
+        <dwc-menu-item value="option-1" style="width: 220px;">
+          <div class="sub-title">
+            <dwc-icon name="settings" style="margin-right: 8px;"></dwc-icon>Navigation One
+          </div>
+        </dwc-menu-item>
+        <dwc-sub-menu value="navigation-2" style="width: 220px;">
+          <template v-slot:title>
+            <div class="sub-title">
+              <dwc-icon name="thumbnails" style="margin-right: 8px;"></dwc-icon>Navigation Two
+            </div>
           </template>
-        </dwc-menu-group>
-        <dwc-menu-group>
-          <template v-slot:title>导航</template>
           <template v-slot:default>
-            <dwc-menu-item value="menu" @click="onClick('menu')">Menu 导航菜单</dwc-menu-item>
+            <dwc-menu-item value="option-2">Option 2</dwc-menu-item>
+            <dwc-menu-item value="option-3">Option 3</dwc-menu-item>
+            <dwc-sub-menu value="sub-menu">
+              <template v-slot:title>
+                <div class="sub-title">
+                  <dwc-icon name="database" style="margin-right: 8px;"></dwc-icon>Sub Menu
+                </div>
+              </template>
+              <template v-slot:default>
+                <dwc-menu-item value="option-4">Option 4</dwc-menu-item>
+                <dwc-menu-item value="option-5">Option 5</dwc-menu-item>
+              </template>
+            </dwc-sub-menu>
           </template>
-        </dwc-menu-group>
-        <dwc-menu-group>
-          <template v-slot:title>数据录入</template>
+        </dwc-sub-menu>
+        <dwc-sub-menu value="navigation-3" style="width: 220px;">
+          <template v-slot:title>
+            <div class="sub-title">
+              <dwc-icon name="graph-bar" style="margin-right: 8px;"></dwc-icon>Navigation Three
+            </div>
+          </template>
           <template v-slot:default>
-            <dwc-menu-item value="input" @click="onClick('input')">Input 输入框</dwc-menu-item>
-            <dwc-menu-item value="select" @click="onClick('select')">Selelct 选择器</dwc-menu-item>
-            <dwc-menu-item value="switch" @click="onClick('switch')">Switch 开关</dwc-menu-item>
+            <dwc-menu-item value="option-6">Option 6</dwc-menu-item>
+            <dwc-menu-item value="option-7">Option 7</dwc-menu-item>
           </template>
-        </dwc-menu-group>
-        <dwc-menu-group>
-          <template v-slot:title>数据展示</template>
+        </dwc-sub-menu>
+        <dwc-sub-menu value="navigation-4" style="width: 220px;" disabled="true">
+          <template v-slot:title>
+            <div class="sub-title">
+              <dwc-icon name="records" style="margin-right: 8px;"></dwc-icon>Navigation Four
+            </div>
+          </template>
           <template v-slot:default>
-            <dwc-menu-item value="tabs" @click="onClick('tabs')">Tabs 标签页</dwc-menu-item>
+            <dwc-menu-item value="option-8">Option 8</dwc-menu-item>
+            <dwc-menu-item value="option-9">Option 9</dwc-menu-item>
           </template>
-        </dwc-menu-group>
+        </dwc-sub-menu>
       </dwc-menu>
     </div>
-    <div class="example-container">
-      <router-view></router-view>
+    <h4 class="title">纵向菜单</h4>
+    <div class="row">
+      <dwc-menu
+        style="width: 220px;"
+        default-selected-key="option-1"
+        :default-open-keys="['navigation-1', 'navigation-2']"
+      >
+        <dwc-menu-item value="option-1">Option 1</dwc-menu-item>
+        <dwc-menu-item value="option-2" :disabled="true">Option 2</dwc-menu-item>
+        <dwc-sub-menu value="navigation-1" :show-arrow="false">
+          <template v-slot:title>
+            <div class="sub-title">
+              <dwc-icon name="settings" style="margin-right: 8px;"></dwc-icon>Navigation One
+            </div>
+          </template>
+          <template v-slot:default>
+            <dwc-menu-item value="option-3">Option 3</dwc-menu-item>
+            <dwc-menu-item value="option-4">Option 4</dwc-menu-item>
+          </template>
+        </dwc-sub-menu>
+        <dwc-menu-item value="option-5">Option 5</dwc-menu-item>
+        <dwc-sub-menu value="navigation-2">
+          <template v-slot:title>
+            <div class="sub-title">
+              <dwc-icon name="thumbnails" style="margin-right: 8px;"></dwc-icon>Navigation Two
+            </div>
+          </template>
+          <template v-slot:default>
+            <dwc-menu-group>
+              <template v-slot:title>Group One</template>
+              <template v-slot:default>
+                <dwc-menu-item value="option-6">Option 6</dwc-menu-item>
+                <dwc-menu-item value="option-7">Option 7</dwc-menu-item>
+              </template>
+            </dwc-menu-group>
+            <dwc-menu-group>
+              <template v-slot:title>Group Two</template>
+              <template v-slot:default>
+                <dwc-menu-item value="option-8" :disabled="true">Option 8</dwc-menu-item>
+                <dwc-menu-item value="option-9">Option 9</dwc-menu-item>
+              </template>
+            </dwc-menu-group>
+          </template>
+        </dwc-sub-menu>
+        <dwc-menu-item value="option-10">Option 10</dwc-menu-item>
+      </dwc-menu>
     </div>
   </div>
 </template>
 <script lang="ts">
-import { ref, onMounted } from "vue";
-import { useRouter } from "vue-router";
+import { Icon } from "dwc-icons";
 
-import { Menu, MenuGroup, MenuItem } from "../../components";
+import { Menu, MenuGroup, MenuItem, SubMenu } from "../../components";
 
 export default {
-  name: "components-page",
+  name: "button-example",
   components: {
+    "dwc-icon": Icon,
     "dwc-menu": Menu,
     "dwc-menu-group": MenuGroup,
     "dwc-menu-item": MenuItem,
+    "dwc-sub-menu": SubMenu,
   },
-  props: {},
-  setup(props, context) {
-    const router = useRouter();
-
-    const path = router.currentRoute.value.path;
-    const index = path.lastIndexOf("/");
-
-    const onClick = (key: string) => {
-      router.push(`/components/${key}`);
+  setup() {
+    const onSelect = (key: string | number) => {
+      console.log(key);
     };
 
-    const selectedKey = ref("overview");
+    const onOpenChange = (keys: Array<string | number>) => {
+      console.log(keys);
+    };
 
-    onMounted(() => {
-      setTimeout(() => {
-        const index = router.currentRoute.value.path.lastIndexOf("/");
-        const key = router.currentRoute.value.path.substr(index + 1);
-        selectedKey.value = key;
-      }, 0);
-    });
-
-    return { selectedKey, onClick };
+    return { onSelect, onOpenChange };
   },
 };
 </script>
-<style lang="scss">
-.components-page {
-  width: 1000px;
-  margin: 0 auto;
+<style lang="scss" scoped>
+.sub-title {
   display: flex;
-
-  .nav-bar {
-    width: 240px;
-    flex-shrink: 0;
-  }
-
-  .example-container {
-    flex-grow: 1;
-    padding: 0 40px;
-
-    .container {
-      width: 100%;
-      margin: 20px 0;
-
-      .title {
-        color: #262626;
-        margin-bottom: 16px;
-      }
-
-      .row {
-        margin-bottom: 16px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-      }
-    }
-  }
+  justify-content: flex-start;
+  align-items: center;
 }
 </style>
