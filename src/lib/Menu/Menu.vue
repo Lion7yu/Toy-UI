@@ -1,39 +1,39 @@
 <template>
-  <ul class="dwc-menu" :class="{ [mode]: true }">
+  <ul class="toy-menu" :class="{ [mode]: true }">
     <slot></slot>
   </ul>
 </template>
 <script lang="ts">
 import { InjectionKey, provide, ref, Ref, computed, readonly } from "vue";
 
-export const DWCMenuParentKey: InjectionKey<string | number> = Symbol(
-  "DWCMenuParentKey"
+export const TOYMenuParentKey: InjectionKey<string | number> = Symbol(
+  "TOYMenuParentKey"
 );
-export const DWCMenuRelationship: InjectionKey<Ref<
+export const TOYMenuRelationship: InjectionKey<Ref<
   Map<string | number, string | number>
->> = Symbol("DWCMenuRelationship");
-export const DWCMenuMode: InjectionKey<Ref<string>> = Symbol("DWCMenuMode");
-export const DWCMenuSelectedKey: InjectionKey<Ref<string | number>> = Symbol(
-  "DWCMenuSelectedKey"
+>> = Symbol("TOYMenuRelationship");
+export const TOYMenuMode: InjectionKey<Ref<string>> = Symbol("TOYMenuMode");
+export const TOYMenuSelectedKey: InjectionKey<Ref<string | number>> = Symbol(
+  "TOYMenuSelectedKey"
 );
-export const DWCMenuOpenKeys: InjectionKey<Ref<
+export const TOYMenuOpenKeys: InjectionKey<Ref<
   Array<string | number>
->> = Symbol("DWCMenuOpenKeys");
+>> = Symbol("TOYMenuOpenKeys");
 
-export const DWCMenuSetRelationship: InjectionKey<(
+export const TOYMenuSetRelationship: InjectionKey<(
   key: string | number,
   parentKey: string | number
-) => void> = Symbol("DWCMenuSetRelationship");
-export const DWCMenuSetSelectedKey: InjectionKey<(
+) => void> = Symbol("TOYMenuSetRelationship");
+export const TOYMenuSetSelectedKey: InjectionKey<(
   key: string | number
-) => void> = Symbol("DWCMenuSetSelectedKey");
-export const DWCMenuEnableOpenKey: InjectionKey<(
+) => void> = Symbol("TOYMenuSetSelectedKey");
+export const TOYMenuEnableOpenKey: InjectionKey<(
   key: string | number,
   enabled: boolean
-) => void> = Symbol("DWCMenuEnableOpenKey");
+) => void> = Symbol("TOYMenuEnableOpenKey");
 
 export default {
-  name: "dwc-menu",
+  name: "toy-menu",
   props: {
     defaultSelectedKey: [String, Number],
     defaultOpenKeys: Array,
@@ -104,23 +104,25 @@ export default {
       context.emit("open-change", [...menuOpenKeys.value]);
     };
 
-    provide(DWCMenuParentKey, "dwc-menu-root");
-    provide(DWCMenuRelationship, relationship);
-    provide(DWCMenuMode, readonly(menuMode));
-    provide(DWCMenuSelectedKey, menuSelectedKey);
-    provide(DWCMenuOpenKeys, menuOpenKeys);
+    provide(TOYMenuParentKey, "TOY-menu-root");
+    provide(TOYMenuRelationship, relationship);
+    provide(TOYMenuMode, readonly(menuMode));
+    provide(TOYMenuSelectedKey, menuSelectedKey);
+    provide(TOYMenuOpenKeys, menuOpenKeys);
 
-    provide(DWCMenuSetRelationship, setRelationship);
-    provide(DWCMenuSetSelectedKey, setSelectedKey);
-    provide(DWCMenuEnableOpenKey, enableOpenKey);
+    provide(TOYMenuSetRelationship, setRelationship);
+    provide(TOYMenuSetSelectedKey, setSelectedKey);
+    provide(TOYMenuEnableOpenKey, enableOpenKey);
   },
 };
 </script>
 <style lang="scss">
-.dwc-menu {
+@import "../lion.scss";
+.toy-menu {
   list-style: none;
   margin-bottom: 0;
   font-size: 14px;
+  border-right: 1px solid $toy-border;
 
   &.horizontal {
     display: flex;

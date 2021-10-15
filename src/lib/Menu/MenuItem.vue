@@ -1,6 +1,6 @@
 <template>
   <li
-    class="dwc-menu-item"
+    class="toy-menu-item"
     :class="{
       active: selectedKey === value,
       [mode]: true,
@@ -15,26 +15,26 @@
 import { inject } from "vue";
 
 import {
-  DWCMenuMode,
-  DWCMenuParentKey,
-  DWCMenuSetRelationship,
-  DWCMenuSelectedKey,
-  DWCMenuSetSelectedKey,
+  TOYMenuMode,
+  TOYMenuParentKey,
+  TOYMenuSetRelationship,
+  TOYMenuSelectedKey,
+  TOYMenuSetSelectedKey,
 } from "./Menu.vue";
 
 export default {
-  name: "dwc-menu-item",
+  name: "toy-menu-item",
   props: {
     disabled: { type: [Boolean, String], default: false },
     value: { type: [Number, String], required: true },
   },
   setup(props) {
-    const mode = inject(DWCMenuMode);
-    const parentKey = inject(DWCMenuParentKey);
+    const mode = inject(TOYMenuMode);
+    const parentKey = inject(TOYMenuParentKey);
 
-    const setRelationship = inject(DWCMenuSetRelationship);
-    const selectedKey = inject(DWCMenuSelectedKey);
-    const setSelectdKey = inject(DWCMenuSetSelectedKey);
+    const setRelationship = inject(TOYMenuSetRelationship);
+    const selectedKey = inject(TOYMenuSelectedKey);
+    const setSelectdKey = inject(TOYMenuSetSelectedKey);
 
     setRelationship(props.value, parentKey);
 
@@ -53,9 +53,10 @@ export default {
 };
 </script>
 <style lang="scss">
-.dwc-menu {
+@import "../lion.scss";
+.toy-menu {
   &.horizontal {
-    > .dwc-menu-item {
+    > .toy-menu-item {
       &.active {
         background-color: #fff;
 
@@ -73,7 +74,7 @@ export default {
   }
 }
 
-.dwc-menu-item {
+.toy-menu-item {
   cursor: pointer;
   padding: 12px 24px;
   background-color: #fff;
@@ -81,9 +82,12 @@ export default {
   white-space: nowrap;
 
   &:hover {
+    color: $toy-blue-highlight;
   }
 
   &.active {
+    color: $toy-blue;
+    background-color: $toy-background-selected;
   }
 
   &.vertical {
@@ -101,11 +105,14 @@ export default {
       display: block;
       content: "";
       width: 2px;
+      background-color: $toy-blue;
+      transition: transform $toy-transition;
       transform: scale(0);
     }
   }
 
   &.disabled {
+    color: $toy-disable;
     cursor: not-allowed;
   }
 }

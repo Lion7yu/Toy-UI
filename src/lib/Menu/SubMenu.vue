@@ -1,6 +1,6 @@
 <template>
   <li
-    class="dwc-sub-menu"
+    class="toy-sub-menu"
     :class="{
       active: openKeys.indexOf(value) > -1,
       selected,
@@ -9,20 +9,14 @@
     }"
     v-click-outside="onOutside"
   >
-    <div class="dwc-sub-menu-title" @click="onClick">
+    <div class="toy-sub-menu-title" @click="onClick">
       <slot name="title"></slot>
-      <dwc-icon
-        v-if="showArrow === true || showArrow === 'true'"
-        name="chevron-down"
-        class="dwc-sub-menu-icon"
-        :size="12"
-      ></dwc-icon>
     </div>
-    <dwc-collapse-transition direction="vertical">
-      <ul class="dwc-sub-menu-list" v-show="openKeys.indexOf(value) > -1">
+    <toy-collapse-transition direction="vertical">
+      <ul class="toy-sub-menu-list" v-show="openKeys.indexOf(value) > -1">
         <slot></slot>
       </ul>
-    </dwc-collapse-transition>
+    </toy-collapse-transition>
   </li>
 </template>
 <script lang="ts">
@@ -32,20 +26,20 @@ import { ClickOutside } from "../directives/ClickOutside.ts";
 import CollapseTransition from "../Collapse/Collapse.vue";
 
 import {
-  DWCMenuMode,
-  DWCMenuParentKey,
-  DWCMenuRelationship,
-  DWCMenuSelectedKey,
-  DWCMenuOpenKeys,
-  DWCMenuSetRelationship,
-  DWCMenuSetSelectedKey,
-  DWCMenuEnableOpenKey,
+  TOYMenuMode,
+  TOYMenuParentKey,
+  TOYMenuRelationship,
+  TOYMenuSelectedKey,
+  TOYMenuOpenKeys,
+  TOYMenuSetRelationship,
+  TOYMenuSetSelectedKey,
+  TOYMenuEnableOpenKey,
 } from "./Menu.vue";
 
 export default {
-  name: "dwc-sub-menu",
+  name: "toy-sub-menu",
   components: {
-    "dwc-collapse-transition": CollapseTransition,
+    "toy-collapse-transition": CollapseTransition,
   },
   directives: { "click-outside": ClickOutside },
   props: {
@@ -54,14 +48,14 @@ export default {
     value: { type: [Number, String], required: true },
   },
   setup(props) {
-    const mode = inject(DWCMenuMode);
-    const parentKey = inject(DWCMenuParentKey);
-    const relationship = inject(DWCMenuRelationship);
-    const selectedKey = inject(DWCMenuSelectedKey);
-    const openKeys = inject(DWCMenuOpenKeys);
+    const mode = inject(TOYMenuMode);
+    const parentKey = inject(TOYMenuParentKey);
+    const relationship = inject(TOYMenuRelationship);
+    const selectedKey = inject(TOYMenuSelectedKey);
+    const openKeys = inject(TOYMenuOpenKeys);
 
-    const setRelationship = inject(DWCMenuSetRelationship);
-    const enableOpenKey = inject(DWCMenuEnableOpenKey);
+    const setRelationship = inject(TOYMenuSetRelationship);
+    const enableOpenKey = inject(TOYMenuEnableOpenKey);
 
     setRelationship(props.value, parentKey);
 
@@ -73,7 +67,7 @@ export default {
       while (current && relationship.value.has(current)) {
         const ancestor = relationship.value.get(current);
 
-        if (ancestor !== "dwc-menu-root") {
+        if (ancestor !== "toy-menu-root") {
           ancestors.push(ancestor);
           current = ancestor;
         } else {
@@ -114,18 +108,19 @@ export default {
       }
     };
 
-    provide(DWCMenuParentKey, props.value);
+    provide(TOYMenuParentKey, props.value);
 
     return { mode, openKeys, selected, onClick, onOutside };
   },
 };
 </script>
 <style lang="scss">
-.dwc-menu {
-  > .dwc-sub-menu {
+@import "../lion.scss";
+.toy-menu {
+  > .toy-sub-menu {
     &.horizontal {
       &.active {
-        > .dwc-sub-menu-title {
+        > .toy-sub-menu-title {
           position: relative;
 
           &::after {
@@ -139,13 +134,13 @@ export default {
           }
         }
 
-        > .dwc-sub-menu-list {
+        > .toy-sub-menu-list {
           margin-top: 3px;
         }
       }
 
       &.selected {
-        > .dwc-sub-menu-title {
+        > .toy-sub-menu-title {
           position: relative;
           background-color: #fff;
 
@@ -158,25 +153,28 @@ export default {
             display: block;
             content: "";
             height: 2px;
+            background-color: $toy-blue;
           }
         }
       }
     }
 
     &.disabled {
-      > .dwc-sub-menu-title {
+      > .toy-sub-menu-title {
         cursor: not-allowed;
       }
     }
   }
 }
 
-.dwc-sub-menu {
+.toy-sub-menu {
   width: 100%;
 
   &.active {
-    > .dwc-sub-menu-title {
-      > .dwc-sub-menu-icon {
+    > .toy-sub-menu-title {
+      color: $toy-blue;
+
+      > .toy-sub-menu-icon {
         position: absolute;
         top: 50%;
         right: 8px;
@@ -188,7 +186,7 @@ export default {
   &.horizontal {
     position: relative;
 
-    > .dwc-sub-menu-list {
+    > .toy-sub-menu-list {
       position: absolute;
       top: 100%;
       left: 0;
@@ -199,32 +197,36 @@ export default {
   }
 
   &.disabled {
-    > .dwc-sub-menu-title {
+    > .toy-sub-menu-title {
+      color: $toy-disable;
       cursor: not-allowed;
     }
   }
 
-  > .dwc-sub-menu-title {
+  > .toy-sub-menu-title {
     padding: 12px 24px;
+    color: $toy-main;
     cursor: pointer;
     position: relative;
 
     &:hover {
+      color: $toy-blue-highlight;
     }
 
-    > .dwc-sub-menu-icon {
+    > .toy-sub-menu-icon {
       position: absolute;
       top: 50%;
       right: 8px;
+      transition: transform $toy-transition;
       transform: translateY(-50%) rotateZ(0);
     }
   }
 
-  > .dwc-sub-menu-list {
+  > .toy-sub-menu-list {
     list-style: none;
     margin-bottom: 0;
 
-    .dwc-menu-item {
+    .toy-menu-item {
       padding: 12px 24px 12px 48px;
     }
   }

@@ -11,3 +11,37 @@
     "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",
     SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
 }
+
+$toy-green: #56aa1c;
+$toy-blue: #008be1;
+$toy-yellow: #ffcf00;
+$toy-orange: #ff6600;
+$toy-red: #cc0000;
+
+$toy-green-highlight: lighten($toy-green, 10%);
+$toy-blue-highlight: lighten($toy-blue, 10%);
+$toy-yellow-highlight: lighten($toy-yellow, 10%);
+$toy-orange-highlight: lighten($toy-orange, 10%);
+$toy-red-highlight: lighten($toy-red, 10%);
+
+$toy-green-shade: darken($toy-green, 10%);
+$toy-blue-shade: darken($toy-blue, 10%);
+$toy-yellow-shade: darken($toy-yellow, 10%);
+$toy-orange-shade: darken($toy-orange, 10%);
+$toy-red-shade: darken($toy-red, 10%);
+
+$toy-title: #262626;
+$toy-main: #595959;
+$toy-secondary: #8c8c8c;
+$toy-disable: #bfbfbf;
+$toy-border: #d9d9d9;
+$toy-divider: #f0f0f0;
+
+$toy-background: #f5f5f5;
+$toy-background-hover: darken($toy-background, 2.5%);
+$toy-background-disable: darken($toy-background, 5%);
+$toy-background-selected: lighten($toy-blue, 50%);
+$toy-table-header: #fafafa;
+
+$toy-shadow: 0px 1px 5px rgba(0, 0, 0, 0.23921568627451);
+$toy-transition: 250ms cubic-bezier(0.645, 0.045, 0.355, 1);
