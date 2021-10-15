@@ -1,8 +1,8 @@
 <template>
-  <button class="lion-button" :class="classes" :disabled="disabled" >
+  <button class="lion-button" :class="classes" :disabled="disabled">
     <span v-if="loading" class="lion-loadingIndicator"></span>
     <svg v-if="icon" class="icon">
-      <use :xlink:href="`#i-${icon}`"></use>
+      <use :xlink:href="`#i-${icon}`" />
     </svg>
     <div class="content">
       <slot />
@@ -15,12 +15,12 @@ import { computed } from "vue";
 
 export default {
   props: {
-    icon:{
-      type:String
+    icon: {
+      type: String
     },
-    iconPosition:{
-      type:String,
-      default:'left'
+    iconPosition: {
+      type: String,
+      default: 'left'
     },
     theme: {
       type: String,
@@ -42,7 +42,7 @@ export default {
       type: Boolean,
       default: false
     },
-    
+
   },
   setup(props) {
     const { theme, size, level, icon, iconPosition } = props;
@@ -51,15 +51,15 @@ export default {
         [`lion-theme-${theme}`]: theme,
         [`lion-size-${size}`]: size,
         [`lion-level-${level}`]: level,
-        [`lion-icon-${icon}`]:icon,
-        [`lion-iconPosition-${iconPosition}`]:iconPosition
+        [`lion-icon-${icon}`]: icon,
+        [`lion-iconPosition-${iconPosition}`]: iconPosition
       };
     });
     return { classes };
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
@@ -97,13 +97,13 @@ $grey: grey;
   &::-moz-focus-inner {
     border: 0;
   }
-  &.lion-iconPosition-left{
+  &.lion-iconPosition-left {
     > .content {
       order: 2;
     }
     > .icon {
       order: 1;
-      margin-right: .3em;
+      margin-right: 0.3em;
     }
   }
   &.lion-iconPosition-right {
@@ -113,7 +113,7 @@ $grey: grey;
     > .icon {
       order: 2;
       margin-right: 0;
-      margin-left: .3em;
+      margin-left: 0.3em;
     }
   }
   &.lion-theme-link {
@@ -200,18 +200,19 @@ $grey: grey;
       }
     }
   }
-  &.lion-theme-link, &.lion-theme-text {
+  &.lion-theme-link,
+  &.lion-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
-  > .lion-loadingIndicator{
+  > .lion-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
     margin-right: 4px;
-    border-radius: 8px; 
+    border-radius: 8px;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
@@ -219,7 +220,11 @@ $grey: grey;
   }
 }
 @keyframes lion-spin {
-  0%{transform: rotate(0deg)} 
-  100%{transform: rotate(360deg)} 
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

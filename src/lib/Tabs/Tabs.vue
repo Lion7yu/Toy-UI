@@ -1,16 +1,20 @@
 <template>
-<div class="lion-tabs">
-  <div class="lion-tabs-nav" ref="container">
-    <div class="lion-tabs-nav-item" v-for="(t,index) in titles" 
-      :ref="el => { if (t===selected) selectedItem = el }" 
-      @click="select(t)" :class="{selected: t=== selected}" 
-      :key="index">{{t}}</div>
-    <div class="lion-tabs-nav-indicator" ref="indicator"></div>
+  <div class="lion-tabs">
+    <div class="lion-tabs-nav" ref="container">
+      <div
+        class="lion-tabs-nav-item"
+        v-for="(t,index) in titles"
+        :ref="el => { if (t === selected) selectedItem = el }"
+        @click="select(t)"
+        :class="{ selected: t === selected }"
+        :key="index"
+      >{{ t }}</div>
+      <div class="lion-tabs-nav-indicator" ref="indicator"></div>
+    </div>
+    <div class="lion-tabs-content">
+      <component :is="current" :key="current.props.title" />
+    </div>
   </div>
-  <div class="lion-tabs-content">
-    <component :is="current" :key="current.props.title" />
-  </div>
-</div>
 </template>
 
 <script lang="ts">
@@ -28,28 +32,28 @@ export default {
     }
   },
   setup(props, context) {
-    const selectedItem = ref < HTMLDivElement > (null)
-    const indicator = ref < HTMLDivElement > (null)
-    const container = ref < HTMLDivElement > (null)
+    const selectedItem = ref<HTMLDivElement>(null)
+    const indicator = ref<HTMLDivElement>(null)
+    const container = ref<HTMLDivElement>(null)
 
-onMounted(() => {
-  watchEffect(() => {
-    const {
-      width
-    } = selectedItem.value.getBoundingClientRect()
-    indicator.value.style.width = width + 'px'
-    const {
-      left: left1
-    } = container.value.getBoundingClientRect()
-    const {
-      left: left2
-    } = selectedItem.value.getBoundingClientRect()
-    const left = left2 - left1
-    indicator.value.style.left = left + 'px'
-  }, {
-    flush: 'post'
-  })
-})
+    onMounted(() => {
+      watchEffect(() => {
+        const {
+          width
+        } = selectedItem.value.getBoundingClientRect()
+        indicator.value.style.width = width + 'px'
+        const {
+          left: left1
+        } = container.value.getBoundingClientRect()
+        const {
+          left: left2
+        } = selectedItem.value.getBoundingClientRect()
+        const left = left2 - left1
+        indicator.value.style.left = left + 'px'
+      }, {
+        flush: 'post'
+      })
+    })
 
     const defaults = context.slots.default()
     defaults.forEach((tag) => {
@@ -80,7 +84,7 @@ onMounted(() => {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
