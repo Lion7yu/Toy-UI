@@ -23,15 +23,20 @@
           </template>
           <template v-slot:default>
             <a href="https://www.zhihu.com/people/ylion-57">
-              <toy-menu-item value="zhihu" style="width:100%">
+              <toy-menu-item value="zhihu" style="width:75px">
                 <svg class="icon">
-                  <use xlink:href="#i-wanju" />
+                  <use xlink:href="#i-zhihu" />
                 </svg>
                 <span>Lion7yu</span>
               </toy-menu-item>
             </a>
             <a href="https://www.yuque.com/u12173902">
-              <toy-menu-item value="yuque">Lion7yu</toy-menu-item>
+              <toy-menu-item value="yuque" style="width:75px">
+                <svg class="icon">
+                  <use xlink:href="#i-yuque" />
+                </svg>
+                <span>Lion7yu</span>
+              </toy-menu-item>
             </a>
           </template>
         </toy-sub-menu>
@@ -65,15 +70,19 @@ export default {
     }
   }
   .blog {
+    z-index: 999;
     a {
       position: relative;
+
       > li {
-        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: red;
         > svg {
+          padding: 0 8px;
+          width: 40px;
+          height: 40px;
+          flex-shrink: 0;
         }
       }
     }
