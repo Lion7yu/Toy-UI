@@ -1,4 +1,5 @@
 <template>
+  <SiteHeader />
   <div class="components-page">
     <div class="nav-bar">
       <toy-menu
@@ -109,6 +110,7 @@
 <script lang="ts">
 
 import { Menu, MenuGroup, MenuItem, SubMenu } from "../lib/index.ts";
+import SiteHeader from "./SiteHeader.vue"
 
 export default {
   name: "doc-page",
@@ -117,6 +119,7 @@ export default {
     "toy-menu-group": MenuGroup,
     "toy-menu-item": MenuItem,
     "toy-sub-menu": SubMenu,
+    SiteHeader
   },
   setup() {
 
