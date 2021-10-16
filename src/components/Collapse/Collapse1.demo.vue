@@ -3,10 +3,12 @@
 </demo>
 <template>
   <div>
-    <Collapse>
-      <Collapse-item title="标题1" name="1">1</Collapse-item>
-      <Collapse-item title="标题2" name="2">2</Collapse-item>
-      <Collapse-item title="标题3" name="3">3</Collapse-item>
+    <Collapse direction="vertical">
+      <ul>
+        <Collapse-item title="标题1" name="1">1</Collapse-item>
+        <Collapse-item title="标题2" name="2">2</Collapse-item>
+        <Collapse-item title="标题3" name="3">3</Collapse-item>
+      </ul>
     </Collapse>
   </div>
 </template>

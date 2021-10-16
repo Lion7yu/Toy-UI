@@ -6,6 +6,9 @@
       @select="onSelect"
       @open-change="onOpenChange"
     >
+      <toy-menu-item value="name" style="width: 880px;">
+        <div class="sub-title-name">Toy-UI</div>
+      </toy-menu-item>
       <router-link to="/">
         <toy-menu-item value="home" style="width: 110px;">
           <div class="sub-title">主页</div>
@@ -64,6 +67,9 @@ export default {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  .sub-title-name {
+    font-size: 20px;
+  }
   a {
     &:hover {
       text-decoration: none;
