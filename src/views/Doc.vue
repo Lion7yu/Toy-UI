@@ -148,6 +148,7 @@ export default {
   margin: 0 auto;
   display: flex;
   .nav-bar {
+    overflow-y: auto;
     width: 240px;
     flex-shrink: 0;
     a {
