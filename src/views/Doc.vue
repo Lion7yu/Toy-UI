@@ -101,14 +101,14 @@
             <toy-menu-group>
               <template v-slot:title>CSS cards</template>
               <template v-slot:default>
-                <router-link to="/doc/shutters">
-                  <toy-menu-item value="shutters">Shutters 百叶窗</toy-menu-item>
-                </router-link>
                 <router-link to="/doc/hover">
                   <toy-menu-item value="hover">Hover 悬停</toy-menu-item>
                 </router-link>
                 <router-link to="/doc/poker">
                   <toy-menu-item value="poker">Poker 纸牌</toy-menu-item>
+                </router-link>
+                <router-link to="/doc/shutters">
+                  <toy-menu-item value="shutters">Shutters 百叶窗</toy-menu-item>
                 </router-link>
               </template>
             </toy-menu-group>
