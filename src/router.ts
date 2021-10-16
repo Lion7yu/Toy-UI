@@ -23,7 +23,9 @@ import CanvasDemo from "./components/Canvas/CanvasDemo.vue"
 import RadioDemo from "./components/Radio/RadioDemo.vue"
 import CalendarDemo from "./components/Calendar/CalendarDemo.vue"
 import MenuDemo from "./components/Menu/MenuDemo.vue"
-
+import ShuttersDemo from "./components/CSSEffect/Cards/Shutters/ShuttersDemo.vue"
+import HoverDemo from "./components/CSSEffect/Cards/Hover/HoverDemo.vue"
+import PokerDemo from "./components/CSSEffect/Cards/Poker/PokerDemo.vue"
 
 import { h } from 'vue';
 import Markdown from './components/Markdown.vue';
@@ -66,6 +68,9 @@ export const router = createRouter({
         { path: "radio",component: RadioDemo},
         { path: "calendar",component: CalendarDemo},
         { path: "menu",component: MenuDemo},
+        { path: "shutters",component: ShuttersDemo},
+        { path: "hover",component: HoverDemo},
+        { path: "poker",component: PokerDemo},
       ],
     },
   ],
