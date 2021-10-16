@@ -62,100 +62,97 @@ export default {
 
 ul {
   padding: 0;
-
   display: flex;
-}
-
-ul li {
-  list-style: none;
-  width: 33%;
-}
-
-ul li .imageBox {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 0 10px;
-}
-
-ul li .imageBox figure {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-ul li .imageBox figure::before,
-ul li .imageBox figure::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 50%;
-  background: #262626;
-  transition: 0.5s;
-}
-
-ul li .imageBox figure::before {
-  left: -50%;
-}
-
-ul li .imageBox:hover figure::before {
-  left: 0;
-}
-
-ul li .imageBox figure::after {
-  right: -50%;
-}
-
-ul li .imageBox:hover figure::after {
-  right: 0;
-}
-
-ul li .imageBox figure img {
-  width: 100%;
-  height: 25vh;
-}
-
-ul li .imageBox figure figcaption {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  bottom: 20px;
-  right: 20px;
-  background: #fff;
-  text-align: center;
-  padding: 20px;
-  opacity: 0;
-  transition: all 0.5s;
-  transition-delay: 0.3s;
-  transform: translateY(-20px);
-  z-index: 1;
-}
-
-ul li .imageBox:hover figure figcaption {
-  opacity: 1;
-  transform: translateY(0px);
-}
-
-ul li .imageBox figure figcaption h1 {
-  margin: 0;
-  padding: 0;
-  font-size: 22px;
-}
-
-ul li .imageBox figure figcaption p {
-  margin: 10px 0 0;
-  padding: 0;
-  font-size: 16px;
-}
-
-ul li .imageBox figure figcaption a {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #ff1922;
-  color: #fff;
-  margin-top: 10px;
-  text-decoration: none;
+  > li {
+    list-style: none;
+    width: 33%;
+    .imageBox {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 0 10px;
+      > figure {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: 50%;
+          background: #262626;
+          transition: 0.5s;
+        }
+        &::before {
+          left: -50%;
+        }
+        &::after {
+          right: -50%;
+        }
+        > img {
+          width: 100%;
+          height: 25vh;
+        }
+        > figcaption {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          bottom: 20px;
+          right: 20px;
+          background: #fff;
+          text-align: center;
+          padding: 20px;
+          opacity: 0;
+          transition: all 0.5s;
+          transition-delay: 0.3s;
+          transform: translateY(-20px);
+          z-index: 1;
+          > h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+          }
+          > p {
+            margin: 10px 0 0;
+            padding: 0;
+            font-size: 16px;
+          }
+          > a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ff1922;
+            color: #fff;
+            margin-top: 10px;
+            text-decoration: none;
+          }
+        }
+      }
+      &:hover {
+        > figure {
+          &::before {
+            left: 0;
+          }
+        }
+      }
+      &:hover {
+        > figure {
+          &::after {
+            right: 0;
+          }
+        }
+      }
+      &:hover {
+        > figure {
+          > figcaption {
+            opacity: 1;
+            transform: translateY(0px);
+          }
+        }
+      }
+    }
+  }
 }
 </style>
