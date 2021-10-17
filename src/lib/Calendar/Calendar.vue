@@ -72,7 +72,6 @@ function getRanderData(value) {
             cursor: true,
             text: n++
           }
-          console.log(obj.text, value.split('-'))
           if (obj.text === value.split('-')[2] / 1) {
             obj.isSelected = true
           }
