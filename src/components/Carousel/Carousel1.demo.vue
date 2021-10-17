@@ -12,7 +12,7 @@
       dotBgColor="#000"
     >
       <CarouselItem v-for="(item, index) of carouselData" :key="index">
-        <img :src="`/images/carouselImages/${item.img_name}`" />
+        <img :src="(`/images/carouselImages/${item.img_name}`)" />
       </CarouselItem>
     </Carousel>
   </div>

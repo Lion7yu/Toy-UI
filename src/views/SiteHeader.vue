@@ -6,7 +6,7 @@
       @select="onSelect"
       @open-change="onOpenChange"
     >
-      <toy-menu-item value="name" style="width: 880px;">
+      <toy-menu-item value="name" style="width: 1000px;">
         <div class="sub-title-name">Toy-UI</div>
       </toy-menu-item>
       <router-link to="/">
@@ -62,11 +62,14 @@ export default {
 
 <style lang="scss" scoped>
 .site-header {
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  .toy-menu.horizontal {
+    width: 100%;
+  }
   .sub-title-name {
     font-size: 20px;
   }
