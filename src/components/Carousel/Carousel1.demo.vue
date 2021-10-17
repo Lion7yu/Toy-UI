@@ -29,7 +29,7 @@ export default {
   },
   setup() {
     const getImageUrl = (name) => {
-      return new URL(`../../assets/carouselImages/${name}`, import.meta.url).href;
+      return new URL(`/images/carouselImages/${name}`, import.meta.url).href;
     };
     return {
       carouselData,

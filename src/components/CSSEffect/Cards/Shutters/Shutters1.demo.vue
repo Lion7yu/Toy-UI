@@ -4,20 +4,20 @@
 <template>
   <ul class="box">
     <li>
-      <img src="src/assets/cardImages/Friedman.jpg" alt />
+      <img src="/images/cardImages/Friedman.jpg" alt />
       <div class="text">Milton Friedmann</div>
     </li>
 
     <li>
-      <img src="src/assets/cardImages/Smee.jpg" alt />
+      <img src="/images/cardImages/Smee.jpg" alt />
       <div class="text">Adam Smith</div>
     </li>
     <li>
-      <img src="src/assets/cardImages/Keynes.jpg" alt />
+      <img src="/images/cardImages/Keynes.jpg" alt />
       <div class="text">John Maynard Keynes</div>
     </li>
     <li>
-      <img src="src/assets/cardImages/Nash.png" alt />
+      <img src="/images/cardImages/Nash.png" alt />
       <div class="text">John Nash</div>
     </li>
   </ul>

@@ -6,7 +6,7 @@
     <li>
       <div class="imageBox">
         <figure>
-          <img src="src/assets/cardImages/Friedman.jpg" alt />
+          <img src="/images/cardImages/Friedman.jpg" alt />
           <figcaption>
             <h1>Milton Friedmann</h1>
             <p>1912.7 - 2006.11</p>
@@ -20,7 +20,7 @@
     <li>
       <div class="imageBox">
         <figure>
-          <img src="src/assets/cardImages/Smee.jpg" alt />
+          <img src="/images/cardImages/Smee.jpg" alt />
           <figcaption>
             <h1>Adam Smith</h1>
             <p>1723.6 - 1790.7</p>
@@ -34,7 +34,7 @@
     <li>
       <div class="imageBox">
         <figure>
-          <img src="src/assets/cardImages/Nash.png" alt />
+          <img src="/images/cardImages/Nash.png" alt />
           <figcaption>
             <h1>John Nash</h1>
             <p>1928.6 - 2015.5</p>
