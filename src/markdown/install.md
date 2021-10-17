@@ -3,13 +3,13 @@
 打开终端运行下列命令：
 
 ```
-npm install lion-ui-1
+npm install toy-ui-1
 ```
 
 或
 
 ```
-yarn add lion-ui-1
+yarn add toy-ui-1
 ```
 
 下一节：[开始使用](#/doc/get-started)

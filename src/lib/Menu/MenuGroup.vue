@@ -14,7 +14,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "../lion.scss";
+@import "../toy.scss";
 .toy-menu-group {
   > .toy-menu-group-title {
     font-size: 12px;

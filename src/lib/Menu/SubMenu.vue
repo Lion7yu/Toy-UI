@@ -115,7 +115,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "../lion.scss";
+@import "../toy.scss";
 .toy-menu {
   > .toy-sub-menu {
     &.horizontal {

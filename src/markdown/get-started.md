@@ -1,10 +1,10 @@
 # 开始使用
 请先[安装](#/doc/install)本组件库。
 
-然后在你的代码中写入下面的代码
+选择你需要的组件，在你的项目中写入下面的代码
 
 ```
-import {Button, Tabs, Tab, Switch, Dialog, openDialog} from "lion-ui-1"
+import { Button } from "toy-ui-1"
 ```
 
 就可以使用我提供的组件了。
@@ -20,9 +20,9 @@ import {Button, Tabs, Tab, Switch, Dialog, openDialog} from "lion-ui-1"
   </div>
 </template>
 <script>
-import {Button, Tabs, Tab, Switch, Dialog, openDialog} from "lion-ui-1"
+import { Button } from "toy-ui-1"
 export default {
-  components: {Button}
+  components: { Button }
 }
 </script>
 ```

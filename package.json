@@ -1,10 +1,10 @@
 {
-  "name": "lion-ui-1",
+  "name": "toy-ui-1",
   "version": "0.0.4",
   "files": [
     "dist/lib/*"
   ],
-  "main": "dist/lib/lion.js",
+  "main": "dist/lib/toy.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"

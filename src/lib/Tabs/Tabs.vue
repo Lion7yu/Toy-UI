@@ -1,17 +1,17 @@
 <template>
-  <div class="lion-tabs">
-    <div class="lion-tabs-nav" ref="container">
+  <div class="toy-tabs">
+    <div class="toy-tabs-nav" ref="container">
       <div
-        class="lion-tabs-nav-item"
+        class="toy-tabs-nav-item"
         v-for="(t,index) in titles"
         :ref="el => { if (t === selected) selectedItem = el }"
         @click="select(t)"
         :class="{ selected: t === selected }"
         :key="index"
       >{{ t }}</div>
-      <div class="lion-tabs-nav-indicator" ref="indicator"></div>
+      <div class="toy-tabs-nav-indicator" ref="indicator"></div>
     </div>
-    <div class="lion-tabs-content">
+    <div class="toy-tabs-content">
       <component :is="current" :key="current.props.title" />
     </div>
   </div>
@@ -89,7 +89,7 @@ $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
 
-.lion-tabs {
+.toy-tabs {
   &-nav {
     display: flex;
     color: $color;

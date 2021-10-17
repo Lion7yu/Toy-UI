@@ -1,34 +1,37 @@
-import esbuild from 'rollup-plugin-esbuild'
-import vue from 'rollup-plugin-vue'
-import scss from 'rollup-plugin-scss'
-import dartSass from 'sass';
-import { terser } from "rollup-plugin-terser"
+import esbuild from "rollup-plugin-esbuild";
+import vue from "rollup-plugin-vue";
+import scss from "rollup-plugin-scss";
+import dartSass from "sass";
+import { terser } from "rollup-plugin-terser";
 
 export default {
-  input: 'src/lib/index.ts',
-  output: [{
-    globals: {
-      vue: 'Vue'
+  input: "src/lib/index.ts",
+  output: [
+    {
+      globals: {
+        vue: "Vue",
+      },
+      name: "Toy",
+      file: "dist/lib/toy.js",
+      format: "umd",
+      plugins: [terser()],
     },
-    name: 'Lion',
-    file: 'dist/lib/lion.js',
-    format: 'umd',
-    plugins: [terser()]
-  }, {
-    name: 'Lion',
-    file: 'dist/lib/lion.esm.js',
-    format: 'es',
-    plugins: [terser()]
-  }],
+    {
+      name: "Toy",
+      file: "dist/lib/toy.esm.js",
+      format: "es",
+      plugins: [terser()],
+    },
+  ],
   plugins: [
     scss({ include: /\.scss$/, sass: dartSass }),
     esbuild({
       include: /\.[jt]s$/,
-      minify: process.env.NODE_ENV === 'production',
-      target: 'es2015' 
+      minify: process.env.NODE_ENV === "production",
+      target: "es2015",
     }),
     vue({
       include: /\.vue$/,
-    })
+    }),
   ],
-}
+};

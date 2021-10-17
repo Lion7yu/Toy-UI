@@ -117,7 +117,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "../lion.scss";
+@import "../toy.scss";
 .toy-menu {
   list-style: none;
   margin-bottom: 0;

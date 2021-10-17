@@ -1,6 +1,6 @@
 <template>
-  <button class="lion-button" :class="classes" :disabled="disabled">
-    <span v-if="loading" class="lion-loadingIndicator"></span>
+  <button class="toy-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="toy-loadingIndicator"></span>
     <svg v-if="icon" class="icon">
       <use :xlink:href="`#i-${icon}`" />
     </svg>
@@ -48,11 +48,11 @@ export default {
     const { theme, size, level, icon, iconPosition } = props;
     const classes = computed(() => {
       return {
-        [`lion-theme-${theme}`]: theme,
-        [`lion-size-${size}`]: size,
-        [`lion-level-${level}`]: level,
-        [`lion-icon-${icon}`]: icon,
-        [`lion-iconPosition-${iconPosition}`]: iconPosition
+        [`toy-theme-${theme}`]: theme,
+        [`toy-size-${size}`]: size,
+        [`toy-level-${level}`]: level,
+        [`toy-icon-${icon}`]: icon,
+        [`toy-iconPosition-${iconPosition}`]: iconPosition
       };
     });
     return { classes };
@@ -67,7 +67,7 @@ $blue: #40a9ff;
 $radius: 4px;
 $red: red;
 $grey: grey;
-.lion-button {
+.toy-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 1em;
@@ -97,7 +97,7 @@ $grey: grey;
   &::-moz-focus-inner {
     border: 0;
   }
-  &.lion-iconPosition-left {
+  &.toy-iconPosition-left {
     > .content {
       order: 2;
     }
@@ -106,7 +106,7 @@ $grey: grey;
       margin-right: 0.3em;
     }
   }
-  &.lion-iconPosition-right {
+  &.toy-iconPosition-right {
     > .content {
       order: 1;
     }
@@ -116,7 +116,7 @@ $grey: grey;
       margin-left: 0.3em;
     }
   }
-  &.lion-theme-link {
+  &.toy-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
@@ -125,7 +125,7 @@ $grey: grey;
       color: lighten($blue, 10%);
     }
   }
-  &.lion-theme-text {
+  &.toy-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
@@ -134,18 +134,18 @@ $grey: grey;
       background: darken(white, 5%);
     }
   }
-  &.lion-size-big {
+  &.toy-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
-  &.lion-size-small {
+  &.toy-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
-  &.lion-theme-button {
-    &.lion-level-main {
+  &.toy-theme-button {
+    &.toy-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
@@ -155,7 +155,7 @@ $grey: grey;
         border-color: darken($blue, 10%);
       }
     }
-    &.lion-level-danger {
+    &.toy-level-danger {
       background: $red;
       border-color: $red;
       color: white;
@@ -166,8 +166,8 @@ $grey: grey;
       }
     }
   }
-  &.lion-theme-link {
-    &.lion-level-danger {
+  &.toy-theme-link {
+    &.toy-level-danger {
       color: $red;
       &:hover,
       &:focus {
@@ -175,15 +175,15 @@ $grey: grey;
       }
     }
   }
-  &.lion-theme-text {
-    &.lion-level-main {
+  &.toy-theme-text {
+    &.toy-level-main {
       color: $blue;
       &:hover,
       &:focus {
         color: darken($blue, 10%);
       }
     }
-    &.lion-level-danger {
+    &.toy-level-danger {
       color: $red;
       &:hover,
       &:focus {
@@ -191,7 +191,7 @@ $grey: grey;
       }
     }
   }
-  &.lion-theme-button {
+  &.toy-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
@@ -200,14 +200,14 @@ $grey: grey;
       }
     }
   }
-  &.lion-theme-link,
-  &.lion-theme-text {
+  &.toy-theme-link,
+  &.toy-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
-  > .lion-loadingIndicator {
+  > .toy-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
@@ -216,10 +216,10 @@ $grey: grey;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
-    animation: lion-spin 1s infinite linear;
+    animation: toy-spin 1s infinite linear;
   }
 }
-@keyframes lion-spin {
+@keyframes toy-spin {
   0% {
     transform: rotate(0deg);
   }

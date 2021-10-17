@@ -84,6 +84,7 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
+
         > svg {
           padding: 0 8px;
           width: 40px;
