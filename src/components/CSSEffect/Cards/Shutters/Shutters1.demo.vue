@@ -4,20 +4,20 @@
 <template>
   <ul class="box">
     <li>
-      <img :src="getImageUrl('Friedman.jpg')" />
+      <img src="/images/cardImages/Friedman.jpg" />
       <div class="text">Milton Friedmann</div>
     </li>
 
     <li>
-      <img :src="getImageUrl('Smee.jpg')" />
+      <img src="/images/cardImages/Smee.jpg" />
       <div class="text">Adam Smith</div>
     </li>
     <li>
-      <img :src="getImageUrl('Keynes.jpg')" />
+      <img src="/images/cardImages/Keynes.jpg" />
       <div class="text">John Maynard Keynes</div>
     </li>
     <li>
-      <img :src="getImageUrl('Nash.png')" />
+      <img src="/images/cardImages/Nash.png" />
       <div class="text">John Nash</div>
     </li>
   </ul>
@@ -25,14 +25,7 @@
 
 <script lang="ts">
 export default {
-  setup() {
-    const getImageUrl = (name) => {
-      return new URL(`/images/cardImages/${name}`, import.meta.url).href;
-    };
-    return {
-      getImageUrl,
-    };
-  },
+
 }
 </script>
 

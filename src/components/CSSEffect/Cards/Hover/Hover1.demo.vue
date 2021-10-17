@@ -6,7 +6,7 @@
     <li>
       <div class="imageBox">
         <figure>
-          <img :src="getImageUrl('Friedman.jpg')" />
+          <img src="/images/cardImages/Friedman.jpg" />
           <figcaption>
             <h1>Milton Friedmann</h1>
             <p>1912.7 - 2006.11</p>
@@ -20,7 +20,7 @@
     <li>
       <div class="imageBox">
         <figure>
-          <img :src="getImageUrl('Smee.jpg')" />
+          <img src="/images/cardImages/Smee.jpg" />
           <figcaption>
             <h1>Adam Smith</h1>
             <p>1723.6 - 1790.7</p>
@@ -34,7 +34,7 @@
     <li>
       <div class="imageBox">
         <figure>
-          <img :src="getImageUrl('Nash.png')" />
+          <img src="/images/cardImages/Nash.png" />
           <figcaption>
             <h1>John Nash</h1>
             <p>1928.6 - 2015.5</p>
@@ -50,14 +50,7 @@
 
 <script lang="ts">
 export default {
-  setup() {
-    const getImageUrl = (name) => {
-      return new URL(`/images/cardImages/${name}`, import.meta.url).href;
-    };
-    return {
-      getImageUrl,
-    };
-  },
+
 }
 </script>
 

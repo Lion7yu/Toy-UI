@@ -12,7 +12,7 @@
       dotBgColor="#000"
     >
       <CarouselItem v-for="(item, index) of carouselData" :key="index">
-        <img :src="getImageUrl(item.img_name)" />
+        <img :src="`/images/carouselImages/${item.img_name}`" />
       </CarouselItem>
     </Carousel>
   </div>
@@ -28,12 +28,8 @@ export default {
     CarouselItem,
   },
   setup() {
-    const getImageUrl = (name) => {
-      return new URL(`/images/carouselImages/${name}`, import.meta.url).href;
-    };
     return {
       carouselData,
-      getImageUrl,
     };
   },
 };
