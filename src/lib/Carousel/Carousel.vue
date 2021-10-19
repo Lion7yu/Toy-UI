@@ -15,17 +15,21 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {
   reactive,
   toRefs,
   onMounted,
   onBeforeUnmount,
-  getCurrentInstance
+  getCurrentInstance,
+  InjectionKey,
+  Ref,
+  provide
 } from 'vue';
 
 import CarouselDot from './CarouselDot.vue'
 import CarouselDirector from './CarouselDirector.vue'
+export const TOYCarouselParentKey: InjectionKey<Ref<string | number>> = Symbol("TOYCarouselParentKey")
 
 
 export default {
@@ -66,6 +70,8 @@ export default {
       currentIndex: props.initial,
       itemLen: 0
     })
+
+    provide('TOYCarouselParentKey', state)
 
     let timer = null
 
@@ -144,6 +150,7 @@ export default {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
   }
 }
 </style>

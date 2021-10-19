@@ -10,6 +10,7 @@
 
 import {
   getCurrentInstance,
+  inject,
   reactive,
   toRefs,
   watch
@@ -18,14 +19,14 @@ import {
 export default {
   name: 'CarouselItem',
   setup() {
+    const parentData = inject('TOYCarouselParentKey')
     const instance = getCurrentInstance()
     const state = reactive({
       selfIndex: instance.vnode.key,
-      currentIndex: instance.parent.ctx.currentIndex
+      currentIndex: parentData.currentIndex
     })
-
     watch(() => {
-      return instance.parent.ctx.currentIndex;
+      return parentData.currentIndex;
     }, (value) => {
       state.currentIndex = value
     })
