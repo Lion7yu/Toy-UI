@@ -85,6 +85,8 @@ export default {
   border-radius: 5px;
   cursor: pointer;
   z-index: 999;
+  height: 35vh;
+  overflow-y: auto;
 
   .menu-item {
     height: 35px;

@@ -9,6 +9,15 @@
       <toy-menu-item value="name" style="width: 1000px;">
         <div class="sub-title-name">Toy-UI</div>
       </toy-menu-item>
+      <toy-menu-item value="selector" style="width: 350px;">
+        <toy-selector>
+          <toy-selector-index
+            :data="componentsSelectorData"
+            placehodler="请输入搜索内容"
+            @setItemValue="setItemValue"
+          ></toy-selector-index>
+        </toy-selector>
+      </toy-menu-item>
       <router-link to="/">
         <toy-menu-item value="home" style="width: 110px;">
           <div class="sub-title">主页</div>
@@ -49,13 +58,23 @@
 </template>
 
 <script>
-import { Menu, MenuGroup, MenuItem, SubMenu } from "../lib/index.ts";
+import { Menu, MenuGroup, MenuItem, SubMenu, Selector, Index } from "../lib/index.ts";
+import { router } from '../router';
+import componentsSelectorData from "./componentsSelectorData"
 export default {
   name: "site-header",
   components: {
     "toy-menu": Menu,
     "toy-menu-item": MenuItem,
-    "toy-sub-menu": SubMenu
+    "toy-sub-menu": SubMenu,
+    "toy-selector": Selector,
+    "toy-selector-index": Index
+  },
+  setup() {
+    const setItemValue = (value) => {
+      router.push(value)
+    }
+    return { setItemValue, componentsSelectorData }
   }
 }
 </script>
