@@ -4,13 +4,11 @@
 
 <script lang="ts">
 import { ref, provide } from "vue";
-import SiteHeader from "./views/SiteHeader.vue"
 import { router } from "./router";
 
 export default {
   name: "App",
   components: {
-    SiteHeader
   },
   setup() {
     const width = document.documentElement.clientWidth;

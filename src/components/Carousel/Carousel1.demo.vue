@@ -12,7 +12,7 @@
       dotBgColor="#000"
     >
       <CarouselItem v-for="(item, index) of carouselData" :key="index">
-        <img :src="getImageUrl(item.img_name)" />
+        <img :src="item.img_name" />
       </CarouselItem>
     </Carousel>
   </div>
@@ -21,19 +21,36 @@
 <script lang="ts">
 import { Carousel } from "../../lib/index";
 import { CarouselItem } from "../../lib/index";
-import carouselData from "../../lib/Carousel/carousel";
+import xili from "/images/carouselImages/1.png"
+import milk from "/images/carouselImages/2.png"
+import staple from "/images/carouselImages/3.jpg"
+import blazer from "/images/carouselImages/4.png"
+import mdla from "/images/carouselImages/5.jpg"
 export default {
   components: {
     Carousel,
     CarouselItem,
   },
   setup() {
-    const getImageUrl = (name) => {
-      return new URL(`/images/carouselImages/${name}`, import.meta.url).href;
-    };
+    const carouselData = [
+      {
+        img_name: xili,
+      },
+      {
+        img_name: blazer
+      },
+      {
+        img_name: mdla
+      },
+      {
+        img_name: staple
+      },
+      {
+        img_name: milk
+      },
+    ]
     return {
       carouselData,
-      getImageUrl,
     };
   },
 };
