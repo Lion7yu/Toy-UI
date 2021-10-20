@@ -102,6 +102,7 @@ ul {
         > img {
           width: 100%;
           height: 25vh;
+          object-fit: cover;
         }
         > figcaption {
           position: absolute;

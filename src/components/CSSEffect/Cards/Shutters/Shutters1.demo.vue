@@ -54,6 +54,7 @@ export default {
     height: 320px;
     transition: all 0.3s;
     > img {
+      object-fit: cover;
       width: 100%;
       height: 100%;
     }

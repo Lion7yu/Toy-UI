@@ -43,12 +43,12 @@ export default {
 .container {
   overflow: hidden;
   margin: auto;
-  overflow-x: auto;
-  overflow-y: auto;
   width: 500px;
   height: 280px;
+  scroll-snap-type: x mandatory;
 }
 img {
+  scroll-snap-align: center;
   width: 100%;
   height: 100%;
 }
