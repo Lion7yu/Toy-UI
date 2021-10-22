@@ -91,6 +91,9 @@
             <router-link to="/doc/magnifier">
               <toy-menu-item value="magnifier">Magnifier 放大镜</toy-menu-item>
             </router-link>
+            <router-link to="/doc/triplet">
+              <toy-menu-item value="triplet">Triplet 一键三连</toy-menu-item>
+            </router-link>
           </template>
         </toy-sub-menu>
         <toy-sub-menu value="cssEffect">

@@ -26,6 +26,7 @@ import MenuDemo from "./components/Menu/MenuDemo.vue"
 import ShuttersDemo from "./components/CSSEffect/Cards/Shutters/ShuttersDemo.vue"
 import HoverDemo from "./components/CSSEffect/Cards/Hover/HoverDemo.vue"
 import PokerDemo from "./components/CSSEffect/Cards/Poker/PokerDemo.vue"
+import TripletDemo from "./components/Triplet/TripletDemo.vue"
 
 import { h } from 'vue';
 import Markdown from './components/Markdown.vue';
@@ -71,6 +72,7 @@ export const router = createRouter({
         { path: "shutters",component: ShuttersDemo},
         { path: "hover",component: HoverDemo},
         { path: "poker",component: PokerDemo},
+        { path: "triplet",component: TripletDemo},
       ],
     },
   ],
