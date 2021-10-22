@@ -21,11 +21,11 @@
 <script lang="ts">
 import { Carousel } from "../../lib/index";
 import { CarouselItem } from "../../lib/index";
-import xili from "/images/carouselImages/1.png"
-import milk from "/images/carouselImages/2.png"
-import staple from "/images/carouselImages/3.jpg"
-import blazer from "/images/carouselImages/4.png"
-import mdla from "/images/carouselImages/5.jpg"
+import xili from "/images/carouselImages/xili.png"
+import blazer from "/images/carouselImages/blazer.png"
+import mdla from "/images/carouselImages/mdla.jpg"
+import staple from "/images/carouselImages/staple.jpg"
+import milk from "/images/carouselImages/milk.png"
 export default {
   components: {
     Carousel,
