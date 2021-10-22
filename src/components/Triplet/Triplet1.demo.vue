@@ -3,7 +3,7 @@
 </demo>
 <template>
   <div class="container">
-    <div class="iconWrapper" @click="lightSvg">
+    <div class="iconWrapper">
       <svg class="icon">
         <use xlink:href="#i-dianzan" />
       </svg>
@@ -26,7 +26,7 @@
         <span style="--i:16"></span>
       </div>
     </div>
-    <div class="iconWrapper" @click="lightSvg">
+    <div class="iconWrapper">
       <svg class="icon">
         <use xlink:href="#i-shoucang" />
       </svg>
@@ -83,8 +83,8 @@ export default {
     let timer_end = null
 
     let is_long = true
-    let mouse_down_start_time = 0
-    let mouse_up_end_time = 0
+    let mouseDownStartTime = 0
+    let mouseUpEndTime = 0
 
     onMounted(() => {
       const iconWrapper = document.querySelectorAll('.iconWrapper')
@@ -101,7 +101,7 @@ export default {
       })
 
       iconWrapper[0].addEventListener('mousedown', () => {
-        mouse_down_start_time = new Date().getTime()
+        mouseDownStartTime = new Date().getTime()
         timer_start = setTimeout(() => {
           iconWrapper.forEach((icon, index) => {
             if (index === 0) {
@@ -117,20 +117,21 @@ export default {
             icon.classList.remove('shake')
             icon.classList.remove('loading')
             icon.classList.add('bang')
-            icon.classList.add('light')
+            icon.classList.add("light")
           })
 
           setTimeout(() => {
             iconWrapper.forEach((icon, index) => {
               icon.classList.remove('bang')
+              icon.classList.add("light")
             })
           }, 1000)
         }, 3500)
       })
 
       iconWrapper[0].addEventListener('mouseup', () => {
-        mouse_up_end_time = new Date().getTime();
-        let gap = mouse_up_end_time - mouse_down_start_time
+        mouseDownStartTime = new Date().getTime()
+        const gap = mouseUpEndTime - mouseDownStartTime
         if (gap > 300) {
           is_long = true
         } else {
@@ -141,21 +142,20 @@ export default {
           clearTimeout(timer_start)
         }
 
-        if (gap < 3500) {
+        if (3500 > gap) {
           iconWrapper.forEach((icon, index) => {
-            icon.classList.remove('shake');
-            icon.classList.remove('loading');
-          });
+            icon.classList.remove('shake')
+            icon.classList.remove('loading')
+          })
 
           if (timer_end) {
-            clearTimeout(timer_end);
-            timer_end = null;
+            clearTimeout(timer_end)
+            timer_end = null
           }
         }
       });
     })
 
-    return {}
   }
 
 }
