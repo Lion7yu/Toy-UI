@@ -33,9 +33,9 @@
             <router-link to="/doc/carousel">
               <toy-menu-item value="carousel">Carousel 轮播图</toy-menu-item>
             </router-link>
-            <router-link to="/doc/color-picker">
+            <!-- <router-link to="/doc/color-picker">
               <toy-menu-item value="color-picker">ColorPicker 颜色选择器</toy-menu-item>
-            </router-link>
+            </router-link>-->
             <!-- <router-link to="/doc/collapse">
               <toy-menu-item value="option-6">Collapse 手风琴</toy-menu-item>
             </router-link>-->
