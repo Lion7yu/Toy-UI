@@ -1,8 +1,8 @@
 <demo>
-常规使用
+支持 gutter
 </demo>
 <template>
-  <toy-row class="demoRow">
+  <toy-row class="demoRow" gutter="10">
     <toy-col :xs="{ span: 12 }">
       <div class="demoCol">12</div>
     </toy-col>
@@ -10,7 +10,7 @@
       <div class="demoCol">12</div>
     </toy-col>
   </toy-row>
-  <toy-row class="demoRow">
+  <toy-row class="demoRow" gutter="10">
     <toy-col :xs="{ span: 8 }">
       <div class="demoCol">8</div>
     </toy-col>
@@ -21,7 +21,7 @@
       <div class="demoCol">8</div>
     </toy-col>
   </toy-row>
-  <toy-row class="demoRow">
+  <toy-row class="demoRow" gutter="10">
     <toy-col :xs="{ span: 6 }">
       <div class="demoCol">6</div>
     </toy-col>
@@ -56,7 +56,6 @@ export default {
 }
 .demoCol {
   height: 50px;
-  font-size: 1em;
   background: rgb(76, 188, 240);
   border: 1px solid white;
   display: flex;

@@ -1,76 +1,46 @@
 <template>
-  <div class="row" style="rowStyle" :class="rowClass">
+  <div class="toy-row" :style="rowStyle" :class="rowClasses">
     <slot></slot>
   </div>
 </template>
 
-<script>
-import { computed, onMounted, getCurrentInstance } from 'vue';
+<script lang="ts">
+import { getCurrentInstance, onMounted, provide, InjectionKey, Ref, ref, computed } from "vue"
+export const TOYRowGutter: InjectionKey<Ref<string | number>> = Symbol("TOYRowGutter")
 export default {
-  name: 'LRow',
+  name: "ToyRow",
   props: {
     gutter: {
       type: [Number, String]
     },
     align: {
       type: String,
-      validator(value) {
-        return ['left', 'right', 'center'].indexOf(value) >= 0;
+      validator(value: string) {
+        return ['left', 'right', 'center'].includes(value)
       }
     }
   },
   setup(props, ctx) {
-    console.log(ctx)
     const instance = getCurrentInstance()
-    console.log(instance)
     const rowStyle = computed(() => {
-      let { gutter } = ctx
-      return {
-        marginLeft: -gutter / 2 + 'px',
-        marginRight: -gutter / 2 + 'px'
-      }
+      let gutter = props.gutter
+      return { marginLeft: -gutter / 2 + 'px', marginRight: -gutter / 2 + 'px', marginTop: -gutter / 2 + 'px' }
     })
 
-    const rowClass = computed(() => {
-      let { align } = ctx
+    const rowClasses = computed(() => {
+      let align = props.align
       return [align && `align-${align}`]
     })
 
-    onMounted(() => {
-    })
-
-    return {
-      rowStyle,
-      rowClass
-    }
+    provide("TOYRowGutter", instance.ctx.gutter)
+    return { rowStyle, rowClasses }
   }
-  // computed: {
-  //   rowStyle() {
-  //     let { gutter } = this
-  //     console.log('gutter')
-  //     console.log(gutter)
-  //     return {
-  //       marginLeft: -gutter / 2 + 'px',
-  //       marginRight: -gutter / 2 + 'px'
-  //     }
-  //   },
-  //   rowClass() {
-  //     let { align } = this
-  //     return [align && `align-${align}`]
-  //   }
-  // },
-  // mounted() {
-  //   // this.$refs.forEach((vm)=>{
-  //   //   vm.gutter = this.gutter
-  //   // })
-  // }
 }
 </script>
 
-<style lang="scss" >
-.row {
+<style lang="scss" scoped>
+.toy-row {
   display: flex;
-  flex-wrap: wrap;
   &.align-left {
     justify-content: flex-start;
   }
