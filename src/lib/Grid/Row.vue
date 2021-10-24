@@ -21,7 +21,6 @@ export default {
     }
   },
   setup(props, ctx) {
-    const instance = getCurrentInstance()
     const rowStyle = computed(() => {
       let gutter = props.gutter
       return { marginLeft: -gutter / 2 + 'px', marginRight: -gutter / 2 + 'px', marginTop: -gutter / 2 + 'px' }
@@ -32,7 +31,7 @@ export default {
       return [align && `align-${align}`]
     })
 
-    provide("TOYRowGutter", instance.ctx.gutter)
+    provide("TOYRowGutter", props.gutter)
     return { rowStyle, rowClasses }
   }
 }
