@@ -72,11 +72,14 @@
             <router-link to="/doc/switch">
               <toy-menu-item value="switch">switch 开关</toy-menu-item>
             </router-link>
-            <router-link to="/doc/tree">
-              <toy-menu-item value="tree">Tree 树形控件</toy-menu-item>
-            </router-link>
             <router-link to="/doc/tabs">
               <toy-menu-item value="tabs">Tabs 标签</toy-menu-item>
+            </router-link>
+            <!-- <router-link to="/doc/toast">
+              <toy-menu-item value="toast">Toast 吐司</toy-menu-item>
+            </router-link>-->
+            <router-link to="/doc/tree">
+              <toy-menu-item value="tree">Tree 树形控件</toy-menu-item>
             </router-link>
           </template>
         </toy-sub-menu>
