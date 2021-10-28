@@ -60,6 +60,9 @@
             <router-link to="/doc/menu">
               <toy-menu-item value="menu">Menu 菜单</toy-menu-item>
             </router-link>
+            <router-link to="/doc/popover">
+              <toy-menu-item value="popover">Popover 气泡卡片</toy-menu-item>
+            </router-link>
             <router-link to="/doc/radio">
               <toy-menu-item value="radio">Radio 选择按钮</toy-menu-item>
             </router-link>

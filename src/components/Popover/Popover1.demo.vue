@@ -2,37 +2,34 @@
 常规使用
 </demo>
 <template>
-<div>
-<Popover trigger="hover">
-  <Button>上方弹出</Button>
-  <template slot="content">
-    弹出内容
-  </template>
-</Popover>
-<Popover position="bottom" trigger="hover">
-  <Button>下方弹出</Button>
-  <template slot="content">
-    弹出内容
-  </template>
-</Popover>
-<Popover position="left" trigger="hover">
-  <Button>左边弹出</Button>
-  <template slot="content">
-    弹出内容
-  </template>
-</Popover>
-<Popover position="right" trigger="hover">
-  <Button>右边弹出</Button>
-  <template slot="content">
-    弹出内容
-  </template>
-</Popover>
-</div>
+  <Popover>
+    <template v-slot:content>
+      <div>popover内容</div>
+    </template>
+    <Button>点我</Button>
+  </Popover>
+  <Popover position="bottom">
+    <template v-slot:content>
+      <div>弹出内容</div>
+    </template>
+    <Button>下方弹出</Button>
+  </Popover>
+  <Popover position="left">
+    <template v-slot:content>
+      <div>弹出内容</div>
+    </template>
+    <Button>下方弹出</Button>
+  </Popover>
+  <Popover position="right">
+    <template v-slot:content>
+      <div>弹出内容</div>
+    </template>
+    <Button>下方弹出</Button>
+  </Popover>
 </template>
 
 <script lang="ts">
-import {Popover} from "../../lib/index"
-import {Button} from "../../lib/index"
+import { Popover, Button } from "../../lib/index"
 
 export default {
   components: {
@@ -43,5 +40,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.popover {
+  padding: 10px;
+}
 </style>
