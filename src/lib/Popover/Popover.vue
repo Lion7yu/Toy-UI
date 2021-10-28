@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { ref, getCurrentInstance, onMounted, computed } from 'vue'
+import { ref, getCurrentInstance, onMounted, computed, onUnmounted } from 'vue'
 export default {
   name: "ToyPopover",
   props: {
@@ -127,13 +127,22 @@ export default {
         instance.ctx.$refs.popover.addEventListener('mouseleave', close)
       }
     })
+
+    onUnmounted(() => {
+      if (instance.ctx.trigger === 'click') {
+        instance.ctx.$refs.popover.removeEventListener('click', onClick)
+      } else {
+        instance.ctx.$refs.popover.removeEventListener('mouseenter', open)
+        instance.ctx.$refs.popover.removeEventListener('mouseleave', close)
+      }
+    })
     return { onClick, visible, openEvent, closeEvent }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-$border-color: #333;
+$border-color: rgb(255, 255, 255);
 $border-radius: 4px;
 
 .popover {
@@ -168,7 +177,7 @@ $border-radius: 4px;
       left: 10px;
     }
     &::before {
-      border-top-color: black;
+      border-top-color: rgb(223, 223, 223);
       top: 100%;
     }
     &::after {
@@ -183,7 +192,7 @@ $border-radius: 4px;
       left: 10px;
     }
     &::before {
-      border-bottom-color: black;
+      border-bottom-color: rgb(225, 225, 225);
       bottom: 100%;
     }
     &::after {
@@ -200,7 +209,7 @@ $border-radius: 4px;
       top: 50%;
     }
     &::before {
-      border-left-color: black;
+      border-left-color: rgb(223, 223, 223);
       left: 100%;
     }
     &::after {
@@ -216,7 +225,7 @@ $border-radius: 4px;
       top: 50%;
     }
     &::before {
-      border-right-color: black;
+      border-right-color: rgb(223, 223, 223);
       right: 100%;
     }
     &::after {

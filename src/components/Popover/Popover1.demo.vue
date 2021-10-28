@@ -4,27 +4,15 @@
 <template>
   <Popover>
     <template v-slot:content>
-      <div>popover内容</div>
+      <div>Popover 内容</div>
     </template>
-    <Button>点我</Button>
+    <Button>Click</Button>
   </Popover>
-  <Popover position="bottom">
+  <Popover trigger="hover">
     <template v-slot:content>
-      <div>弹出内容</div>
+      <div>Popover 内容</div>
     </template>
-    <Button>下方弹出</Button>
-  </Popover>
-  <Popover position="left" trigger="hover">
-    <template v-slot:content>
-      <div>弹出内容</div>
-    </template>
-    <Button>下方弹出</Button>
-  </Popover>
-  <Popover position="right" trigger="hover">
-    <template v-slot:content>
-      <div>弹出内容</div>
-    </template>
-    <Button>下方弹出</Button>
+    <Button>Hover</Button>
   </Popover>
 </template>
 
