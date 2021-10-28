@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" @click="onClick" ref="popover">
+  <div class="popover" ref="popover">
     <div
       ref="contentWrapper"
       class="content-wrapper"
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { ref, getCurrentInstance, onMounted } from 'vue'
+import { ref, getCurrentInstance, onMounted, computed } from 'vue'
 export default {
   name: "ToyPopover",
   props: {
@@ -25,11 +25,34 @@ export default {
       validator(value) {
         return ['top', 'buttom', 'left', 'right'].indexOf(value) >= 0
       }
+    },
+    trigger: {
+      type: String,
+      default: 'click',
+      validator(value) {
+        return ['click', 'hover'].indexOf(value) >= 0
+      }
     }
   },
   setup() {
     const instance = getCurrentInstance()
     let visible = ref(false)
+
+    const openEvent = computed(() => {
+      if (instance.ctx.trigger === 'click') {
+        return 'click'
+      } else {
+        return 'mouseenter'
+      }
+    })
+
+    const closeEvent = computed(() => {
+      if (instance.ctx.trigger === 'click') {
+        return 'click'
+      } else {
+        return 'mouseleave'
+      }
+    })
 
     const positionContent = () => {
       const { contentWrapper, triggerWrapper } = instance.ctx.$refs
@@ -97,8 +120,14 @@ export default {
       }
     }
     onMounted(() => {
+      if (instance.ctx.trigger === 'click') {
+        instance.ctx.$refs.popover.addEventListener('click', onClick)
+      } else {
+        instance.ctx.$refs.popover.addEventListener('mouseenter', open)
+        instance.ctx.$refs.popover.addEventListener('mouseleave', close)
+      }
     })
-    return { onClick, visible }
+    return { onClick, visible, openEvent, closeEvent }
   }
 }
 </script>

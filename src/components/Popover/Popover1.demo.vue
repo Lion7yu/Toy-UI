@@ -14,13 +14,13 @@
     </template>
     <Button>下方弹出</Button>
   </Popover>
-  <Popover position="left">
+  <Popover position="left" trigger="hover">
     <template v-slot:content>
       <div>弹出内容</div>
     </template>
     <Button>下方弹出</Button>
   </Popover>
-  <Popover position="right">
+  <Popover position="right" trigger="hover">
     <template v-slot:content>
       <div>弹出内容</div>
     </template>
