@@ -3,13 +3,11 @@
 </demo>
 <template>
   <div>
-    <Collapse direction="vertical">
-      <ul>
-        <Collapse-item title="标题1" name="1">1</Collapse-item>
-        <Collapse-item title="标题2" name="2">2</Collapse-item>
-        <Collapse-item title="标题3" name="3">3</Collapse-item>
-      </ul>
-    </Collapse>
+    <toy-collapse>
+      <toy-collapse-item title="标题1">内容一</toy-collapse-item>
+      <toy-collapse-item title="标题2">内容二</toy-collapse-item>
+      <toy-collapse-item title="标题3">内容三</toy-collapse-item>
+    </toy-collapse>
   </div>
 </template>
 
@@ -19,8 +17,8 @@ import { CollapseItem } from "../../lib/index"
 
 export default {
   components: {
-    Collapse,
-    CollapseItem
+    "toy-collapse": Collapse,
+    "toy-collapse-item": CollapseItem
   }
 }
 </script>

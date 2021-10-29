@@ -36,11 +36,11 @@
             <!-- <router-link to="/doc/color-picker">
               <toy-menu-item value="color-picker">ColorPicker 颜色选择器</toy-menu-item>
             </router-link>-->
-            <!-- <router-link to="/doc/collapse">
-              <toy-menu-item value="option-6">Collapse 手风琴</toy-menu-item>
-            </router-link>-->
             <router-link to="/doc/checkbox">
               <toy-menu-item value="checkbox">Checkbox 检查框</toy-menu-item>
+            </router-link>
+            <router-link to="/doc/collapse">
+              <toy-menu-item value="option-6">Collapse 手风琴</toy-menu-item>
             </router-link>
             <router-link to="/doc/dialog">
               <toy-menu-item value="dialog">Dialog 模态框</toy-menu-item>
