@@ -1,7 +1,7 @@
 <template>
   <SiteHeader />
   <div class="components-page">
-    <div class="nav-bar">
+    <div class="nav-bar nav-bar-scrollbar">
       <toy-menu
         :default-open-keys="['doc', 'normalComponents', 'toyComponents', 'cssEffect']"
         v-model:selected-key="selectedKey"
@@ -160,14 +160,15 @@ export default {
   margin: 0 auto;
   display: flex;
   .nav-bar {
-    overflow-y: auto;
     width: 240px;
     flex-shrink: 0;
+    overflow-y: auto;
     a {
       &:hover {
         text-decoration: none;
       }
     }
+
     .router {
       > a {
         display: block;
@@ -192,6 +193,32 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+.nav-bar-scrollbar::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 10px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 10px;
+}
+.nav-bar-scrollbar::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  background-color: skyblue;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+.nav-bar-scrollbar::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #ededed;
+  border-radius: 10px;
 }
 </style>
 
