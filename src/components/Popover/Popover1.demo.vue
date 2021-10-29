@@ -2,18 +2,18 @@
 常规使用
 </demo>
 <template>
-  <Popover>
+  <toy-popover>
     <template v-slot:content>
       <div>Popover 内容</div>
     </template>
-    <Button>Click</Button>
-  </Popover>
-  <Popover trigger="hover">
+    <toy-button>Click</toy-button>
+  </toy-popover>
+  <toy-popover trigger="hover">
     <template v-slot:content>
       <div>Popover 内容</div>
     </template>
-    <Button>Hover</Button>
-  </Popover>
+    <toy-button>Hover</toy-button>
+  </toy-popover>
 </template>
 
 <script lang="ts">
@@ -21,8 +21,8 @@ import { Popover, Button } from "../../lib/index"
 
 export default {
   components: {
-    Popover,
-    Button
+    "toy-popover": Popover,
+    "toy-button": Button
   }
 }
 </script>

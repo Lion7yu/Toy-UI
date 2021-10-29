@@ -2,30 +2,30 @@
 支持四个方向
 </demo>
 <template>
-  <Popover position="left" trigger="hover">
+  <toy-popover position="left" trigger="hover">
     <template v-slot:content>
       <div>弹出内容</div>
     </template>
-    <Button>左侧弹出</Button>
-  </Popover>
-  <Popover position="top" trigger="hover">
+    <toy-button>左侧弹出</toy-button>
+  </toy-popover>
+  <toy-popover position="top" trigger="hover">
     <template v-slot:content>
       <div>弹出内容</div>
     </template>
-    <Button>上方弹出</Button>
-  </Popover>
-  <Popover position="right" trigger="hover">
+    <toy-button>上方弹出</toy-button>
+  </toy-popover>
+  <toy-popover position="right" trigger="hover">
     <template v-slot:content>
       <div>弹出内容</div>
     </template>
-    <Button>右侧弹出</Button>
-  </Popover>
-  <Popover position="bottom" trigger="hover">
+    <toy-button>右侧弹出</toy-button>
+  </toy-popover>
+  <toy-popover position="bottom" trigger="hover">
     <template v-slot:content>
       <div>弹出内容</div>
     </template>
-    <Button>下方弹出</Button>
-  </Popover>
+    <toy-button>下方弹出</toy-button>
+  </toy-popover>
 </template>
 
 <script lang="ts">
@@ -33,8 +33,8 @@ import { Popover, Button } from "../../lib/index"
 
 export default {
   components: {
-    Popover,
-    Button
+    "toy-popover": Popover,
+    "toy-button": Button
   }
 }
 </script>

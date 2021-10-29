@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { ref, getCurrentInstance, onMounted, computed, onUnmounted } from 'vue'
+import { ref, getCurrentInstance, onMounted, computed, onUnmounted, nextTick } from 'vue'
 export default {
   name: "ToyPopover",
   props: {
@@ -34,12 +34,12 @@ export default {
       }
     }
   },
-  setup() {
+  setup(props) {
     const instance = getCurrentInstance()
     let visible = ref(false)
 
     const openEvent = computed(() => {
-      if (instance.ctx.trigger === 'click') {
+      if (props.trigger === 'click') {
         return 'click'
       } else {
         return 'mouseenter'
@@ -47,7 +47,7 @@ export default {
     })
 
     const closeEvent = computed(() => {
-      if (instance.ctx.trigger === 'click') {
+      if (props.trigger === 'click') {
         return 'click'
       } else {
         return 'mouseleave'
@@ -55,7 +55,7 @@ export default {
     })
 
     const positionContent = () => {
-      const { contentWrapper, triggerWrapper } = instance.ctx.$refs
+      const { contentWrapper, triggerWrapper } = instance.refs
       document.body.appendChild(contentWrapper)
       const { width, height, top, left } = triggerWrapper.getBoundingClientRect()
       const { height: height2 } = contentWrapper.getBoundingClientRect()
@@ -77,21 +77,21 @@ export default {
           left: left + window.scrollX + width
         },
       }
-      contentWrapper.style.left = positions[instance.ctx.position].left + 'px'
-      contentWrapper.style.top = positions[instance.ctx.position].top + 'px'
-      contentWrapper.style.right = positions[instance.ctx.position].right + 'px'
-      contentWrapper.style.bottom = positions[instance.ctx.position].bottom + 'px'
+      contentWrapper.style.left = positions[props.position].left + 'px'
+      contentWrapper.style.top = positions[props.position].top + 'px'
+      contentWrapper.style.right = positions[props.position].right + 'px'
+      contentWrapper.style.bottom = positions[props.position].bottom + 'px'
     }
 
     let onClickDocument = (e) => {
-      if (instance.ctx.$refs.popover &&
-        (instance.ctx.$refs.popover === e.target ||
-          instance.ctx.$refs.popover.contains(e.target))) {
+      if (instance.refs.popover &&
+        (instance.refs.popover === e.target ||
+          instance.refs.popover.contains(e.target))) {
         return
       }
-      if (instance.ctx.$refs.contentWrapper &&
-        (instance.ctx.$refs.contentWrapper === e.target ||
-          instance.ctx.$refs.contentWrapper.contains(e.target))) {
+      if (instance.refs.contentWrapper &&
+        (instance.refs.contentWrapper === e.target ||
+          instance.refs.contentWrapper.contains(e.target))) {
         return
       }
       close()
@@ -99,7 +99,7 @@ export default {
 
     const open = () => {
       visible.value = true
-      instance.ctx.$nextTick(() => {
+      nextTick(() => {
         positionContent()
         document.addEventListener('click', onClickDocument)
       })
@@ -111,7 +111,7 @@ export default {
     }
 
     const onClick = (event) => {
-      if (instance.ctx.$refs.triggerWrapper.contains(event.target)) {
+      if (instance.refs.triggerWrapper.contains(event.target)) {
         if (visible.value === true) {
           close()
         } else {
@@ -120,20 +120,20 @@ export default {
       }
     }
     onMounted(() => {
-      if (instance.ctx.trigger === 'click') {
-        instance.ctx.$refs.popover.addEventListener('click', onClick)
+      if (props.trigger === 'click') {
+        instance.refs.popover.addEventListener('click', onClick)
       } else {
-        instance.ctx.$refs.popover.addEventListener('mouseenter', open)
-        instance.ctx.$refs.popover.addEventListener('mouseleave', close)
+        instance.refs.popover.addEventListener('mouseenter', open)
+        instance.refs.popover.addEventListener('mouseleave', close)
       }
     })
 
     onUnmounted(() => {
-      if (instance.ctx.trigger === 'click') {
-        instance.ctx.$refs.popover.removeEventListener('click', onClick)
+      if (props.trigger === 'click') {
+        instance.refs.popover.removeEventListener('click', onClick)
       } else {
-        instance.ctx.$refs.popover.removeEventListener('mouseenter', open)
-        instance.ctx.$refs.popover.removeEventListener('mouseleave', close)
+        instance.refs.popover.removeEventListener('mouseenter', open)
+        instance.refs.popover.removeEventListener('mouseleave', close)
       }
     })
     return { onClick, visible, openEvent, closeEvent }
