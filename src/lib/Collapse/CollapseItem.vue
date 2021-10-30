@@ -17,6 +17,10 @@ export default {
     title: {
       type: String,
       required: true
+    },
+    value: {
+      type: [Number, String],
+      require: true
     }
   },
   setup(props, ctx) {
@@ -27,18 +31,22 @@ export default {
       if (open.value) {
         open.value = false
       } else {
-        open.value = true
-        emitter && emitter.emit('update:selected', ctx)
+        emitter && emitter.emit('update:selected', props.value)
 
       }
     }
     const close = () => {
       open.value = false
     }
+    const show = () => {
+      open.value = true
+    }
     onMounted(() => {
-      emitter && emitter.on('update:selected', (vm) => {
-        if (vm !== ctx) {
+      emitter && emitter.on('update:selected', (value) => {
+        if (value !== props.value) {
           close()
+        } else {
+          show()
         }
       })
     })

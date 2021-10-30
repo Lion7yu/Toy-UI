@@ -13,14 +13,17 @@ export default {
     accordion: {
       type: Boolean,
       default: false
+    },
+    selected: {
+      type: [Number, String],
     }
   },
   setup(props, ctx) {
     const emitter = new Emitter()
-    console.log(props.accordion)
-    if (props.accordion) {
-      provide("TOYEmitter", emitter)
-    }
+    provide("TOYEmitter", emitter)
+    onMounted(() => {
+      emitter.emit('update:selected', props.selected)
+    })
   }
 
 }
