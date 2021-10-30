@@ -8,7 +8,9 @@
 </template>
 
 <script>
-import { onMounted, ref, getCurrentInstance, watch } from "vue"
+import { onMounted, ref, getCurrentInstance, watch, inject } from "vue"
+
+
 export default {
   name: "ToyCollapseItem",
   props: {
@@ -18,6 +20,7 @@ export default {
     }
   },
   setup(props, ctx) {
+    const emitter = inject("TOYEmitter")
     const instance = getCurrentInstance()
     let open = ref(false)
     const toggle = () => {
@@ -25,14 +28,19 @@ export default {
         open.value = false
       } else {
         open.value = true
-        ctx.emit('update:selected', open.value)
+        emitter && emitter.emit('update:selected', ctx)
+
       }
     }
     const close = () => {
       open.value = false
     }
     onMounted(() => {
-
+      emitter && emitter.on('update:selected', (vm) => {
+        if (vm !== ctx) {
+          close()
+        }
+      })
     })
 
 

@@ -3,6 +3,12 @@
 </demo>
 <template>
   <div>
+    <toy-collapse accordion>
+      <toy-collapse-item title="标题1">内容一</toy-collapse-item>
+      <toy-collapse-item title="标题2">内容二</toy-collapse-item>
+      <toy-collapse-item title="标题3">内容三</toy-collapse-item>
+    </toy-collapse>
+
     <toy-collapse>
       <toy-collapse-item title="标题1">内容一</toy-collapse-item>
       <toy-collapse-item title="标题2">内容二</toy-collapse-item>

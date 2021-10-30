@@ -5,8 +5,24 @@
 </template>
 
 <script>
+import Emitter from "tiny-emitter"
+import { getCurrentInstance, onMounted, provide, ref, computed } from "vue"
 export default {
-  name: "ToyCollapse"
+  name: "ToyCollapse",
+  props: {
+    accordion: {
+      type: Boolean,
+      default: false
+    }
+  },
+  setup(props, ctx) {
+    const emitter = new Emitter()
+    console.log(props.accordion)
+    if (props.accordion) {
+      provide("TOYEmitter", emitter)
+    }
+  }
+
 }
 </script>
 
