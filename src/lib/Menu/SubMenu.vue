@@ -23,7 +23,7 @@
 import { inject, provide, computed } from "vue";
 
 import { ClickOutside } from "../directives/ClickOutside.ts";
-import CollapseTransition from "../Collapse/Collapse.vue";
+import CollapseTransition from "./MenuCollapse.vue";
 
 import {
   TOYMenuMode,
