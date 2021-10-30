@@ -1,6 +1,6 @@
 <template>
   <div class="collapseItem">
-    <div class="title" @click="open = !open">{{ title }}</div>
+    <div class="title" ref="title" @click="toggle">{{ title }}</div>
     <div class="content" v-if="open">
       <slot></slot>
     </div>
@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { ref } from "vue"
+import { onMounted, ref, getCurrentInstance, watch } from "vue"
 export default {
   name: "ToyCollapseItem",
   props: {
@@ -17,9 +17,26 @@ export default {
       required: true
     }
   },
-  setup() {
+  setup(props, ctx) {
+    const instance = getCurrentInstance()
     let open = ref(false)
-    return { open }
+    const toggle = () => {
+      if (open.value) {
+        open.value = false
+      } else {
+        open.value = true
+        ctx.emit('update:selected', open.value)
+      }
+    }
+    const close = () => {
+      open.value = false
+    }
+    onMounted(() => {
+
+    })
+
+
+    return { open, toggle }
   }
 }
 </script>
