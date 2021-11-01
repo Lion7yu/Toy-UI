@@ -73,7 +73,7 @@
               <toy-menu-item value="selector">Selector 搜索框</toy-menu-item>
             </router-link>
             <router-link to="/doc/switch">
-              <toy-menu-item value="switch">switch 开关</toy-menu-item>
+              <toy-menu-item value="switch">Switch 开关</toy-menu-item>
             </router-link>
             <router-link to="/doc/tabs">
               <toy-menu-item value="tabs">Tabs 标签</toy-menu-item>
