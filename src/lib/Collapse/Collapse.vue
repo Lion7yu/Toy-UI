@@ -10,23 +10,27 @@ import { getCurrentInstance, onMounted, provide, ref, computed } from "vue"
 export default {
   name: "ToyCollapse",
   props: {
+    selected: {
+      type: Array,
+    },
     accordion: {
       type: Boolean,
       default: false
-    },
-    selected: {
-      type: Array,
     }
   },
   setup(props, ctx) {
     const emitter = new Emitter()
     provide("TOYEmitter", emitter)
-    provide("TOYAccordion", props.accordion)
 
     onMounted(() => {
       emitter.emit('update:selected', props.selected)
       emitter.on('update:addSelected', (value) => {
-        props.selected.push(value)
+        if (props.accordion) {
+          props.selected.splice(0, props.selected.length)
+          props.selected.push(value)
+        } else {
+          props.selected.push(value)
+        }
         emitter.emit('update:selected', props.selected)
         ctx.emit('update:selected', props.selected)
       })
