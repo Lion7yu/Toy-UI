@@ -1,8 +1,10 @@
 <template>
   <div class="collapseItem">
     <div class="title" ref="title" @click="toggle">{{ title }}</div>
-    <div class="content" v-if="open">
-      <slot></slot>
+    <div class="content content-show" v-if="open" :class="{ 'content-show': show }">
+      <p>
+        <slot></slot>
+      </p>
     </div>
   </div>
 </template>
@@ -59,10 +61,11 @@ $border-radius: 4px;
     margin-top: -1px;
     margin-left: -1px;
     margin-right: -1px;
-    min-height: 32px;
+    min-height: 46px;
     display: flex;
     align-items: center;
     padding: 0 8px;
+    background: rgb(250, 250, 250);
   }
   &:first-child {
     > .title {
@@ -74,10 +77,19 @@ $border-radius: 4px;
     > .title:last-child {
       border-bottom-left-radius: $border-radius;
       border-bottom-right-radius: $border-radius;
+      border-bottom: none;
     }
   }
   > .content {
+    min-height: 72px;
     padding: 8px;
+    &.content-show {
+      transition: all 2s;
+    }
+  }
+  p {
+    padding: 16px;
+    font-size: 14px;
   }
 }
 </style>
