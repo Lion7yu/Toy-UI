@@ -1,6 +1,6 @@
 <template>
   <div class="collapseItem">
-    <div class="title" ref="title" @click="toggle">{{ title }}</div>
+    <div class="title" ref="title" @click="toggle">{{ accordion }}{{ title }}</div>
     <div class="content" v-if="open">
       <slot></slot>
     </div>
@@ -25,34 +25,28 @@ export default {
   },
   setup(props, ctx) {
     const emitter = inject("TOYEmitter")
-    const instance = getCurrentInstance()
     let open = ref(false)
+    let accordion = inject("TOYAccordion")
     const toggle = () => {
       if (open.value) {
-        open.value = false
+        emitter && emitter.emit('update:removeSelected', props.value)
       } else {
-        emitter && emitter.emit('update:selected', props.value)
-
+        emitter && emitter.emit('update:addSelected', props.value)
       }
     }
-    const close = () => {
-      open.value = false
-    }
-    const show = () => {
-      open.value = true
-    }
+
     onMounted(() => {
-      emitter && emitter.on('update:selected', (value) => {
-        if (value !== props.value) {
-          close()
+      emitter && emitter.on('update:selected', (values) => {
+        if (values.indexOf(props.value) >= 0) {
+          open.value = true
         } else {
-          show()
+          open.value = false
         }
       })
     })
 
 
-    return { open, toggle }
+    return { open, toggle, accordion }
   }
 }
 </script>

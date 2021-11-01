@@ -15,14 +15,27 @@ export default {
       default: false
     },
     selected: {
-      type: [Number, String],
+      type: Array,
     }
   },
   setup(props, ctx) {
     const emitter = new Emitter()
     provide("TOYEmitter", emitter)
+    provide("TOYAccordion", props.accordion)
+
     onMounted(() => {
       emitter.emit('update:selected', props.selected)
+      emitter.on('update:addSelected', (value) => {
+        props.selected.push(value)
+        emitter.emit('update:selected', props.selected)
+        ctx.emit('update:selected', props.selected)
+      })
+      emitter.on('update:removeSelected', (value) => {
+        let index = props.selected.indexOf(value)
+        props.selected.splice(index, 1)
+        emitter.emit('update:selected', props.selected)
+        ctx.emit('update:selected', props.selected)
+      })
     })
   }
 
