@@ -81,7 +81,7 @@ $border-radius: 4px;
     }
   }
   > .content {
-    min-height: 72px;
+    min-height: 64px;
     padding: 8px;
     &.content-show {
       transition: all 2s;
