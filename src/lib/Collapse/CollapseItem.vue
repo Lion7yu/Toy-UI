@@ -1,20 +1,25 @@
 <template>
   <div class="collapseItem">
     <div class="title" ref="title" @click="toggle">{{ title }}</div>
-    <div class="content content-show" v-if="open" :class="{ 'content-show': show }">
-      <p>
-        <slot></slot>
-      </p>
-    </div>
+    <Spread :visible="open">
+      <div class="content">
+        <p>
+          <slot></slot>
+        </p>
+      </div>
+    </Spread>
   </div>
 </template>
 
 <script>
-import { onMounted, ref, getCurrentInstance, watch, inject } from "vue"
-
+import { onMounted, ref, inject } from "vue"
+import Spread from "../Spread/Spread.vue"
 
 export default {
   name: "ToyCollapseItem",
+  components: {
+    Spread
+  },
   props: {
     title: {
       type: String,
@@ -83,9 +88,6 @@ $border-radius: 4px;
   > .content {
     min-height: 64px;
     padding: 8px;
-    &.content-show {
-      transition: all 2s;
-    }
   }
   p {
     padding: 16px;
