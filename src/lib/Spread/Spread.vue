@@ -49,7 +49,6 @@ export default {
         el.style.paddingRight = 0;
       } else {
         el.style.transition = verticalTransition.value;
-        console.log(el.style.transition)
         state.oldPaddingTop = el.style.paddingTop;
         state.oldPaddingBottom = el.style.paddingBottom;
         el.style.height = 0;

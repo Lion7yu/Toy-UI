@@ -1,13 +1,18 @@
 <template>
   <div class="collapseItem">
-    <div class="title" ref="title" @click="toggle">{{ title }}</div>
-    <Spread :visible="open">
+    <div class="title" ref="title" @click="toggle">
+      <svg class="icon">
+        <use :xlink:href="svgName" />
+      </svg>
+      {{ title }}
+    </div>
+    <toy-spread :visible="open">
       <div class="content">
         <p>
           <slot></slot>
         </p>
       </div>
-    </Spread>
+    </toy-spread>
   </div>
 </template>
 
@@ -18,7 +23,7 @@ import Spread from "../Spread/Spread.vue"
 export default {
   name: "ToyCollapseItem",
   components: {
-    Spread
+    "toy-spread": Spread
   },
   props: {
     title: {
@@ -33,6 +38,7 @@ export default {
   setup(props, ctx) {
     const emitter = inject("TOYEmitter")
     let open = ref(false)
+    let svgName = ref("#i-right")
     const toggle = () => {
       if (open.value) {
         emitter && emitter.emit('update:removeSelected', props.value)
@@ -45,14 +51,16 @@ export default {
       emitter && emitter.on('update:selected', (values) => {
         if (values.indexOf(props.value) >= 0) {
           open.value = true
+          svgName.value = "#i-down1"
         } else {
           open.value = false
+          svgName.value = "#i-right"
         }
       })
     })
 
 
-    return { open, toggle }
+    return { open, toggle, svgName }
   }
 }
 </script>
@@ -71,6 +79,7 @@ $border-radius: 4px;
     align-items: center;
     padding: 0 8px;
     background: rgb(250, 250, 250);
+    margin-bottom: -1px;
   }
   &:first-child {
     > .title {
@@ -79,10 +88,9 @@ $border-radius: 4px;
     }
   }
   &:last-child {
-    > .title:last-child {
+    .title:last-child {
       border-bottom-left-radius: $border-radius;
       border-bottom-right-radius: $border-radius;
-      border-bottom: none;
     }
   }
   > .content {
@@ -92,6 +100,9 @@ $border-radius: 4px;
   p {
     padding: 16px;
     font-size: 14px;
+  }
+  svg {
+    margin: 0 8px;
   }
 }
 </style>
