@@ -41,4 +41,5 @@ export { default as MenuGroup} from './Menu/MenuGroup.vue'
 export { default as MenuItem} from './Menu/MenuItem.vue';
 export { default as SubMenu} from './Menu/SubMenu.vue'
 export { default as ColorPicker} from './ColorPicker/ColorPicker.vue'
+export { default as Spread} from './Spread/Spread.vue'
 export { openDialog as openDialog } from './Dialog/openDialog';
