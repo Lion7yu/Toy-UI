@@ -97,6 +97,9 @@
             <router-link to="/doc/calendar">
               <toy-menu-item value="calendar">Calendar 日历</toy-menu-item>
             </router-link>
+            <router-link to="/doc/drag-sort">
+              <toy-menu-item value="drag-sort">DragSort 拖拽排序</toy-menu-item>
+            </router-link>
             <router-link to="/doc/magnifier">
               <toy-menu-item value="magnifier">Magnifier 放大镜</toy-menu-item>
             </router-link>
