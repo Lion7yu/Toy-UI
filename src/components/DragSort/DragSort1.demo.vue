@@ -61,32 +61,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.flip-list-move {
-  transition: transform 0.3s ease-in;
-}
-
-.box {
-  display: block;
+.container {
+  overflow: hidden;
   display: flex;
-  width: 500px;
-  flex-wrap: wrap;
-  margin: auto;
-}
+  justify-content: center;
+  height: 200px;
+  .box {
+    display: block;
+    display: flex;
+    width: 500px;
+    flex-wrap: wrap;
+    .flip-list-move {
+      transition: transform 0.3s ease-in;
+    }
+    .items {
+      width: 100px;
+      height: 50px;
+      margin: 10px 10px 0px 10px;
+      line-height: 50px;
+      text-align: center;
+      cursor: grab;
+      color: rgb(64, 169, 255);
 
-.items {
-  width: 100px;
-  height: 50px;
-  margin: 10px;
-  line-height: 50px;
-  text-align: center;
-  cursor: grab;
-  color: rgb(64, 169, 255);
-
-  box-shadow: 0 0 2px rgb(76, 188, 240);
-}
-
-.items.active {
-  background: rgb(76, 188, 240);
-  color: #fff;
+      box-shadow: 0 0 2px rgb(76, 188, 240);
+      &.active {
+        background: rgb(76, 188, 240);
+        color: #fff;
+      }
+    }
+  }
 }
 </style>
