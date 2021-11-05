@@ -48,6 +48,9 @@
             <router-link to="/doc/grid">
               <toy-menu-item value="grid">Grid 栅格</toy-menu-item>
             </router-link>
+            <router-link to="/doc/image-loader">
+              <toy-menu-item value="image-loader">ImageLoader 图片上传</toy-menu-item>
+            </router-link>
             <router-link to="/doc/input">
               <toy-menu-item value="input">Input 输入</toy-menu-item>
             </router-link>

@@ -30,6 +30,7 @@ import TripletDemo from "./components/Triplet/TripletDemo.vue"
 import ColorPickerDemo from "./components/ColorPicker/ColorPickerDemo.vue"
 import SpreadDemo from "./components/Spread/SpreadDemo.vue"
 import DragSortDemo from "./components/DragSort/DragSortDemo.vue"
+import ImageLoaderDemo from "./components/ImageLoader/ImageLoaderDemo.vue"
 
 
 import { h } from 'vue';
@@ -80,6 +81,7 @@ export const router = createRouter({
         { path: "color-picker",component: ColorPickerDemo},
         { path: "spread",component: SpreadDemo},
         { path: "drag-sort",component: DragSortDemo},
+        { path: "image-loader",component: ImageLoaderDemo},
       ],
     },
   ],
