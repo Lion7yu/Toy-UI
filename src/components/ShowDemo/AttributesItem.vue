@@ -30,6 +30,7 @@ export default {
   .box {
     flex: 1;
     padding: 10px;
+    color: rgb(96, 98, 102);
   }
 }
 </style>

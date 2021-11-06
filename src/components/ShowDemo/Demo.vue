@@ -1,4 +1,5 @@
 <template>
+  <h2>{{ component.__sourceCodeTitle }}</h2>
   <div class="demo">
     <div class="demo-component">
       <component :is="component" />
@@ -61,21 +62,16 @@ export default {
 
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
-
+h2 {
+  margin: 20px;
+}
 .demo {
   width: 76vw;
   border: 1px solid $border-color;
   margin: 16px 0 32px;
   &:hover {
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
   }
-
-  > h2 {
-    font-size: 20px;
-    padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
-  }
-
   &-component {
     padding: 16px;
   }
