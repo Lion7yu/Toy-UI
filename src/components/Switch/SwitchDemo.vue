@@ -1,62 +1,48 @@
 <template>
-<div>
-  <h1>Switch 组件示例 </h1>
-  <Demo :component="Switch1Demo" />
-  <Demo :component="Switch2Demo" />
-</div>
+  <div>
+    <h1>Switch 示例</h1>
+    <toy-demo :component="Switch1Demo" />
+    <toy-demo :component="Switch2Demo" />
+    <toy-attributes>
+      <toy-attributes-item :attributesData="value"></toy-attributes-item>
+      <toy-attributes-item :attributesData="disabled"></toy-attributes-item>
+    </toy-attributes>
+  </div>
 </template>
 
 <script lang="ts">
-import Switch1Demo from './Switch1.demo.vue'
-import Switch2Demo from './Switch2.demo.vue'
-import Demo from '../Demo.vue'
-import {
-  ref
-} from 'vue'
+import Demo from "../ShowDemo/Demo.vue";
+import Attributes from "../ShowDemo/Attributes.vue";
+import AttributesItem from "../ShowDemo/AttributesItem.vue";
+import Switch1Demo from "./Switch1.demo.vue";
+import Switch2Demo from "./Switch2.demo.vue";
 export default {
   components: {
-    Demo
+    "toy-demo": Demo,
+    "toy-attributes": Attributes,
+    "toy-attributes-item": AttributesItem,
   },
   setup() {
-    return {
-      Switch1Demo,
-      Switch2Demo,
+    const value = getData('v-model', '绑定值，选择初始的状态', 'boolean', 'true/false', '——')
+    const disabled = getData('disabled', '是否禁用', 'boolean', '——', 'false')
+    function getData(argument, explain, type, options, initial) {
+      return {
+        argument: argument,
+        explain: explain,
+        type: type,
+        options: options,
+        initial: initial
+      }
     }
-  }
-}
+    return {
+      value,
+      disabled,
+      Switch1Demo,
+      Switch2Demo
+    };
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-$border-color: #d9d9d9;
-
-.demo {
-  border: 1px solid $border-color;
-  margin: 16px 0 32px;
-
-  >h2 {
-    font-size: 20px;
-    padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
-  }
-
-  &-component {
-    padding: 16px;
-  }
-
-  &-actions {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-  }
-
-  &-code {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-
-    >pre {
-      line-height: 1.1;
-      font-family: Consolas, 'Courier New', Courier, monospace;
-      margin: 0;
-    }
-  }
-}
+<style lang="scss">
 </style>
