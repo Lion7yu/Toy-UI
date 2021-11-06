@@ -1,16 +1,16 @@
 <demo>
-常规使用
+基础使用
 </demo>
 <template>
-<Tabs v-model:selected="x">
-  <Tab title="导航1">内容1</Tab>
-  <Tab title="导航2">内容2</Tab>
-</Tabs>
+  <Tabs v-model:selected="selected">
+    <Tab title="导航1">内容1</Tab>
+    <Tab title="导航2">内容2</Tab>
+  </Tabs>
 </template>
 
 <script lang="ts">
-import {Tabs} from "../../lib/index"
-import {Tab} from "../../lib/index"
+import { Tabs } from "../../lib/index"
+import { Tab } from "../../lib/index"
 import {
   ref
 } from 'vue'
@@ -20,9 +20,9 @@ export default {
     Tab
   },
   setup() {
-    const x = ref('导航2')
+    const selected = ref('导航2')
     return {
-      x
+      selected
     }
   }
 }

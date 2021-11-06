@@ -23,8 +23,9 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  font-size: 14px;
   display: flex;
-  height: 50px;
+  height: 52px;
   overflow: hidden;
   border-bottom: 1px solid rgb(220, 223, 230);
   .box {
