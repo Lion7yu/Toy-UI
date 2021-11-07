@@ -1,5 +1,5 @@
 <demo>
-支持 gutter
+添加 Gutter
 </demo>
 <template>
   <toy-row class="demoRow" gutter="10">

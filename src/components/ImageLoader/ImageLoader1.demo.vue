@@ -1,5 +1,5 @@
 <demo>
-支持拖拽上传
+拖拽上传 / 组件内部图片可拖拽 
 </demo>
 <template>
   <div>

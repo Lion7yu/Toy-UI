@@ -2,9 +2,7 @@
   <div>
     <h1>Tree 示例</h1>
     <toy-demo :component="Tree1Demo" />
-    <toy-attributes>
-      <toy-attributes-item :attributesData="menuData"></toy-attributes-item>
-    </toy-attributes>
+    <toy-attributes></toy-attributes>
   </div>
 </template>
 
@@ -20,7 +18,6 @@ export default {
     "toy-attributes-item": AttributesItem,
   },
   setup() {
-    const menuData = getData('menuData', '树形数据', 'json', '——', '——')
     function getData(argument, explain, type, options, initial) {
       return {
         argument: argument,
@@ -31,7 +28,6 @@ export default {
       }
     }
     return {
-      menuData,
       Tree1Demo,
     };
   },

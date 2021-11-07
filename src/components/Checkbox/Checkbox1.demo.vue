@@ -1,5 +1,5 @@
 <demo>
-常规使用
+基础用法
 </demo>
 <template>
   <div>
@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import {Checkbox} from "../../lib/index"
+import { Checkbox } from "../../lib/index"
 export default {
   components: {
     Checkbox
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .buttonDemo{
-    margin-bottom: 8px;
-  }
+.buttonDemo {
+  margin-bottom: 8px;
+}
 </style>

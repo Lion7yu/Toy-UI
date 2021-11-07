@@ -14,7 +14,7 @@
 import { ref, reactive, computed, nextTick } from "vue";
 
 export default {
-  name: "dwc-collapse-transition",
+  name: "toy-collapse-transition",
   props: {
     direction: {
       type: String,

@@ -21,8 +21,8 @@ export default {
     "toy-attributes-item": AttributesItem,
   },
   setup() {
-    const size = getData('size', '尺寸', 'number', '任意', 30)
-    const num = getData('num', '初始数量', 'number', '0-5', '0')
+    const size = getData('size', '尺寸', 'number', '——', 30)
+    const num = getData('num', '初始数量', 'number', '0 - 5', '0')
     function getData(argument, explain, type, options, initial) {
       return {
         argument: argument,

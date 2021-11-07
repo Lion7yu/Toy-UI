@@ -1,5 +1,5 @@
 <demo>
-accordion 手风琴
+Accordion 手风琴
 </demo>
 <template>
   <div>

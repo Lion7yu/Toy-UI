@@ -1,5 +1,5 @@
 <demo>
-支持自定义空隙
+自定义空隙
 </demo>
 <template>
   <toy-row class="demoRow" gutter="10">

@@ -66,7 +66,6 @@ h2 {
   margin: 20px;
 }
 .demo {
-  width: 76vw;
   border: 1px solid $border-color;
   margin: 16px 0 32px;
   &:hover {

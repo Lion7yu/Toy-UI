@@ -25,11 +25,11 @@ export default {
     "toy-attributes-item": AttributesItem,
   },
   setup() {
-    const canvasWidth = getData('canvasWidth', '画板宽度', 'number', '任意', '500')
-    const canvasHeight = getData('canvasHeight', '画板高度', 'number', '任意', '300')
-    const fillStyle = getData('fillStyle', '填充颜色', 'string', '任意', 'black')
-    const strokeStyle = getData('strokeStyle', '描边颜色', 'string', '任意', 'black')
-    const lineWidth = getData('lineWidth', '线条宽度', 'number', '任意', '8')
+    const canvasWidth = getData('canvasWidth', '画板宽度', 'number', '——', '500')
+    const canvasHeight = getData('canvasHeight', '画板高度', 'number', '——', '300')
+    const fillStyle = getData('fillStyle', '填充颜色', 'string', '——', 'black')
+    const strokeStyle = getData('strokeStyle', '描边颜色', 'string', '——', 'black')
+    const lineWidth = getData('lineWidth', '线条宽度', 'number', '——', '8')
     const lineCap = getData('lineCap', '线段末端结束方式', 'string', 'butt / square / round', 'round')
     function getData(argument, explain, type, options, initial) {
       return {

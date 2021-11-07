@@ -1,5 +1,5 @@
 <demo>
-拖拽换位
+自由换位
 </demo>
 <template>
   <div class="container">

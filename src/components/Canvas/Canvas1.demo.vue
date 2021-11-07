@@ -1,5 +1,5 @@
 <demo>
-  常规使用
+基础用法
 </demo>
 <template>
   <div class="canvasWrapper">
@@ -27,7 +27,7 @@ export default {
       canvasWidth: 500,
       canvasHeight: 300,
       fillStyle: 'black',
-      strokeStyle: 'black',
+      strokeStyle: 'lightblue',
       lineWidth: 8,
       lineCap: 'round'
     })

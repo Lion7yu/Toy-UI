@@ -19,6 +19,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h2 {
+  margin: 20px;
+}
 .attributes-wrapper {
   width: 76vw;
   .title-wrapper {

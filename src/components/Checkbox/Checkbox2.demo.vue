@@ -1,5 +1,5 @@
 <demo>
-  支持 disabled
+Disabled
 </demo>
 <template>
   <div>
