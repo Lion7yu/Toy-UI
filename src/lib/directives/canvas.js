@@ -5,14 +5,13 @@ export default {
     const canvasWidth = getStyle(canvasWrapper, "width");
     const canvasHeight = getStyle(canvasWrapper, "height");
     const resetButton = canvasWrapper.querySelector(".reset");
-    console.log(resetButton);
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
     const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "black"; //填充颜色
-    ctx.strokeStyle = "black"; //边框颜色
-    ctx.lineWidth = 8; //线的宽度
-    ctx.lineCap = "round"; //线的类型是圆
+    ctx.fillStyle = canvas.style.fillStyle; //填充颜色
+    ctx.strokeStyle = canvas.style.strokeStyle; //边框颜色
+    ctx.lineWidth = canvas.style.lineWidth; //线的宽度
+    ctx.lineCap = canvas.style.lineCap; //线的类型是圆
 
     let painting = false;
     let last;
@@ -39,7 +38,6 @@ export default {
       canvas.onmousedown = (e) => {
         painting = true;
         last = [e.layerX, e.layerY];
-        console.log(e);
       };
 
       canvas.onmousemove = (e) => {

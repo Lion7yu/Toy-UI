@@ -12,7 +12,9 @@
       :style="{
         width: canvasWidth,
         height: canvasHeight,
-        fillStyle: 'black',
+        strokeStyle: strokeStyle,
+        lineWidth: lineWidth,
+        lineCap: lineCap
       }"
     ></canvas>
     <div class="reset">
@@ -42,7 +44,7 @@ export default {
       type: String,
       default: "black"
     },
-    lineWdith: {
+    lineWidth: {
       type: Number,
       default: 8
     },
