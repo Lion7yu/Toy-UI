@@ -12,12 +12,12 @@
         <span v-if="codeVisible">隐藏代码</span>
         <span v-else>显示代码</span>
       </div>
-      <toy-spread :visible="codeVisible">
-        <div class="demo-code">
-          <pre class="language-html" v-html="html" />
-        </div>
-      </toy-spread>
     </div>
+    <toy-spread :visible="codeVisible">
+      <div class="demo-code">
+        <pre class="language-html" v-html="html" />
+      </div>
+    </toy-spread>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <demo>
-常规使用
+Click / Hover
 </demo>
 <template>
   <toy-popover>

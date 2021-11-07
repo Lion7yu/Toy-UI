@@ -3,8 +3,8 @@
 </demo>
   
 <template>
-  <Radio label="1" v-model:value="labelVal">男</Radio>
-  <Radio label="0" v-model:value="labelVal">女</Radio>
+  <Radio label="男" v-model:value="labelVal">男</Radio>
+  <Radio label="女" v-model:value="labelVal">女</Radio>
   <div class="picked">Picked:{{ labelVal }}</div>
 </template>
   
@@ -18,7 +18,7 @@ export default {
     Radio,
   },
   setup() {
-    const labelVal = ref('1')
+    const labelVal = ref('男')
     return { labelVal }
   }
 }
