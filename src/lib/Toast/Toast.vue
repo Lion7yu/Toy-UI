@@ -59,7 +59,6 @@ export default {
     }
 
     const execAutoClose = () => {
-      console.log(instance.ctx.autoClose)
       if (instance.ctx.autoClose) {
         setTimeout(() => {
           close()

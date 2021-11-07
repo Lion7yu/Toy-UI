@@ -32,7 +32,6 @@ export default {
     })
 
     const dragstart = (val) => {
-      console.log(state.test)
       state.oldVal = val
       state.isActive = val
     }

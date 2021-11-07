@@ -3,7 +3,7 @@
 </demo>
 
 <template>
-  <Rate :num="num" :size="size" @getRateNum="getRateNum" />
+  <Rate :num="num" :size="size" />
 </template>
 
 <script lang="ts">
@@ -21,13 +21,9 @@ export default {
       size: 30
     })
 
-    const getRateNum = (num) => {
-      console.log(num)
-    }
 
     return {
       ...toRefs(state),
-      getRateNum
     }
   }
 
