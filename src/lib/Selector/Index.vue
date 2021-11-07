@@ -1,15 +1,7 @@
 <template>
   <div class="selector" v-focus>
-    <SelectorInput 
-      :placeholder="placehodler"
-      :value="inputValue"
-      @searchOptions="searchOptions"
-    />
-    <SelectorMenu 
-      :data="data"
-      @setItemValue="setItemValue"
-      :searchValue="searchValue"
-    />
+    <SelectorInput :placeholder="placeholder" :value="inputValue" @searchOptions="searchOptions" />
+    <SelectorMenu :data="data" @setItemValue="setItemValue" :searchValue="searchValue" />
   </div>
 </template>
 
@@ -21,7 +13,7 @@ import {reactive, toRefs} from 'vue'
 export default {
   name:'Selector',
   props:{
-    placehodler: String,
+    placeholder: String,
     data: Array
   },
   directives:{
@@ -53,8 +45,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .selector{
-    position: relative;
-    width: 300px;
-  }
+.selector {
+  position: relative;
+  width: 300px;
+}
 </style>

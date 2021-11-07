@@ -13,7 +13,7 @@
         <toy-selector>
           <toy-selector-index
             :data="componentsSelectorData"
-            placehodler="请输入搜索内容"
+            placeholder="请输入搜索内容"
             @setItemValue="setItemValue"
           ></toy-selector-index>
         </toy-selector>

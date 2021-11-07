@@ -4,7 +4,7 @@
     <toy-demo :component="Selector1Demo" />
     <toy-attributes>
       <toy-attributes-item :attributesData="data"></toy-attributes-item>
-      <toy-attributes-item :attributesData="placehodler"></toy-attributes-item>
+      <toy-attributes-item :attributesData="placeholder"></toy-attributes-item>
     </toy-attributes>
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
   },
   setup() {
     const data = getData('data', '搜索数据', 'json', '——', '1-2-3')
-    const placehodler = getData('placeholder', '占位符', 'string', '——', '请选择')
+    const placeholder = getData('placeholder', '占位符', 'string', '——', '请选择')
     function getData(argument, explain, type, options, initial) {
       return {
         argument: argument,
@@ -34,7 +34,7 @@ export default {
     }
     return {
       data,
-      placehodler,
+      placeholder,
       Selector1Demo,
     };
   },

@@ -3,7 +3,7 @@
 </demo>
 <template>
   <Selector>
-    <Index :data="selectorData" placehodler="请选择人物"></Index>
+    <Index :data="selectorData" placeholder="请选择人物"></Index>
   </Selector>
 </template>
 
