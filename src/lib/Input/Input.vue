@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 $height: 32px;
 $border-color: #999;
 $border-radius: 4px;
