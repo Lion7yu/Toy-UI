@@ -56,7 +56,6 @@ export default {
     }
 
     function getXY(e) {
-      console.log(e);
       return {
         x: e.layerX - imgX - magWidth / 2,
         y: e.layerY - imgY - magHeight / 2,
