@@ -6,7 +6,13 @@
     <toy-demo :component="Input2Demo" />
     <toy-demo :component="Input3Demo" />
 
-    <toy-attributes></toy-attributes>
+    <toy-attributes>
+      <toy-attributes-item :attributesData="placeholder"></toy-attributes-item>
+      <toy-attributes-item :attributesData="icon"></toy-attributes-item>
+      <toy-attributes-item :attributesData="error"></toy-attributes-item>
+      <toy-attributes-item :attributesData="disabled"></toy-attributes-item>
+      <toy-attributes-item :attributesData="readonly"></toy-attributes-item>
+    </toy-attributes>
   </div>
 </template>
 
@@ -25,6 +31,11 @@ export default {
     "toy-attributes-item": AttributesItem,
   },
   setup() {
+    const placeholder = getData('placeholder', '占位符', 'string', '——', '请输入')
+    const icon = getData('icon', 'icon 名称', 'string', '——', '——')
+    const error = getData('error', 'error 信息', 'string', '——', '——')
+    const readonly = getData('readonly', '是否为 readonly', 'boolean', 'true / false', 'false')
+    const disabled = getData('disabled', '是否为 disabled', 'boolean', 'true / false', 'false')
     function getData(argument, explain, type, options, initial) {
       return {
         argument: argument,
@@ -35,6 +46,11 @@ export default {
       }
     }
     return {
+      placeholder,
+      icon,
+      error,
+      readonly,
+      disabled,
       Input1Demo,
       Input2Demo,
       Input3Demo,
