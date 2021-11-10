@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="topnavAndBanner">
-      <Topnav />
       <div class="banner">
         <h1>Toy-UI</h1>
         <h2>一个简单好玩的 UI 框架</h2>
@@ -90,6 +89,7 @@ export default {
   z-index: 10;
 }
 .wrapper {
+  display: flex;
   position: relative;
   .column {
     margin: 0;
