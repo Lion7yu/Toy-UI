@@ -13,7 +13,7 @@ export default {
   name: "toy-menu-group",
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../toy.scss";
 .toy-menu-group {
   > .toy-menu-group-title {

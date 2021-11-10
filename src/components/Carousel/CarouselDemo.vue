@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Tree 示例</h1>
+    <h1>Carousel 示例</h1>
     <toy-demo :component="Carousel1Demo" />
     <toy-attributes>
       <toy-attributes-item :attributesData="autoplay"></toy-attributes-item>

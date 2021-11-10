@@ -116,7 +116,7 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../toy.scss";
 .toy-menu {
   list-style: none;

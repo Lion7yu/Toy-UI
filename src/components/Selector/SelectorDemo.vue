@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Tree 示例</h1>
+    <h1>Selector 示例</h1>
     <toy-demo :component="Selector1Demo" />
     <toy-attributes>
       <toy-attributes-item :attributesData="data"></toy-attributes-item>
